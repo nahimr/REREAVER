@@ -1,0 +1,8361 @@
+#include "THISDUST.H"
+#include "FX.H"
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Init(struct _FXTracker *fxTracker /*$s1*/)
+ // line 120, offset 0x80041f54
+	/* begin block 1 */
+		// Start line: 121
+		// Start offset: 0x80041F54
+		// Variables:
+	// 		struct _FX_MATRIX *fxMatrix; // $s0
+	// 		struct _FX_MATRIX *endFXMatrix; // $s2
+	// 		struct _FX_PRIM *fxPrim; // $s0
+	// 		struct _FX_PRIM *endFXPrim; // $s2
+	/* end block 1 */
+	// End offset: 0x80041FEC
+	// End Line: 147
+
+	/* begin block 2 */
+		// Start line: 240
+	/* end block 2 */
+	// End Line: 241
+
+void FX_Init(_FXTracker *fxTracker)
+
+{
+  undefined *puVar1;
+  int unaff_s1;
+  
+  puVar1 = (undefined *)(unaff_s1 + 0x590);
+  while (puVar1 < &DAT_00006d90 + unaff_s1) {
+    FUN_8004f500(&DAT_00006da0 + unaff_s1,puVar1);
+    puVar1 = puVar1 + 0x68;
+  }
+  SoundEffectChannel_ARRAY_800d13bc[0].handle = 0;
+  SoundEffectChannel_ARRAY_800d13bc[0]._0_4_ = 0x800d13b4;
+  FUN_8004dacc();
+  snow_amount = 0;
+  rain_amount = 0;
+  current_rain_fade = 0;
+  FX_reaver_instance = (_Instance *)0x0;
+  SoundEffectChannel_ARRAY_800d13bc[0].volume = 1;
+  SoundEffectChannel_ARRAY_800d13bc[0].volumeChangeTime = 0;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Die(struct _FX_PRIM *fxPrim /*$s0*/, struct _FXTracker *fxTracker /*$s1*/)
+ // line 191, offset 0x80042034
+	/* begin block 1 */
+		// Start line: 382
+	/* end block 1 */
+	// End Line: 383
+
+	/* begin block 2 */
+		// Start line: 431
+	/* end block 2 */
+	// End Line: 432
+
+void FX_Die(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FX_MATRIX * /*$ra*/ FX_GetMatrix(struct _FXTracker *fxTracker /*$s1*/)
+ // line 208, offset 0x800420a4
+	/* begin block 1 */
+		// Start line: 209
+		// Start offset: 0x800420A4
+		// Variables:
+	// 		struct _FX_MATRIX *fxMatrix; // $s0
+	/* end block 1 */
+	// End offset: 0x800420DC
+	// End Line: 218
+
+	/* begin block 2 */
+		// Start line: 467
+	/* end block 2 */
+	// End Line: 468
+
+_FX_MATRIX * FX_GetMatrix(_FXTracker *fxTracker)
+
+{
+  ulong uVar1;
+  int iVar2;
+  
+  uVar1 = SoundEffectChannel_ARRAY_800d13bc[0].handle;
+  if (SoundEffectChannel_ARRAY_800d13bc[0].handle != 0) {
+    SoundEffectChannel_ARRAY_800d13bc[0].handle =
+         *(ulong *)SoundEffectChannel_ARRAY_800d13bc[0].handle;
+    iVar2 = *(int *)SoundEffectChannel_ARRAY_800d13bc[0].handle;
+    ((int *)SoundEffectChannel_ARRAY_800d13bc[0].handle)[1] = 0;
+    fxTracker = (_FXTracker *)uVar1;
+    if (iVar2 == 0) {
+      SoundEffectChannel_ARRAY_800d13bc[0].handle = 0;
+      fxTracker = (_FXTracker *)uVar1;
+    }
+  }
+  if (fxTracker != (_FXTracker *)0x0) {
+    *(undefined4 *)(fxTracker->matrixPool[0].lwTransform.m + 4) = 0;
+    *(undefined4 *)fxTracker->matrixPool[0].lwTransform.m = 0;
+    *(undefined4 *)(fxTracker->matrixPool[0].lwTransform.m + 6) = 0;
+  }
+  return (_FX_MATRIX *)fxTracker;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FX_PRIM * /*$ra*/ FX_GetPrim(struct _FXTracker *fxTracker /*$a0*/)
+ // line 222, offset 0x800420f4
+	/* begin block 1 */
+		// Start line: 223
+		// Start offset: 0x800420F4
+		// Variables:
+	// 		struct _FX_PRIM *fxPrim; // $a0
+	/* end block 1 */
+	// End offset: 0x80042154
+	// End Line: 244
+
+	/* begin block 2 */
+		// Start line: 496
+	/* end block 2 */
+	// End Line: 497
+
+_FX_PRIM * FX_GetPrim(_FXTracker *fxTracker)
+
+{
+  _FX_PRIM *in_v0;
+  
+  return in_v0;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXParticle * /*$ra*/ FX_GetParticle(struct _Instance *instance /*$s1*/, short startSegment /*$s0*/)
+ // line 247, offset 0x80042164
+	/* begin block 1 */
+		// Start line: 248
+		// Start offset: 0x80042164
+		// Variables:
+	// 		struct _FXParticle *particle; // $v1
+	/* end block 1 */
+	// End offset: 0x800421E8
+	// End Line: 268
+
+	/* begin block 2 */
+		// Start line: 549
+	/* end block 2 */
+	// End Line: 550
+
+_FXParticle * FX_GetParticle(_Instance *instance,short startSegment)
+
+{
+  _FXParticle *in_v1;
+  
+  (in_v1->offset).y = 0;
+  (in_v1->offset).x = 0;
+  (in_v1->acceleration).z = 0;
+  (in_v1->acceleration).y = 0;
+  (in_v1->acceleration).x = 0;
+  in_v1->flag_bits = 0;
+  in_v1->z_undulate = '\0';
+  return in_v1;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_AniTexSetup(struct _FX_PRIM *fxPrim /*$a2*/, struct _MFace *mface /*$a1*/, struct _Model *model /*$a2*/, struct _FXTracker *fxTracker /*$a3*/)
+ // line 271, offset 0x80042200
+	/* begin block 1 */
+		// Start line: 606
+	/* end block 1 */
+	// End Line: 607
+
+	/* begin block 2 */
+		// Start line: 607
+	/* end block 2 */
+	// End Line: 608
+
+void FX_AniTexSetup(_FX_PRIM *fxPrim,_MFace *mface,_Model *model,_FXTracker *fxTracker)
+
+{
+  uint in_v0;
+  
+  model->segmentList = (_Segment *)(in_v0 & (uint)fxPrim | 0x20000000);
+  return;
+}
+
+
+
+// autogenerated function stub: 
+// void /*$ra*/ FX_StandardProcess(struct _FX_PRIM *fxPrim /*$a0*/, struct _FXTracker *fxTracker /*$a1*/)
+void FX_StandardProcess(struct _FX_PRIM *fxPrim, struct _FXTracker *fxTracker)
+{ // line 360, offset 0x8004227c
+	/* begin block 1 */
+		// Start line: 798
+	/* end block 1 */
+	// End Line: 799
+
+}
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_ShatterProcess(struct _FX_PRIM *fxPrim /*$s0*/, struct _FXTracker *fxTracker /*$s1*/)
+ // line 396, offset 0x8004229c
+	/* begin block 1 */
+		// Start line: 397
+		// Start offset: 0x8004229C
+		// Variables:
+	// 		struct MATRIX matrix; // stack offset -64
+	// 		struct _Rotation rotation; // stack offset -32
+	// 		struct _Rotation rot_temp; // stack offset -24
+	/* end block 1 */
+	// End offset: 0x80042530
+	// End Line: 445
+
+	/* begin block 2 */
+		// Start line: 870
+	/* end block 2 */
+	// End Line: 871
+
+void FX_ShatterProcess(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  int in_v0;
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int unaff_s0;
+  short sStack00000030;
+  short in_stack_00000032;
+  short in_stack_00000034;
+  short sStack00000038;
+  short sStack0000003a;
+  short sStack0000003c;
+  
+  if (in_v0 == 0) {
+    iVar2 = (int)(short)gameTrackerX.controlCommand[1][1];
+    *(short *)(unaff_s0 + 0x5c) =
+         *(short *)(unaff_s0 + 0x5c) + (short)(iVar2 * (int)*(short *)(unaff_s0 + 0x62) >> 0xc);
+    *(short *)(unaff_s0 + 0x5e) =
+         *(short *)(unaff_s0 + 0x5e) + (short)(iVar2 * (int)*(short *)(unaff_s0 + 100) >> 0xc);
+    *(short *)(unaff_s0 + 0x60) =
+         *(short *)(unaff_s0 + 0x60) + (short)(iVar2 * (int)*(short *)(unaff_s0 + 0x66) >> 0xc);
+    *(short *)(unaff_s0 + 0x2c) =
+         *(short *)(unaff_s0 + 0x2c) + (short)(iVar2 * (int)*(short *)(unaff_s0 + 0x5c) >> 0xc);
+    *(short *)(unaff_s0 + 0x2e) =
+         *(short *)(unaff_s0 + 0x2e) + (short)(iVar2 * (int)*(short *)(unaff_s0 + 0x5e) >> 0xc);
+    iVar2 = (uint)*(ushort *)(unaff_s0 + 0x30) + (iVar2 * (int)*(short *)(unaff_s0 + 0x60) >> 0xc);
+    *(undefined2 *)(unaff_s0 + 0x30) = (short)iVar2;
+    if (iVar2 * 0x10000 >> 0x10 < (int)*(short *)(unaff_s0 + 0x42)) {
+      *(undefined2 *)(unaff_s0 + 0x10) = 6;
+      *(uint *)(unaff_s0 + 0xc) = *(uint *)(unaff_s0 + 0xc) | 2;
+      *(undefined2 *)(unaff_s0 + 0x30) = *(undefined2 *)(unaff_s0 + 0x42);
+    }
+    sStack00000030 = *(short *)(unaff_s0 + 0x5a);
+    iVar2 = (int)sStack00000030;
+    if (iVar2 != 0) {
+      iVar1 = *(int *)(unaff_s0 + 0x18);
+      iVar4 = (int)in_stack_00000032;
+      iVar3 = (int)in_stack_00000034;
+      sStack00000038 =
+           (short)(iVar2 * (int)*(short *)(iVar1 + 0xc) >> 0xc) +
+           (short)(iVar4 * (int)*(short *)(iVar1 + 0xe) >> 0xc) +
+           (short)(iVar3 * (int)*(short *)(iVar1 + 0x10) >> 0xc);
+      iVar1 = *(int *)(unaff_s0 + 0x18);
+      sStack0000003a =
+           (short)(iVar2 * (int)*(short *)(iVar1 + 0x12) >> 0xc) +
+           (short)(iVar4 * (int)*(short *)(iVar1 + 0x14) >> 0xc) +
+           (short)(iVar3 * (int)*(short *)(iVar1 + 0x16) >> 0xc);
+      iVar1 = *(int *)(unaff_s0 + 0x18);
+      sStack0000003c =
+           (short)(iVar2 * (int)*(short *)(iVar1 + 0x18) >> 0xc) +
+           (short)(iVar4 * (int)*(short *)(iVar1 + 0x1a) >> 0xc) +
+           (short)(iVar3 * (int)*(short *)(iVar1 + 0x1c) >> 0xc);
+                    /* WARNING: Subroutine does not return */
+      rm_1(&stack0x00000038,&stack0x00000010);
+    }
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_DFacadeProcess(struct _FX_PRIM *fxPrim /*$s0*/, struct _FXTracker *fxTracker /*$a1*/)
+ // line 583, offset 0x80042544
+	/* begin block 1 */
+		// Start line: 584
+		// Start offset: 0x80042544
+
+		/* begin block 1.1 */
+			// Start line: 596
+			// Start offset: 0x8004259C
+			// Variables:
+		// 		struct MATRIX *swTransform; // $v1
+		/* end block 1.1 */
+		// End offset: 0x8004259C
+		// End Line: 597
+
+		/* begin block 1.2 */
+			// Start line: 756
+			// Start offset: 0x800426A8
+			// Variables:
+		// 		struct _Rotation rot; // stack offset -16
+		/* end block 1.2 */
+		// End offset: 0x80042708
+		// End Line: 764
+	/* end block 1 */
+	// End offset: 0x80042708
+	// End Line: 773
+
+	/* begin block 2 */
+		// Start line: 1166
+	/* end block 2 */
+	// End Line: 1167
+
+void FX_DFacadeProcess(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  int in_v0;
+  int in_v1;
+  int iVar1;
+  uint uVar2;
+  int unaff_s0;
+  undefined2 uStack00000010;
+  short sStack00000012;
+  short sStack00000014;
+  
+  iVar1 = in_v1 + in_v0;
+  *(undefined2 *)(unaff_s0 + 0x2c) = *(undefined2 *)(iVar1 + 0x14);
+  *(undefined2 *)(unaff_s0 + 0x2e) = *(undefined2 *)(iVar1 + 0x18);
+  *(undefined2 *)(unaff_s0 + 0x30) = *(undefined2 *)(iVar1 + 0x1c);
+  uVar2 = *(uint *)(*(int *)(unaff_s0 + 0x18) + 8);
+  if (((uVar2 & 2) == 0) &&
+     (*(uint *)(*(int *)(unaff_s0 + 0x18) + 8) = uVar2 | 2, (*(uint *)(unaff_s0 + 0xc) & 0x80) != 0)
+     ) {
+    uStack00000010 = (undefined2)((int)*(char *)(unaff_s0 + 0x53) << 2);
+    sStack00000012 = (short)((int)*(char *)(unaff_s0 + 0x5a) << 2);
+    sStack00000014 = (short)((int)*(char *)(unaff_s0 + 0x5b) << 2);
+    FUN_80078bf4((int)*(char *)(unaff_s0 + 0x53) << 2,*(int *)(unaff_s0 + 0x18) + 0xc);
+    FUN_80078d28((int)sStack00000012,*(int *)(unaff_s0 + 0x18) + 0xc);
+                    /* WARNING: Subroutine does not return */
+    FUN_80078e5c((int)sStack00000014,*(int *)(unaff_s0 + 0x18) + 0xc);
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FX_PRIM * /*$ra*/ _FX_BuildSingleFaceWithModel(struct _Model *model /*$a0*/, struct _MFace *mface /*$s6*/, struct SVECTOR *center /*$s7*/, struct SVECTOR *vel /*$fp*/, struct SVECTOR *accl /*stack 16*/, struct _FXTracker *fxTracker /*stack 20*/, TDRFuncPtr__FX_BuildSingleFaceWithModel6fxSetup fxSetup /*stack 24*/, TDRFuncPtr__FX_BuildSingleFaceWithModel7fxProcess fxProcess /*stack 28*/, struct _FX_MATRIX *fxMatrix /*stack 32*/, int timeToLive /*stack 36*/)
+ // line 856, offset 0x80042718
+	/* begin block 1 */
+		// Start line: 857
+		// Start offset: 0x80042718
+		// Variables:
+	// 		struct _FX_PRIM *fxPrim; // $s1
+	// 		struct _MVertex *vertexList; // $s3
+	/* end block 1 */
+	// End offset: 0x800427E0
+	// End Line: 885
+
+	/* begin block 2 */
+		// Start line: 1677
+	/* end block 2 */
+	// End Line: 1678
+
+/* WARNING: Variable defined which should be unmapped: timeToLive */
+/* WARNING: Variable defined which should be unmapped: fxTracker */
+/* WARNING: Variable defined which should be unmapped: accl */
+/* WARNING: Variable defined which should be unmapped: fxSetup */
+/* WARNING: Variable defined which should be unmapped: fxProcess */
+
+_FX_PRIM *
+_FX_BuildSingleFaceWithModel
+          (_Model *model,_MFace *mface,SVECTOR *center,SVECTOR *vel,SVECTOR *accl,
+          _FXTracker *fxTracker,TDRFuncPtr__FX_BuildSingleFaceWithModel6fxSetup fxSetup,
+          TDRFuncPtr__FX_BuildSingleFaceWithModel7fxProcess fxProcess,_FX_MATRIX *fxMatrix,
+          int timeToLive)
+
+{
+  _FX_PRIM *p_Var1;
+  int unaff_s2;
+  code *unaff_s5;
+  undefined4 in_stack_00000074;
+  
+  p_Var1 = (_FX_PRIM *)FUN_8004208c();
+  if (p_Var1 != (_FX_PRIM *)0x0) {
+    if (unaff_s5 != (code *)0x0) {
+      (*unaff_s5)(p_Var1,in_stack_00000074);
+    }
+    FUN_8004f500(&DAT_00006d90 + unaff_s2,p_Var1);
+  }
+  return p_Var1;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FX_PRIM * /*$ra*/ FX_BuildSingleFaceWithModel(struct _Model *model /*$a0*/, struct _MFace *mface /*$a1*/, struct SVECTOR *center /*$a2*/, struct SVECTOR *vel /*$a3*/, struct SVECTOR *accl /*stack 16*/, struct _FXTracker *fxTracker /*stack 20*/, TDRFuncPtr_FX_BuildSingleFaceWithModel6fxSetup fxSetup /*stack 24*/, TDRFuncPtr_FX_BuildSingleFaceWithModel7fxProcess fxProcess /*stack 28*/, int timeToLive /*stack 32*/)
+ // line 890, offset 0x80042814
+	/* begin block 1 */
+		// Start line: 1745
+	/* end block 1 */
+	// End Line: 1746
+
+_FX_PRIM *
+FX_BuildSingleFaceWithModel
+          (_Model *model,_MFace *mface,SVECTOR *center,SVECTOR *vel,SVECTOR *accl,
+          _FXTracker *fxTracker,TDRFuncPtr_FX_BuildSingleFaceWithModel6fxSetup fxSetup,
+          TDRFuncPtr_FX_BuildSingleFaceWithModel7fxProcess fxProcess,int timeToLive)
+
+{
+  _FX_PRIM *p_Var1;
+  int unaff_s0;
+  
+  FUN_800bf838(&accl,*(int *)(unaff_s0 + 0x40) + (int)*(short *)(unaff_s0 + 0xee) * 0x20,&accl);
+  p_Var1 = (_FX_PRIM *)CdReady(&accl);
+  return p_Var1;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ _FX_SetupLighting(struct _Instance *instance /*$s0*/)
+ // line 917, offset 0x80042864
+	/* begin block 1 */
+		// Start line: 918
+		// Start offset: 0x80042864
+		// Variables:
+	// 		struct MATRIX lm; // stack offset -40
+	/* end block 1 */
+	// End offset: 0x80042864
+	// End Line: 918
+
+	/* begin block 2 */
+		// Start line: 1834
+	/* end block 2 */
+	// End Line: 1835
+
+void _FX_SetupLighting(_Instance *instance)
+
+{
+  undefined4 in_zero;
+  undefined4 in_at;
+  uint uVar1;
+  uint in_v1;
+  undefined4 in_a2;
+  
+  if ((in_v1 & 8) != 0) {
+    _FX_DoLighting((_MFace *)instance);
+    return;
+  }
+  uVar1 = (uint)*(byte *)((int)&(instance->node).next + 2);
+  setCopReg(2,in_zero,*(undefined4 *)&(&_Normal_800c8bb0)[uVar1].z);
+  setCopReg(2,in_at,*(undefined4 *)(_Normal_ARRAY_800c8bb8 + uVar1));
+  setCopReg(2,in_a2,instance->next->prev);
+  setCopReg(2,0x4000,in_a2);
+  copFunction(2,0xe80413);
+  getCopReg(2,0x16);
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// long /*$ra*/ _FX_DoLighting(struct _MFace *mface /*$a0*/)
+ // line 928, offset 0x800428b4
+	/* begin block 1 */
+		// Start line: 929
+		// Start offset: 0x800428B4
+		// Variables:
+	// 		long modelDQP; // $a2
+	// 		long color; // stack offset -8
+	// 		struct TextureMT3 *texture; // $a1
+	/* end block 1 */
+	// End offset: 0x800429C0
+	// End Line: 961
+
+	/* begin block 2 */
+		// Start line: 1797
+	/* end block 2 */
+	// End Line: 1798
+
+long _FX_DoLighting(_MFace *mface)
+
+{
+  int in_a1;
+  uint local_res0;
+  
+  return local_res0 & 0xffffff | 0x24000000 | *(uint *)(in_a1 + 0xc) & 0x3000000;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ _FX_BuildSegmentedSplinters(struct _Instance *instance /*stack 0*/, struct SVECTOR *center /*stack 4*/, struct SVECTOR *vel /*stack 8*/, struct SVECTOR *accl /*stack 12*/, struct FXSplinter *splintDef /*stack 16*/, struct _FXTracker *fxTracker /*stack 20*/, TDRFuncPtr__FX_BuildSegmentedSplinters6fxSetup fxSetup /*stack 24*/, TDRFuncPtr__FX_BuildSegmentedSplinters7fxProcess fxProcess /*stack 28*/, int shardFlags /*stack 32*/)
+ // line 976, offset 0x800429cc
+	/* begin block 1 */
+		// Start line: 977
+		// Start offset: 0x800429CC
+		// Variables:
+	// 		long j; // $s4
+	// 		long maxTimeToLive; // stack offset -80
+	// 		long faceSkip; // stack offset -76
+	// 		long numFaces; // $v0
+	// 		struct _MFace *mface; // $s5
+	// 		struct _MFace *endMFace; // stack offset -72
+	// 		struct _Model *model; // stack offset -68
+	// 		struct _MVertex *vertexList; // stack offset -64
+	// 		struct _MFace *faceList; // $s0
+	// 		struct _FX_MATRIX *fxMatrix; // $s3
+	// 		struct _FX_MATRIX (*fxMatList[60]); // stack offset -960
+	// 		struct _SVector veloc[60]; // stack offset -720
+	// 		struct _SVector *curVel; // $s7
+	// 		int lastFxMat; // $fp
+	// 		unsigned char matIdx[128]; // stack offset -240
+	// 		struct _FX_PRIM *fxPrim; // $s2
+	// 		struct _SVector *vertex0; // $s0
+	// 		struct _SVector *vertex1; // $s1
+	// 		struct _SVector *vertex2; // $s4
+	// 		struct _SVector *poolOfVertices; // stack offset -60
+	// 		long *vtxSegment; // stack offset -56
+	// 		struct _Vector Center; // stack offset -112
+	// 		int seg0; // $s6
+	// 		int seg1; // $a0
+	// 		struct _SVector offset; // stack offset -96
+
+		/* begin block 1.1 */
+			// Start line: 1059
+			// Start offset: 0x80042BBC
+			// Variables:
+		// 		short _y0; // $v0
+		// 		short _z0; // $v1
+		// 		short _x1; // $a1
+		// 		short _y1; // $a3
+		// 		short _z1; // $a2
+		// 		struct _SVector *_v; // stack offset -48
+		// 		struct _Vector *_v1; // $a2
+		/* end block 1.1 */
+		// End offset: 0x80042BBC
+		// End Line: 1059
+
+		/* begin block 1.2 */
+			// Start line: 1072
+			// Start offset: 0x80042C50
+		/* end block 1.2 */
+		// End offset: 0x80042D10
+		// End Line: 1083
+
+		/* begin block 1.3 */
+			// Start line: 1136
+			// Start offset: 0x80043008
+			// Variables:
+		// 		short _x0; // $a1
+		// 		short _y0; // $v1
+		// 		short _z0; // $v0
+		// 		short _x1; // $a0
+		// 		short _y1; // $a3
+		// 		short _z1; // $a2
+		// 		struct _Position *_v0; // $v0
+		// 		struct _Vector *_v1; // $a2
+		/* end block 1.3 */
+		// End offset: 0x80043008
+		// End Line: 1136
+
+		/* begin block 1.4 */
+			// Start line: 1165
+			// Start offset: 0x80043144
+			// Variables:
+		// 		struct TextureMT3 *texture; // $v1
+		/* end block 1.4 */
+		// End offset: 0x80043144
+		// End Line: 1165
+
+		/* begin block 1.5 */
+			// Start line: 1195
+			// Start offset: 0x80043210
+		/* end block 1.5 */
+		// End offset: 0x80043270
+		// End Line: 1200
+
+		/* begin block 1.6 */
+			// Start line: 1217
+			// Start offset: 0x800432E4
+		/* end block 1.6 */
+		// End offset: 0x8004332C
+		// End Line: 1223
+	/* end block 1 */
+	// End offset: 0x80043420
+	// End Line: 1243
+
+	/* begin block 2 */
+		// Start line: 1895
+	/* end block 2 */
+	// End Line: 1896
+
+	/* begin block 3 */
+		// Start line: 1925
+	/* end block 3 */
+	// End Line: 1926
+
+void _FX_BuildSegmentedSplinters
+               (_Instance *instance,SVECTOR *center,SVECTOR *vel,SVECTOR *accl,FXSplinter *splintDef
+               ,_FXTracker *fxTracker,TDRFuncPtr__FX_BuildSegmentedSplinters6fxSetup fxSetup,
+               TDRFuncPtr__FX_BuildSegmentedSplinters7fxProcess fxProcess,int shardFlags)
+
+{
+  FUN_8003a748();
+                    /* WARNING: Subroutine does not return */
+  FUN_800bcdac(&stack0x00000300,0xff,0x80);
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ _FX_BuildNonSegmentedSplinters(struct _Instance *instance /*stack 0*/, struct SVECTOR *center /*stack 4*/, struct SVECTOR *vel /*stack 8*/, struct SVECTOR *accl /*stack 12*/, struct FXSplinter *splintDef /*stack 16*/, struct _FXTracker *fxTracker /*stack 20*/, TDRFuncPtr__FX_BuildNonSegmentedSplinters6fxSetup fxSetup /*stack 24*/, TDRFuncPtr__FX_BuildNonSegmentedSplinters7fxProcess fxProcess /*stack 28*/, int shardFlags /*stack 32*/)
+ // line 1254, offset 0x80043450
+	/* begin block 1 */
+		// Start line: 1255
+		// Start offset: 0x80043450
+		// Variables:
+	// 		long j; // $s2
+	// 		long maxTimeToLive; // stack offset -72
+	// 		long faceSkip; // stack offset -68
+	// 		long numFaces; // $v0
+	// 		struct _MFace *mface; // $s5
+	// 		struct _MFace *endMFace; // stack offset -64
+	// 		short whichMatrix; // $v0
+	// 		struct _Model *model; // stack offset -60
+	// 		struct _MVertex *vertexList; // stack offset -56
+	// 		struct _MFace *faceList; // $s4
+	// 		struct _FX_MATRIX *fxMatrix; // $s0
+	// 		struct _FX_MATRIX (*fxMatList[4]); // stack offset -200
+	// 		struct _SVector *curVel; // $s6
+	// 		struct _FX_PRIM *fxPrim; // $s2
+	// 		struct _SVector *vertex0; // $s1
+	// 		struct _SVector *vertex1; // $s3
+	// 		struct _SVector *vertex2; // $s4
+	// 		struct _SVector *poolOfVertices; // $fp
+	// 		struct MATRIX *swTransform; // $s1
+	// 		struct MATRIX ourM; // stack offset -184
+	// 		struct _Vector Center; // stack offset -152
+	// 		struct _SVector offset; // stack offset -136
+	// 		struct _Normal faceNorm; // stack offset -128
+	// 		struct _SVector sv_temp; // stack offset -120
+	// 		struct _SVector sv_vels[4]; // stack offset -112
+
+		/* begin block 1.1 */
+			// Start line: 1296
+			// Start offset: 0x80043564
+			// Variables:
+		// 		short start; // $v0
+		/* end block 1.1 */
+		// End offset: 0x8004368C
+		// End Line: 1322
+
+		/* begin block 1.2 */
+			// Start line: 1352
+			// Start offset: 0x800437F8
+			// Variables:
+		// 		short _x1; // $v0
+		// 		short _y1; // $v1
+		// 		short _z1; // $a0
+		// 		struct _SVector *_v0; // $s3
+		// 		struct _SVector *_v1; // $a1
+		/* end block 1.2 */
+		// End offset: 0x800437F8
+		// End Line: 1352
+
+		/* begin block 1.3 */
+			// Start line: 1414
+			// Start offset: 0x80043BAC
+			// Variables:
+		// 		short _x0; // $a1
+		// 		short _y0; // $v1
+		// 		short _z0; // $v0
+		// 		short _x1; // $a0
+		// 		short _y1; // $a3
+		// 		short _z1; // $a2
+		// 		struct _SVector *_v; // stack offset -48
+		// 		struct _Position *_v0; // $v0
+		// 		struct _Vector *_v1; // $a2
+		/* end block 1.3 */
+		// End offset: 0x80043BAC
+		// End Line: 1414
+
+		/* begin block 1.4 */
+			// Start line: 1443
+			// Start offset: 0x80043CE8
+			// Variables:
+		// 		struct TextureMT3 *texture; // $v1
+		/* end block 1.4 */
+		// End offset: 0x80043CE8
+		// End Line: 1443
+
+		/* begin block 1.5 */
+			// Start line: 1473
+			// Start offset: 0x80043DA4
+		/* end block 1.5 */
+		// End offset: 0x80043DA4
+		// End Line: 1473
+
+		/* begin block 1.6 */
+			// Start line: 1499
+			// Start offset: 0x80043EF0
+		/* end block 1.6 */
+		// End offset: 0x80043F38
+		// End Line: 1505
+	/* end block 1 */
+	// End offset: 0x8004400C
+	// End Line: 1530
+
+	/* begin block 2 */
+		// Start line: 2797
+	/* end block 2 */
+	// End Line: 2798
+
+void _FX_BuildNonSegmentedSplinters
+               (_Instance *instance,SVECTOR *center,SVECTOR *vel,SVECTOR *accl,FXSplinter *splintDef
+               ,_FXTracker *fxTracker,TDRFuncPtr__FX_BuildNonSegmentedSplinters6fxSetup fxSetup,
+               TDRFuncPtr__FX_BuildNonSegmentedSplinters7fxProcess fxProcess,int shardFlags)
+
+{
+  short sVar1;
+  int in_v0;
+  int iVar2;
+  int iVar3;
+  uint uVar4;
+  undefined4 uVar5;
+  int iVar6;
+  uint uVar7;
+  short *psVar8;
+  ushort uVar9;
+  int iVar10;
+  short *psVar11;
+  ushort *puVar12;
+  short *psVar13;
+  ushort *puVar14;
+  int unaff_s8;
+  short sStack00000040;
+  undefined4 uStack00000040;
+  short sStack00000042;
+  short sStack00000044;
+  undefined4 uStack00000044;
+  short sStack00000046;
+  short sStack00000048;
+  undefined4 uStack00000048;
+  short sStack0000004a;
+  short sStack0000004c;
+  undefined4 uStack0000004c;
+  short sStack0000004e;
+  short sStack00000050;
+  undefined4 in_stack_00000050;
+  undefined2 uStack00000052;
+  undefined4 uStack00000054;
+  undefined4 uStack00000058;
+  undefined4 uStack0000005c;
+  short sStack00000060;
+  undefined4 in_stack_00000060;
+  short sStack00000064;
+  undefined4 in_stack_00000064;
+  short sStack00000068;
+  undefined4 in_stack_00000068;
+  short in_stack_00000070;
+  short in_stack_00000072;
+  short in_stack_00000074;
+  undefined2 uStack00000078;
+  undefined2 uStack0000007a;
+  short sStack0000007c;
+  short in_stack_00000080;
+  short in_stack_00000082;
+  short in_stack_00000084;
+  uint uStack00000088;
+  undefined *puStack0000008c;
+  undefined *puStack00000090;
+  undefined *puStack00000094;
+  undefined *puStack00000098;
+  undefined *puStack0000009c;
+  uint uStack000000a0;
+  undefined *puStack000000a4;
+  ushort uStack000000a8;
+  undefined2 uStack000000b0;
+  int iStack000000b0;
+  int iStack000000b4;
+  ushort *puStack000000b8;
+  int in_stack_000000bc;
+  int iStack000000c4;
+  undefined2 *puStack000000c8;
+  int in_stack_000000f8;
+  short *in_stack_00000100;
+  int in_stack_00000108;
+  int in_stack_0000010c;
+  code *in_stack_00000110;
+  int in_stack_00000114;
+  ushort in_stack_00000118;
+  
+  puVar12 = *(ushort **)(in_v0 + 0x14);
+  uStack00000088 = DAT_800cedc4;
+  puStack0000008c = PTR_LAB_800cedc8;
+  puStack00000090 = PTR_DAT_800cedcc;
+  puStack00000094 = PTR_LAB_800cedd0;
+  puStack00000098 = PTR_DAT_800cedd4;
+  puStack0000009c = PTR_LAB_800cedd8;
+  uStack000000a0 = DAT_800ceddc;
+  puStack000000a4 = PTR_LAB_800cede0;
+  uStack000000a8 = in_stack_00000118;
+  FUN_8003a748(instance,center,&DAT_00001080 + unaff_s8);
+  if (in_stack_00000108 == 0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_800bcddc();
+  }
+  uVar9 = *(short *)(in_stack_00000108 + 4) - *(short *)(in_stack_00000108 + 8);
+  if (*(short *)(in_stack_00000108 + 8) != 0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_800bcddc();
+  }
+  uStack00000088 = uStack00000088 & 0xffff0000 | (uint)uVar9;
+  puStack00000090 = (undefined *)((uint)puStack00000090 & 0xffff0000 | (uint)(ushort)-uVar9);
+  puStack00000098 = (undefined *)((uint)puStack00000098 & 0xffff | (uint)uVar9 << 0x10);
+  uStack000000a0 = uStack000000a0 & 0xffff | (uint)(ushort)-uVar9 << 0x10;
+  uVar9 = *(ushort *)(in_stack_00000108 + 6);
+  puStack0000008c = (undefined *)((uint)puStack0000008c & 0xffff0000 | (uint)uVar9);
+  puStack00000094 = (undefined *)((uint)puStack00000094 & 0xffff0000 | (uint)uVar9);
+  puStack0000009c = (undefined *)((uint)puStack0000009c & 0xffff0000 | (uint)uVar9);
+  puStack000000a4 = (undefined *)((uint)puStack000000a4 & 0xffff0000 | (uint)uVar9);
+  iStack000000b0 = (int)*(short *)(in_stack_00000108 + 0xc);
+  iVar10 = 0;
+  FUN_800427fc(in_stack_000000f8);
+  in_stack_00000050 = CONCAT22(uStack00000052,0x1000);
+  uStack0000004c = 0;
+  uStack00000048 = 0x1000;
+  uStack00000044 = 0;
+  uStack00000040 = 0x1000;
+  uStack00000054 = in_stack_00000060;
+  uStack00000058 = in_stack_00000064;
+  uStack0000005c = in_stack_00000068;
+  do {
+    iVar2 = FUN_8004203c(in_stack_0000010c);
+    if (iVar2 == 0) {
+      if (iVar10 == 0) {
+        return;
+      }
+                    /* WARNING: Subroutine does not return */
+      FUN_800bcddc();
+    }
+    *(int *)(&stack0x00000030 + iVar10 * 4) = iVar2;
+    iVar3 = iVar10 * 8;
+    psVar8 = (short *)(&stack0x00000088 + iVar3);
+    *(undefined4 *)(iVar2 + 0xc) = uStack00000040;
+    *(undefined4 *)(iVar2 + 0x10) = uStack00000044;
+    *(undefined4 *)(iVar2 + 0x14) = uStack00000048;
+    *(undefined4 *)(iVar2 + 0x18) = uStack0000004c;
+    *(undefined4 *)(iVar2 + 0x1c) = in_stack_00000050;
+    *(undefined4 *)(iVar2 + 0x20) = uStack00000054;
+    *(undefined4 *)(iVar2 + 0x24) = uStack00000058;
+    *(undefined4 *)(iVar2 + 0x28) = uStack0000005c;
+    in_stack_00000080 = *psVar8;
+    in_stack_00000082 = *(short *)(&stack0x0000008a + iVar3);
+    in_stack_00000084 = *(short *)(&stack0x0000008c + iVar3);
+    *psVar8 = (short)((int)in_stack_00000080 * (int)sStack00000040 >> 0xc) +
+              (short)((int)in_stack_00000082 * (int)sStack00000042 >> 0xc) +
+              (short)((int)in_stack_00000084 * (int)sStack00000044 >> 0xc);
+    *(short *)(&stack0x0000008a + iVar3) =
+         (short)((int)in_stack_00000080 * (int)sStack00000046 >> 0xc) +
+         (short)((int)in_stack_00000082 * (int)sStack00000048 >> 0xc) +
+         (short)((int)in_stack_00000084 * (int)sStack0000004a >> 0xc);
+    iVar10 = iVar10 + 1;
+    *(short *)(&stack0x0000008c + iVar3) =
+         (short)((int)in_stack_00000080 * (int)sStack0000004c >> 0xc) +
+         (short)((int)in_stack_00000082 * (int)sStack0000004e >> 0xc) +
+         (short)((int)in_stack_00000084 * (int)sStack00000050 >> 0xc);
+    *(int *)(iVar2 + 0x20) = *(int *)(iVar2 + 0x20) + (int)*psVar8 * 4;
+    *(int *)(iVar2 + 0x24) =
+         *(int *)(iVar2 + 0x24) +
+         ((int)((uint)*(ushort *)(&stack0x0000008a + iVar3) << 0x10) >> 0xe);
+  } while (iVar10 < 4);
+  if (in_stack_00000108 == 0) {
+    iStack000000b4 = 1;
+  }
+  else {
+    if ((int)*(short *)(in_stack_00000108 + 0xe) == 0) {
+      iStack000000b4 = 1;
+    }
+    else {
+      iStack000000b4 =
+           *(int *)(in_stack_000000bc + 0x10) / (int)*(short *)(in_stack_00000108 + 0xe) + 1;
+    }
+  }
+  puStack000000b8 = puVar12 + *(int *)(in_stack_000000bc + 0x10) * 6;
+  if (puVar12 < puStack000000b8) {
+    iStack000000c4 = 0x55555556;
+    puStack000000c8 = &stack0x00000070;
+    do {
+      psVar8 = (short *)(unaff_s8 + (uint)*puVar12 * 8);
+      psVar11 = (short *)(unaff_s8 + (uint)puVar12[1] * 8);
+      psVar13 = (short *)(unaff_s8 + (uint)puVar12[2] * 8);
+      iVar10 = (int)*psVar8 + (int)*psVar11 + (int)*psVar13;
+      iVar6 = (int)((ulonglong)((longlong)iVar10 * (longlong)iStack000000c4) >> 0x20) -
+              (iVar10 >> 0x1f);
+      uStack00000078 = (undefined2)iVar6;
+      iVar10 = (int)psVar8[1] + (int)psVar11[1] + (int)psVar13[1];
+      iVar10 = (int)((ulonglong)((longlong)iVar10 * (longlong)iStack000000c4) >> 0x20) -
+               (iVar10 >> 0x1f);
+      uStack0000007a = (undefined2)iVar10;
+      iVar2 = (int)psVar8[2] + (int)psVar11[2] + (int)psVar13[2];
+      iVar3 = iVar10 * 0x10000 >> 0x10;
+      iVar6 = iVar6 * 0x10000 >> 0x10;
+      iVar10 = iVar6;
+      if (iVar6 < 0) {
+        iVar10 = -iVar6;
+      }
+      sStack0000007c =
+           (short)((ulonglong)((longlong)iVar2 * (longlong)iStack000000c4) >> 0x20) -
+           (short)(iVar2 >> 0x1f);
+      iVar2 = iVar3;
+      if (iVar3 < 0) {
+        iVar2 = -iVar3;
+      }
+      uVar4 = (uint)(iVar6 < 1);
+      if ((iVar10 <= iVar2) && (uVar4 = 3, 0 < iVar3)) {
+        uVar4 = 2;
+      }
+      iVar3 = *(int *)(&stack0x00000030 + uVar4 * 4);
+      iVar2 = uVar4 * 8;
+      iVar10 = FUN_8004208c(in_stack_0000010c);
+      puVar14 = puStack000000b8;
+      if (iVar10 != 0) {
+        if (in_stack_00000110 == (code *)0x0) {
+          *(undefined2 *)(iVar10 + 0x2c) = *(undefined2 *)(iVar3 + 0x20);
+          *(undefined2 *)(iVar10 + 0x2e) = *(undefined2 *)(iVar3 + 0x24);
+          *(undefined2 *)(iVar10 + 0x30) = *(undefined2 *)(iVar3 + 0x28);
+          sVar1 = *(short *)(iVar10 + 0x30);
+          in_stack_00000070 = *(short *)(iVar10 + 0x2c) - sStack00000060;
+          puStack000000c8[1] = *(short *)(iVar10 + 0x2e) - sStack00000064;
+          puStack000000c8[2] = sVar1 - sStack00000068;
+          *(short *)(iVar10 + 0x3c) = *psVar8 - in_stack_00000070;
+          *(short *)(iVar10 + 0x3e) = psVar8[1] - in_stack_00000072;
+          *(short *)(iVar10 + 0x40) = psVar8[2] - in_stack_00000074;
+          *(short *)(iVar10 + 0x44) = *psVar11 - in_stack_00000070;
+          *(short *)(iVar10 + 0x46) = psVar11[1] - in_stack_00000072;
+          *(short *)(iVar10 + 0x48) = psVar11[2] - in_stack_00000074;
+          *(short *)(iVar10 + 0x4c) = *psVar13 - in_stack_00000070;
+          *(short *)(iVar10 + 0x4e) = psVar13[1] - in_stack_00000072;
+          sVar1 = psVar13[2];
+          *(int *)(iVar10 + 0x18) = iVar3;
+          *(short *)(iVar10 + 0x50) = sVar1 - in_stack_00000074;
+          FUN_80042198(iVar10,puVar12,in_stack_000000bc,in_stack_0000010c);
+          if ((uStack000000a8 & 0x40) == 0) {
+            uVar5 = FUN_8004284c(puVar12);
+            *(undefined4 *)(iVar10 + 0x1c) = uVar5;
+          }
+          else {
+            if ((*(byte *)((int)puVar12 + 7) & 2) == 0) {
+              uVar4 = *(uint *)(puVar12 + 4);
+              *(uint *)(iVar10 + 0x1c) = uVar4 & 0xffffff;
+              uVar7 = uVar4 & 0xffffff | 0x20000000;
+              uVar4 = *(uint *)(puVar12 + 4);
+            }
+            else {
+              iVar3 = *(int *)(puVar12 + 4);
+              uVar7 = *(uint *)(iVar3 + 0xc) & 0xffffff;
+              *(uint *)(iVar10 + 0x1c) = uVar7;
+              uVar7 = uVar7 | 0x24000000;
+              uVar4 = *(uint *)(iVar3 + 0xc);
+            }
+            *(uint *)(iVar10 + 0x1c) = uVar7 | uVar4 & 0x3000000;
+          }
+          if (in_stack_00000114 == 0) {
+            *(undefined4 *)(iVar10 + 0x14) = 0x80042234;
+          }
+          else {
+            *(int *)(iVar10 + 0x14) = in_stack_00000114;
+          }
+          *(undefined2 *)(iVar10 + 0x5c) = *(undefined2 *)(&stack0x00000088 + iVar2);
+          *(undefined2 *)(iVar10 + 0x5e) = *(undefined2 *)(&stack0x0000008a + iVar2);
+          *(undefined2 *)(iVar10 + 0x60) = *(undefined2 *)(&stack0x0000008c + iVar2);
+          if (in_stack_00000108 == 0) {
+                    /* WARNING: Subroutine does not return */
+            FUN_800bcddc();
+          }
+          if (*(short *)(in_stack_00000108 + 10) != 0) {
+                    /* WARNING: Subroutine does not return */
+            FUN_800bcddc();
+          }
+          if (in_stack_00000100 != (short *)0x0) {
+            *(short *)(iVar10 + 0x5c) = *(short *)(iVar10 + 0x5c) + *in_stack_00000100;
+            *(short *)(iVar10 + 0x5e) = *(short *)(iVar10 + 0x5e) + in_stack_00000100[1];
+            *(short *)(iVar10 + 0x60) = *(short *)(iVar10 + 0x60) + in_stack_00000100[2];
+          }
+          *(undefined2 *)(iVar10 + 0x62) = 0;
+          *(undefined2 *)(iVar10 + 100) = 0;
+          if (in_stack_00000108 == 0) {
+                    /* WARNING: Subroutine does not return */
+            *(undefined2 *)(iVar10 + 0x66) = 0xfff8;
+            FUN_800bcddc();
+          }
+          if (*(short *)(in_stack_00000108 + 0x10) != 0) {
+                    /* WARNING: Subroutine does not return */
+            FUN_800bcddc();
+          }
+          *(undefined2 *)(iVar10 + 0x5a) = 0;
+          *(undefined2 *)(iVar10 + 0x66) = *(undefined2 *)(in_stack_00000108 + 0x12);
+          *(undefined2 *)(iVar10 + 0x4a) = 0x1000;
+          *(undefined2 *)(iVar10 + 0x10) = uStack000000b0;
+          sVar1 = -0x7fff;
+          if ((uStack000000a8 & 0x10) == 0) {
+            sVar1 = *(short *)(in_stack_000000f8 + 0x60) -
+                    *(short *)(*(int *)((int)*(short *)(in_stack_000000f8 + 0x10a) * 4 +
+                                       *(int *)(*(int *)(in_stack_000000f8 + 0x1c) + 0xc)) + 0x24);
+          }
+          *(short *)(iVar10 + 0x42) = sVar1;
+        }
+        else {
+          (*in_stack_00000110)(iVar10,in_stack_00000114,iVar3,in_stack_000000f8);
+        }
+        FUN_8004f500(&DAT_00006d90 + in_stack_0000010c,iVar10);
+        puVar14 = puVar12;
+      }
+      puVar12 = puVar14 + iStack000000b4 * 6;
+    } while (puVar12 < puStack000000b8);
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ _FX_BuildSplinters(struct _Instance *instance /*$s2*/, struct SVECTOR *center /*$s4*/, struct SVECTOR *vel /*$s5*/, struct SVECTOR *accl /*$s6*/, struct FXSplinter *splintDef /*stack 16*/, struct _FXTracker *fxTracker /*stack 20*/, TDRFuncPtr__FX_BuildSplinters6fxSetup fxSetup /*stack 24*/, TDRFuncPtr__FX_BuildSplinters7fxProcess fxProcess /*stack 28*/, int shardFlags /*stack 32*/)
+ // line 1541, offset 0x8004403c
+	/* begin block 1 */
+		// Start line: 3767
+	/* end block 1 */
+	// End Line: 3768
+
+/* WARNING: Variable defined which should be unmapped: splintDef */
+/* WARNING: Variable defined which should be unmapped: fxTracker */
+/* WARNING: Variable defined which should be unmapped: fxSetup */
+
+void _FX_BuildSplinters(_Instance *instance,SVECTOR *center,SVECTOR *vel,SVECTOR *accl,
+                       FXSplinter *splintDef,_FXTracker *fxTracker,
+                       TDRFuncPtr__FX_BuildSplinters6fxSetup fxSetup,
+                       TDRFuncPtr__FX_BuildSplinters7fxProcess fxProcess,int shardFlags)
+
+{
+  ushort uVar1;
+  ushort unaff_s1;
+  int unaff_s2;
+  ushort *unaff_s3;
+  
+  uVar1 = *unaff_s3;
+  if (unaff_s3[1] != 0) {
+    SOUND_SfxOn();
+  }
+  if ((*(int *)(*(int *)((int)*(short *)(unaff_s2 + 0x10a) * 4 +
+                        *(int *)(*(int *)(unaff_s2 + 0x1c) + 0xc)) + 0x18) < 4) ||
+     (((uVar1 | unaff_s1) & 0x20) != 0)) {
+    FUN_800433e8();
+  }
+  else {
+    FUN_80042964();
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ _FX_Build(struct _Instance *instance /*$s0*/, struct SVECTOR *center /*$s2*/, struct SVECTOR *vel /*$s3*/, struct SVECTOR *accl /*$s4*/, struct _FXTracker *fxTracker /*stack 16*/, TDRFuncPtr__FX_Build5fxSetup fxSetup /*stack 20*/, TDRFuncPtr__FX_Build6fxProcess fxProcess /*stack 24*/, int shardFlags /*stack 28*/)
+ // line 1566, offset 0x80044190
+	/* begin block 1 */
+		// Start line: 3818
+	/* end block 1 */
+	// End Line: 3819
+
+/* WARNING: Variable defined which should be unmapped: fxSetup */
+/* WARNING: Variable defined which should be unmapped: fxProcess */
+/* WARNING: Variable defined which should be unmapped: shardFlags */
+
+void _FX_Build(_Instance *instance,SVECTOR *center,SVECTOR *vel,SVECTOR *accl,_FXTracker *fxTracker,
+              TDRFuncPtr__FX_Build5fxSetup fxSetup,TDRFuncPtr__FX_Build6fxProcess fxProcess,
+              int shardFlags)
+
+{
+  int in_v0;
+  int in_v1;
+  short unaff_s1;
+  int iStack00000020;
+  
+  if (*(int *)(*(int *)(in_v0 + in_v1) + 0x18) < 4) {
+    iStack00000020 = (int)unaff_s1;
+    FUN_800433e8();
+  }
+  else {
+    iStack00000020 = (int)unaff_s1;
+    FUN_80042964();
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Build(struct _Instance *instance /*$a0*/, struct SVECTOR *center /*$a1*/, struct SVECTOR *vel /*$a2*/, struct SVECTOR *accl /*$a3*/, struct _FXTracker *fxTracker /*stack 16*/, TDRFuncPtr_FX_Build5fxSetup fxSetup /*stack 20*/, TDRFuncPtr_FX_Build6fxProcess fxProcess /*stack 24*/)
+ // line 1741, offset 0x800442a4
+	/* begin block 1 */
+		// Start line: 4172
+	/* end block 1 */
+	// End Line: 4173
+
+void FX_Build(_Instance *instance,SVECTOR *center,SVECTOR *vel,SVECTOR *accl,_FXTracker *fxTracker,
+             TDRFuncPtr_FX_Build5fxSetup fxSetup,TDRFuncPtr_FX_Build6fxProcess fxProcess)
+
+{
+  undefined2 in_v0;
+  short in_v1;
+  int in_t2;
+  short *in_t3;
+  
+  *(undefined2 *)(in_t2 + 0x2c) = in_v0;
+  center->vy = in_v1;
+  center->vz = (short)instance;
+  if ((vel == (SVECTOR *)0x0) && ((*(uint *)(in_t2 + 0xc) & 0x10000) != 0)) {
+    *(short *)(in_t2 + 0x3c) = *(short *)(in_t2 + 0x3c) + *in_t3;
+    *(short *)(in_t2 + 0x3e) = *(short *)(in_t2 + 0x3e) + in_t3[1];
+    *(short *)(in_t2 + 0x40) = *(short *)(in_t2 + 0x40) + in_t3[2];
+    *(short *)(in_t2 + 0x44) = *(short *)(in_t2 + 0x44) + *in_t3;
+    *(short *)(in_t2 + 0x46) = *(short *)(in_t2 + 0x46) + in_t3[1];
+    *(short *)(in_t2 + 0x48) = *(short *)(in_t2 + 0x48) + in_t3[2];
+    *(short *)(in_t2 + 0x4c) = *(short *)(in_t2 + 0x4c) + *in_t3;
+    *(short *)(in_t2 + 0x4e) = *(short *)(in_t2 + 0x4e) + in_t3[1];
+    *(short *)(in_t2 + 0x50) = *(short *)(in_t2 + 0x50) + in_t3[2];
+    if ((*(uint *)(in_t2 + 0xc) & 8) != 0) {
+      *(short *)(in_t2 + 0x54) = *(short *)(in_t2 + 0x54) + *in_t3;
+      *(short *)(in_t2 + 0x56) = *(short *)(in_t2 + 0x56) + in_t3[1];
+      *(short *)(in_t2 + 0x58) = *(short *)(in_t2 + 0x58) + in_t3[2];
+    }
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_UpdatePos(struct _FX_PRIM *fxPrim /*$t2*/, struct _SVector *offset /*$t3*/, int spriteflag /*$a2*/)
+ // line 1747, offset 0x800442dc
+	/* begin block 1 */
+		// Start line: 1748
+		// Start offset: 0x800442DC
+
+		/* begin block 1.1 */
+			// Start line: 1748
+			// Start offset: 0x800442DC
+			// Variables:
+		// 		short _x0; // $v0
+		// 		short _y0; // $v1
+		// 		short _z0; // $a0
+		// 		short _x1; // $a3
+		// 		short _y1; // $t0
+		// 		short _z1; // $t1
+		// 		struct _Position *_v; // $a1
+		/* end block 1.1 */
+		// End offset: 0x800442DC
+		// End Line: 1748
+	/* end block 1 */
+	// End offset: 0x80044428
+	// End Line: 1764
+
+	/* begin block 2 */
+		// Start line: 4184
+	/* end block 2 */
+	// End Line: 4185
+
+void FX_UpdatePos(_FX_PRIM *fxPrim,_SVector *offset,int spriteflag)
+
+{
+  int in_t2;
+  short *in_t3;
+  
+  *(short *)(in_t2 + 0x3e) = *(short *)(in_t2 + 0x3e) + in_t3[1];
+  *(short *)(in_t2 + 0x40) = *(short *)(in_t2 + 0x40) + in_t3[2];
+  *(short *)(in_t2 + 0x44) = *(short *)(in_t2 + 0x44) + *in_t3;
+  *(short *)(in_t2 + 0x46) = *(short *)(in_t2 + 0x46) + in_t3[1];
+  *(short *)(in_t2 + 0x48) = *(short *)(in_t2 + 0x48) + in_t3[2];
+  *(short *)(in_t2 + 0x4c) = *(short *)(in_t2 + 0x4c) + *in_t3;
+  *(short *)(in_t2 + 0x4e) = *(short *)(in_t2 + 0x4e) + in_t3[1];
+  *(short *)(in_t2 + 0x50) = *(short *)(in_t2 + 0x50) + in_t3[2];
+  if ((*(uint *)(in_t2 + 0xc) & 8) != 0) {
+    *(short *)(in_t2 + 0x54) = *(short *)(in_t2 + 0x54) + *in_t3;
+    *(short *)(in_t2 + 0x56) = *(short *)(in_t2 + 0x56) + in_t3[1];
+    *(short *)(in_t2 + 0x58) = *(short *)(in_t2 + 0x58) + in_t3[2];
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Relocate(struct _SVector *offset /*$s1*/)
+ // line 1767, offset 0x80044430
+	/* begin block 1 */
+		// Start line: 1768
+		// Start offset: 0x80044430
+		// Variables:
+	// 		struct _FX_PRIM *fxPrim; // $s0
+	// 		struct _FXTracker *fxTracker; // $s2
+	// 		struct _FXGeneralEffect *currentEffect; // $a2
+
+		/* begin block 1.1 */
+			// Start line: 1796
+			// Start offset: 0x800444F4
+			// Variables:
+		// 		int i; // $a3
+		// 		int end; // $t1
+		// 		struct _FXRibbon *currentRibbon; // $t0
+		/* end block 1.1 */
+		// End offset: 0x8004456C
+		// End Line: 1806
+
+		/* begin block 1.2 */
+			// Start line: 1809
+			// Start offset: 0x8004457C
+		/* end block 1.2 */
+		// End offset: 0x800445B8
+		// End Line: 1813
+	/* end block 1 */
+	// End offset: 0x800445C8
+	// End Line: 1817
+
+	/* begin block 2 */
+		// Start line: 4225
+	/* end block 2 */
+	// End Line: 4226
+
+void FX_Relocate(_SVector *offset)
+
+{
+  byte bVar1;
+  short sVar2;
+  _FXGeneralEffect *p_Var3;
+  short *psVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  int unaff_s0;
+  short *unaff_s1;
+  int unaff_s2;
+  
+  while( true ) {
+    if (*(int *)(unaff_s0 + 0x14) == unaff_s2) {
+      *(short *)(unaff_s0 + 0x10) = *(short *)(unaff_s0 + 0x10) + unaff_s1[2];
+    }
+    unaff_s0 = *(int *)(unaff_s0 + 4);
+    p_Var3 = FX_GeneralEffectTracker;
+    if (unaff_s0 == 0) break;
+    FUN_80044274(unaff_s0);
+  }
+  while (p_Var3 != (_FXGeneralEffect *)0x0) {
+    bVar1 = p_Var3->effectType;
+    iVar7 = 0;
+    if (bVar1 == 0) {
+      sVar2 = *(short *)&p_Var3[1].next;
+      if ((int)(uint)bVar1 < (int)sVar2) {
+        iVar6 = 0;
+        do {
+          psVar4 = (short *)(iVar6 + (int)p_Var3[1].continue_process);
+          *psVar4 = *psVar4 + *unaff_s1;
+          iVar5 = iVar6 + (int)p_Var3[1].continue_process;
+          *(short *)(iVar5 + 2) = *(short *)(iVar5 + 2) + unaff_s1[1];
+          iVar6 = iVar6 + (int)p_Var3[1].continue_process;
+          iVar7 = iVar7 + 1;
+          *(short *)(iVar6 + 4) = *(short *)(iVar6 + 4) + unaff_s1[2];
+          iVar6 = iVar7 * 8;
+        } while (iVar7 < (int)sVar2);
+      }
+    }
+    else {
+      if (bVar1 == 0x84) {
+        *(short *)&p_Var3[1].next = *(short *)&p_Var3[1].next + *unaff_s1;
+        *(short *)((int)&p_Var3[1].next + 2) = *(short *)((int)&p_Var3[1].next + 2) + unaff_s1[1];
+        *(short *)&p_Var3[1].continue_process = *(short *)&p_Var3[1].continue_process + unaff_s1[2];
+      }
+    }
+    p_Var3 = (_FXGeneralEffect *)p_Var3->next;
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_UpdateTexturePointers(struct _FX_PRIM *fxPrim /*$a0*/, struct Object *oldObject /*$a1*/, long sizeOfObject /*$a2*/, long offset /*$a3*/)
+ // line 1822, offset 0x800445e0
+	/* begin block 1 */
+		// Start line: 4352
+	/* end block 1 */
+	// End Line: 4353
+
+	/* begin block 2 */
+		// Start line: 4353
+	/* end block 2 */
+	// End Line: 4354
+
+void FX_UpdateTexturePointers(_FX_PRIM *fxPrim,Object *oldObject,long sizeOfObject,long offset)
+
+{
+  int iVar1;
+  void *pvVar2;
+  _FX_PRIM *p_Var3;
+  _FXGeneralEffect *p_Var4;
+  
+  iVar1 = fontTracker.font_buffer._1144_4_;
+  oldObject = (Object *)((int)oldObject - (int)fxPrim);
+  FUN_80044578(*(undefined4 *)(&DAT_00006d94 + fontTracker.font_buffer._1144_4_),fxPrim,sizeOfObject
+               ,oldObject);
+  FUN_80044578(*(undefined4 *)(&DAT_00006d9c + iVar1),fxPrim,sizeOfObject,oldObject);
+  if (FX_GeneralEffectTracker != (_FXGeneralEffect *)0x0) {
+    p_Var4 = FX_GeneralEffectTracker;
+    do {
+      if (p_Var4->effectType == '\x01') {
+        p_Var3 = (_FX_PRIM *)p_Var4[1].next;
+        if (((p_Var3 != (_FX_PRIM *)0x0) && (fxPrim <= p_Var3)) &&
+           (p_Var3 <= (_FX_PRIM *)((int)&(fxPrim->node).prev + sizeOfObject))) {
+          pvVar2 = (void *)0x0;
+          if (p_Var3 != (_FX_PRIM *)0x0) {
+            pvVar2 = (void *)((int)p_Var3 + (int)oldObject);
+          }
+          p_Var4[1].next = pvVar2;
+        }
+      }
+      p_Var4 = (_FXGeneralEffect *)p_Var4->next;
+    } while (p_Var4 != (_FXGeneralEffect *)0x0);
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_RelocateFXPointers(struct Object *oldObject /*$s3*/, struct Object *newObject /*$a1*/, long sizeOfObject /*$s2*/)
+ // line 1842, offset 0x80044640
+	/* begin block 1 */
+		// Start line: 1843
+		// Start offset: 0x80044640
+		// Variables:
+	// 		struct _FXTracker *fxTracker; // $s0
+	// 		struct _FXGeneralEffect *currentEffect; // $a0
+	// 		long offset; // $s1
+
+		/* begin block 1.1 */
+			// Start line: 1862
+			// Start offset: 0x800446B4
+		/* end block 1.1 */
+		// End offset: 0x800446E4
+		// End Line: 1865
+	/* end block 1 */
+	// End offset: 0x800446F4
+	// End Line: 1868
+
+	/* begin block 2 */
+		// Start line: 4392
+	/* end block 2 */
+	// End Line: 4393
+
+void FX_RelocateFXPointers(Object *oldObject,Object *newObject,long sizeOfObject)
+
+{
+  Object *in_v0;
+  _G2AnimKeylist_Type **pp_Var1;
+  _G2AnimKeylist_Type **pp_Var2;
+  int unaff_s1;
+  _G2AnimKeylist_Type **unaff_s3;
+  
+  while( true ) {
+    if (in_v0 == newObject) {
+      pp_Var2 = oldObject->animList;
+      if (((pp_Var2 != (_G2AnimKeylist_Type **)0x0) && (unaff_s3 <= pp_Var2)) &&
+         (pp_Var2 <= (uint)sizeOfObject)) {
+        pp_Var1 = (_G2AnimKeylist_Type **)0x0;
+        if (pp_Var2 != (_G2AnimKeylist_Type **)0x0) {
+          pp_Var1 = (_G2AnimKeylist_Type **)((int)pp_Var2 + unaff_s1);
+        }
+        oldObject->animList = pp_Var1;
+      }
+    }
+    oldObject = (Object *)oldObject->oflags;
+    if (oldObject == (Object *)0x0) break;
+    in_v0 = (Object *)(uint)*(byte *)&oldObject->modelList;
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_ProcessList(struct _FXTracker *fxTracker /*$s2*/)
+ // line 1872, offset 0x80044710
+	/* begin block 1 */
+		// Start line: 1873
+		// Start offset: 0x80044710
+		// Variables:
+	// 		struct _FX_PRIM *fxPrim; // $a0
+	// 		struct _FX_PRIM *nextFXPrim; // $s0
+	// 		struct _FX_MATRIX *fxMatrix; // $s0
+	// 		struct _FX_MATRIX *nextFXMatrix; // $s1
+
+		/* begin block 1.1 */
+			// Start line: 1943
+			// Start offset: 0x80044884
+			// Variables:
+		// 		struct _FXGeneralEffect *currentEffect; // $a0
+		// 		struct _FXGeneralEffect *nextEffect; // $s0
+		/* end block 1.1 */
+		// End offset: 0x800448A8
+		// End Line: 1953
+	/* end block 1 */
+	// End offset: 0x800448EC
+	// End Line: 1960
+
+	/* begin block 2 */
+		// Start line: 4463
+	/* end block 2 */
+	// End Line: 4464
+
+	/* begin block 3 */
+		// Start line: 4476
+	/* end block 3 */
+	// End Line: 4477
+
+void FX_ProcessList(_FXTracker *fxTracker)
+
+{
+  code **ppcVar1;
+  uint in_v0;
+  uint uVar2;
+  uint in_v1;
+  int iVar3;
+  int iVar4;
+  uint in_a1;
+  int unaff_s0;
+  int iVar5;
+  _FXGeneralEffect *p_Var6;
+  int unaff_s2;
+  
+  while( true ) {
+    uVar2 = in_v1 | 1;
+    if (in_v0 == 0) {
+      uVar2 = in_v1 & in_a1;
+    }
+    *(uint *)(unaff_s0 + 8) = uVar2;
+    *(uint *)(unaff_s0 + 8) = *(uint *)(unaff_s0 + 8) & (uint)fxTracker;
+    unaff_s0 = *(int *)(unaff_s0 + 4);
+    if (unaff_s0 == 0) break;
+    in_v1 = *(uint *)(unaff_s0 + 8);
+    in_v0 = in_v1 & 4;
+  }
+  iVar4 = *(int *)(&DAT_00006d94 + unaff_s2);
+  while (iVar4 != 0) {
+    iVar3 = *(int *)(iVar4 + 0x18);
+    iVar5 = *(int *)(iVar4 + 4);
+    if (iVar3 != 0) {
+      *(uint *)(iVar3 + 8) = *(uint *)(iVar3 + 8) | 1;
+    }
+    ppcVar1 = (code **)(iVar4 + 0x14);
+    iVar4 = iVar5;
+    if (*ppcVar1 != (code *)0x0) {
+      (**ppcVar1)();
+      iVar4 = iVar5;
+    }
+  }
+  iVar4 = *(int *)(&DAT_00006d9c + unaff_s2);
+  while (iVar4 != 0) {
+    ppcVar1 = (code **)(iVar4 + 0x14);
+    iVar4 = *(int *)(iVar4 + 4);
+    if (*ppcVar1 != (code *)0x0) {
+      (**ppcVar1)();
+    }
+  }
+  iVar4 = *(int *)(unaff_s2 + 0x584);
+  while (iVar3 = iVar4, p_Var6 = FX_GeneralEffectTracker, iVar3 != 0) {
+    iVar4 = *(int *)(iVar3 + 4);
+    if ((*(uint *)(iVar3 + 8) & 1) == 0) {
+      FUN_8004f52c(iVar3);
+      FUN_8004f500(unaff_s2 + 0x588,iVar3);
+    }
+  }
+  while (p_Var6 != (_FXGeneralEffect *)0x0) {
+    ppcVar1 = (code **)&p_Var6->continue_process;
+    p_Var6 = (_FXGeneralEffect *)p_Var6->next;
+    if (*ppcVar1 != (code *)0x0) {
+      (**ppcVar1)();
+    }
+  }
+  if (FX_ConstrictStage == 1) {
+    FX_ConstrictStage = 0;
+  }
+  if (snow_amount != 0) {
+    FUN_80048ea8();
+  }
+  if (rain_amount != 0) {
+    FUN_80049248();
+  }
+  FUN_80049000();
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_DrawReaver(struct _PrimPool *primPool /*$v0*/, unsigned long **ot /*$s0*/, struct MATRIX *wcTransform /*$a3*/)
+ // line 1963, offset 0x8004490c
+	/* begin block 1 */
+		// Start line: 4668
+	/* end block 1 */
+	// End Line: 4669
+
+void FX_DrawReaver(_PrimPool *primPool,ulong **ot,MATRIX *wcTransform)
+
+{
+  byte bVar1;
+  bool bVar2;
+  uint uVar3;
+  ulong **ppuVar4;
+  undefined4 in_zero;
+  undefined4 in_at;
+  byte bVar5;
+  ushort uVar6;
+  ulong uVar7;
+  byte bVar8;
+  byte bVar9;
+  int iVar10;
+  uint *puVar11;
+  undefined4 *in_a3;
+  ushort uVar12;
+  int in_t2;
+  undefined4 uVar13;
+  undefined4 uVar14;
+  undefined4 uVar15;
+  ulong uVar16;
+  uint *puVar17;
+  uint *puVar18;
+  uint *puVar19;
+  uint uVar20;
+  ulong uVar21;
+  ulong *puVar22;
+  uint in_stack_00000010;
+  uint in_stack_00000014;
+  uint in_stack_00000018;
+  uint in_stack_0000001c;
+  uint in_stack_00000020;
+  uint in_stack_00000024;
+  ulong **in_stack_00000038;
+  ulong **in_stack_0000003c;
+  int in_stack_00000040;
+  int in_stack_00000044;
+  _PrimPool *p_Stack00000078;
+  
+  puVar22 = ot[0x10];
+  puVar18 = (uint *)puVar22[1];
+  if (primPool->prim[0x1b62] != 0) {
+    puVar19 = puVar18 + 1;
+    uVar16 = primPool->prim[0x1b62];
+    do {
+      if ((uint *)puVar22[2] <= puVar18 + 10) break;
+      uVar20 = *(uint *)(uVar16 + 0xc);
+      uVar21 = *(ulong *)(uVar16 + 4);
+      if ((uVar20 & 0x10) == 0) {
+        if ((uVar20 & 0x10000) == 0) {
+          *(int *)(*(int *)(uVar16 + 0x18) + 0x20) = (int)*(short *)(uVar16 + 0x2c);
+          *(int *)(*(int *)(uVar16 + 0x18) + 0x24) = (int)*(short *)(uVar16 + 0x2e);
+          *(int *)(*(int *)(uVar16 + 0x18) + 0x28) = (int)*(short *)(uVar16 + 0x30);
+          p_Stack00000078 = primPool;
+          FUN_800bfa58();
+          FUN_800bce3c(0x1f800000);
+                    /* WARNING: Subroutine does not return */
+          FUN_800bce1c(0x1f800000);
+        }
+        if (in_t2 == 0) {
+          setCopControlWord(2,0,*in_a3);
+          setCopControlWord(2,0x800,in_a3[1]);
+          setCopControlWord(2,0x1000,in_a3[2]);
+          setCopControlWord(2,0x1800,in_a3[3]);
+          setCopControlWord(2,0x2000,in_a3[4]);
+          setCopControlWord(2,0x2800,in_a3[5]);
+          setCopControlWord(2,0x3000,in_a3[6]);
+          setCopControlWord(2,0x3800,in_a3[7]);
+          in_t2 = 1;
+        }
+        if ((uVar20 & 0x2000) == 0) {
+          setCopReg(2,in_zero,*(undefined4 *)(uVar16 + 0x3c));
+          setCopReg(2,in_at,*(undefined4 *)(uVar16 + 0x40));
+          setCopReg(2,(undefined4 *)(uVar16 + 0x4c),*(undefined4 *)(uVar16 + 0x44));
+          setCopReg(2,(undefined4 *)(uVar16 + 0x44),*(undefined4 *)(uVar16 + 0x48));
+          setCopReg(2,(undefined4 *)(uVar16 + 0x3c),*(undefined4 *)(uVar16 + 0x4c));
+          setCopReg(2,ot,*(undefined4 *)(uVar16 + 0x50));
+        }
+        else {
+          in_stack_00000014 =
+               in_stack_00000014 & 0xffff0000 |
+               (int)*(short *)(uVar16 + 0x40) * (int)*(short *)(uVar16 + 0x4e) >> 0xc & 0xffffU;
+          in_stack_0000001c =
+               in_stack_0000001c & 0xffff0000 |
+               (int)*(short *)(uVar16 + 0x48) * (int)*(short *)(uVar16 + 0x4e) >> 0xc & 0xffffU;
+          in_stack_00000010 =
+               (int)*(short *)(uVar16 + 0x3c) * (int)*(short *)(uVar16 + 0x3e) >> 0xc & 0xffff;
+          in_stack_00000018 =
+               (int)*(short *)(uVar16 + 0x44) * (int)*(short *)(uVar16 + 0x3e) >> 0xc & 0xffff;
+          in_stack_00000020 =
+               (int)*(short *)(uVar16 + 0x4c) * (int)*(short *)(uVar16 + 0x3e) >> 0xc & 0xffff;
+          in_stack_00000024 =
+               in_stack_00000024 & 0xffff0000 |
+               (int)*(short *)(uVar16 + 0x50) * (int)*(short *)(uVar16 + 0x4e) >> 0xc & 0xffffU;
+          setCopReg(2,in_zero,in_stack_00000010);
+          setCopReg(2,in_at,in_stack_00000014);
+          setCopReg(2,&stack0x00000010,in_stack_00000018);
+          setCopReg(2,&stack0x00000020,in_stack_0000001c);
+          setCopReg(2,&stack0x00000018,in_stack_00000020);
+          setCopReg(2,ot,in_stack_00000024);
+        }
+        copFunction(2,0x280030);
+        if ((uVar20 & 0x1000000) == 0) {
+          if ((uVar20 & 0x4000) == 0) {
+            in_stack_00000044 = getCopReg(2,0x9800);
+            in_stack_00000044 = in_stack_00000044 >> 2;
+          }
+          else {
+            ot = (ulong **)getCopReg(2,0x11);
+            in_stack_0000003c = (ulong **)getCopReg(2,0x12);
+            in_stack_00000040 = getCopReg(2,0x13);
+            in_stack_00000044 = in_stack_00000040 >> 2;
+            ppuVar4 = in_stack_0000003c;
+            if ((int)in_stack_0000003c < (int)ot) {
+              ppuVar4 = ot;
+            }
+            in_stack_00000038 = ot;
+            if (in_stack_00000040 < (int)ppuVar4) {
+              in_stack_00000044 = (int)ppuVar4 >> 2;
+              in_stack_00000038 = ot;
+            }
+          }
+        }
+        else {
+          in_stack_00000038 = (ulong **)getCopReg(2,0x11);
+          in_stack_0000003c = (ulong **)getCopReg(2,0x12);
+          in_stack_00000040 = getCopReg(2,0x13);
+          in_stack_00000044 = (int)in_stack_00000038 >> 2;
+        }
+        if ((uVar20 & 0x8000) != 0) {
+          in_stack_00000044 = in_stack_00000044 + -0x14;
+        }
+        if (in_stack_00000044 - 1U < 0xbff) {
+          if ((uVar20 & 1) == 0) {
+            if ((uVar20 & 8) == 0) {
+              if ((uVar20 & 0x1000000) == 0) {
+                *puVar19 = *(uint *)(uVar16 + 0x1c);
+                uVar20 = getCopReg(2,0xc);
+                puVar18[2] = uVar20;
+                uVar20 = getCopReg(2,0xd);
+                puVar18[3] = uVar20;
+                uVar20 = getCopReg(2,0xe);
+                puVar18[4] = uVar20;
+                puVar19 = puVar19 + 5;
+                puVar11 = (uint *)(wcTransform->m + in_stack_00000044 * 2);
+                *puVar18 = *puVar11 & 0xffffff | 0x4000000;
+                puVar17 = puVar18 + 5;
+              }
+              else {
+                if ((uVar20 & 0x80000) == 0) goto LAB_800452ec;
+                puVar19[1] = *(uint *)(uVar16 + 0x1c);
+                uVar20 = *(uint *)(uVar16 + 0x24);
+                *puVar19 = 0xe1000620;
+                puVar19[3] = uVar20;
+                uVar20 = getCopReg(2,0xc);
+                puVar18[5] = uVar20;
+                uVar20 = getCopReg(2,0xd);
+                puVar18[3] = uVar20;
+                *(undefined *)((int)puVar19 + 7) = 0x52;
+                puVar19 = puVar19 + 6;
+                puVar11 = (uint *)(wcTransform->m + in_stack_00000044 * 2);
+                *puVar18 = *puVar11 & 0xffffff | 0x5000000;
+                puVar17 = puVar18 + 6;
+              }
+            }
+            else {
+              if ((uVar20 & 0x80000) != 0) {
+                uVar20 = getCopReg(2,0xc);
+                puVar18[3] = uVar20;
+                uVar20 = getCopReg(2,0xd);
+                puVar18[5] = uVar20;
+                uVar20 = getCopReg(2,0xe);
+                puVar18[7] = uVar20;
+                setCopReg(2,in_zero,*(undefined4 *)(uVar16 + 0x54));
+                setCopReg(2,in_at,*(undefined4 *)(uVar16 + 0x58));
+                copFunction(2,0x180001);
+                *puVar19 = 0xe1000620;
+                uVar20 = getCopReg(2,0xe);
+                puVar18[9] = uVar20;
+                ot = (ulong **)(puVar18 + 2);
+                iVar10 = 0;
+                uVar7 = uVar16;
+                do {
+                  setCopReg(2,0x4000,0x1000 - (int)*(short *)(uVar7 + 0x34));
+                  setCopReg(2,0x4800,(uint)*(byte *)(uVar16 + 0x1c));
+                  setCopReg(2,0x5000,(uint)*(byte *)(uVar16 + 0x1d));
+                  setCopReg(2,0x5800,(uint)*(byte *)(uVar16 + 0x1e));
+                  copFunction(2,0x198003d);
+                  uVar13 = getCopReg(2,0x4800);
+                  uVar14 = getCopReg(2,0x5000);
+                  uVar15 = getCopReg(2,0x5800);
+                  *(byte *)ot = (byte)uVar13;
+                  *(byte *)((int)ot + 1) = (byte)uVar14;
+                  *(byte *)((int)ot + 2) = (byte)uVar15;
+                  ot = ot + 2;
+                  iVar10 = iVar10 + 1;
+                  uVar7 = uVar7 + 2;
+                } while (iVar10 < 4);
+                *puVar18 = *(uint *)(wcTransform->m + in_stack_00000044 * 2) & 0xffffff | 0x9000000;
+                *(uint *)(wcTransform->m + in_stack_00000044 * 2) = (uint)puVar18 & 0xffffff;
+                *(undefined *)((int)puVar18 + 0xb) = 0x3a;
+                puVar18 = puVar18 + 10;
+                puVar19 = puVar19 + 10;
+                goto LAB_800452ec;
+              }
+              uVar20 = getCopReg(2,0xc);
+              puVar18[2] = uVar20;
+              uVar20 = getCopReg(2,0xd);
+              puVar18[4] = uVar20;
+              uVar20 = getCopReg(2,0xe);
+              puVar18[6] = uVar20;
+              setCopReg(2,in_zero,*(undefined4 *)(uVar16 + 0x54));
+              setCopReg(2,in_at,*(undefined4 *)(uVar16 + 0x58));
+              copFunction(2,0x180001);
+              *puVar19 = *(uint *)(uVar16 + 0x1c);
+              puVar19[2] = *(uint *)(uVar16 + 0x1c);
+              puVar19[4] = *(uint *)(uVar16 + 0x1c);
+              uVar20 = *(uint *)(uVar16 + 0x1c);
+              *(undefined *)((int)puVar19 + -1) = 8;
+              *(undefined *)((int)puVar19 + 3) = 0x38;
+              puVar19[6] = uVar20;
+              uVar20 = getCopReg(2,0xe);
+              puVar18[8] = uVar20;
+              puVar19 = puVar19 + 9;
+              puVar11 = (uint *)(wcTransform->m + in_stack_00000044 * 2);
+              *puVar18 = *puVar11 & 0xffffff | 0x8000000;
+              puVar17 = puVar18 + 9;
+            }
+          }
+          else {
+            ot = *(ulong ***)(uVar16 + 8);
+            if ((uVar20 & 8) == 0) {
+              uVar3 = getCopReg(2,0xc);
+              puVar18[2] = uVar3;
+              uVar3 = getCopReg(2,0xd);
+              puVar18[4] = uVar3;
+              uVar3 = getCopReg(2,0xe);
+              puVar18[6] = uVar3;
+              *(ulong **)(puVar19 + 2) = *ot;
+              *(ulong **)(puVar19 + 4) = ot[1];
+              *(ulong **)(puVar19 + 6) = ot[2];
+              if ((uVar20 & 0x1000) != 0) {
+                bVar8 = *(byte *)ot;
+                bVar9 = *(byte *)(ot + 1);
+                if (bVar8 < bVar9) {
+                  bVar2 = bVar9 < bVar8;
+                  if (*(byte *)(ot + 2) <= bVar8) {
+LAB_80045204:
+                    bVar5 = *(byte *)(ot + 2);
+                    goto LAB_80045208;
+                  }
+                  bVar5 = *(byte *)ot;
+                }
+                else {
+                  if (*(byte *)(ot + 2) <= bVar9) goto LAB_80045204;
+                  bVar5 = *(byte *)(ot + 1);
+LAB_80045208:
+                  bVar8 = *(byte *)ot;
+                  bVar9 = *(byte *)(ot + 1);
+                  bVar2 = bVar9 < bVar8;
+                }
+                if (bVar2) {
+                  if (*(byte *)(ot + 2) < bVar8) {
+                    bVar8 = *(byte *)ot;
+                  }
+                  else {
+LAB_80045260:
+                    bVar8 = *(byte *)(ot + 2);
+                  }
+                }
+                else {
+                  if (bVar9 <= *(byte *)(ot + 2)) goto LAB_80045260;
+                  bVar8 = *(byte *)(ot + 1);
+                }
+                bVar9 = bVar5;
+                if (*(byte *)ot == bVar5) {
+                  bVar9 = bVar8;
+                }
+                *(byte *)(puVar18 + 3) = bVar9;
+                bVar9 = bVar5;
+                if (*(byte *)(ot + 1) == bVar5) {
+                  bVar9 = bVar8;
+                }
+                *(byte *)(puVar18 + 5) = bVar9;
+                if (*(byte *)(ot + 2) == bVar5) {
+                  bVar5 = bVar8;
+                }
+                *(byte *)(puVar18 + 7) = bVar5;
+              }
+              *puVar19 = *(uint *)(uVar16 + 0x1c);
+              puVar19 = puVar19 + 8;
+              puVar11 = (uint *)(wcTransform->m + in_stack_00000044 * 2);
+              *puVar18 = *puVar11 & 0xffffff | 0x7000000;
+              puVar17 = puVar18 + 8;
+            }
+            else {
+              uVar3 = getCopReg(2,0xc);
+              puVar18[2] = uVar3;
+              uVar3 = getCopReg(2,0xd);
+              puVar18[4] = uVar3;
+              uVar3 = getCopReg(2,0xe);
+              puVar18[6] = uVar3;
+              setCopReg(2,in_zero,*(undefined4 *)(uVar16 + 0x54));
+              setCopReg(2,in_at,*(undefined4 *)(uVar16 + 0x58));
+              copFunction(2,0x180001);
+              bVar8 = *(byte *)ot;
+              bVar9 = *(byte *)(ot + 1);
+              if (bVar8 < bVar9) {
+                bVar2 = bVar9 < bVar8;
+                if (*(byte *)(ot + 2) <= bVar8) {
+LAB_80044f60:
+                  bVar5 = *(byte *)(ot + 2);
+                  goto LAB_80044f64;
+                }
+                bVar5 = *(byte *)ot;
+              }
+              else {
+                if (*(byte *)(ot + 2) <= bVar9) goto LAB_80044f60;
+                bVar5 = *(byte *)(ot + 1);
+LAB_80044f64:
+                bVar8 = *(byte *)ot;
+                bVar9 = *(byte *)(ot + 1);
+                bVar2 = bVar9 < bVar8;
+              }
+              if (bVar2) {
+                if (*(byte *)(ot + 2) < bVar8) {
+                  uVar12 = (ushort)*(byte *)ot;
+                }
+                else {
+LAB_80044fbc:
+                  uVar12 = (ushort)*(byte *)(ot + 2);
+                }
+              }
+              else {
+                if (bVar9 <= *(byte *)(ot + 2)) goto LAB_80044fbc;
+                uVar12 = (ushort)*(byte *)(ot + 1);
+              }
+              bVar8 = *(byte *)((int)ot + 1);
+              bVar9 = *(byte *)((int)ot + 5);
+              if (bVar8 < bVar9) {
+                if (*(byte *)((int)ot + 9) <= bVar8) {
+LAB_80045018:
+                  bVar1 = *(byte *)((int)ot + 9);
+                  goto LAB_80045024;
+                }
+                bVar1 = *(byte *)((int)ot + 1);
+              }
+              else {
+                if (*(byte *)((int)ot + 9) <= bVar9) goto LAB_80045018;
+                bVar1 = *(byte *)((int)ot + 5);
+LAB_80045024:
+                bVar8 = *(byte *)((int)ot + 1);
+                bVar9 = *(byte *)((int)ot + 5);
+              }
+              if (bVar9 < bVar8) {
+                if (*(byte *)((int)ot + 9) < bVar8) {
+                  uVar6 = (ushort)*(byte *)((int)ot + 1) << 8;
+                }
+                else {
+LAB_8004507c:
+                  uVar6 = (ushort)*(byte *)((int)ot + 9) << 8;
+                }
+              }
+              else {
+                if (bVar9 <= *(byte *)((int)ot + 9)) goto LAB_8004507c;
+                uVar6 = (ushort)*(byte *)((int)ot + 5) << 8;
+              }
+              *(ushort *)(puVar18 + 3) = CONCAT11(bVar1,bVar5);
+              *(ushort *)(puVar18 + 5) = uVar12 | (ushort)bVar1 << 8;
+              *(ushort *)(puVar18 + 7) = (ushort)bVar5 | uVar6;
+              *(ushort *)(puVar18 + 9) = uVar12 | uVar6;
+              *(undefined2 *)((int)puVar18 + 0xe) = *(undefined2 *)((int)ot + 2);
+              *(undefined2 *)((int)puVar18 + 0x16) = *(undefined2 *)((int)ot + 6);
+              uVar3 = getCopReg(2,0xe);
+              puVar18[8] = uVar3;
+              if ((uVar20 & 0x1000) != 0) {
+                bVar8 = *(byte *)(puVar18 + 3) ^ *(byte *)(puVar18 + 5);
+                *(byte *)(puVar18 + 3) = bVar8;
+                bVar8 = bVar8 ^ *(byte *)(puVar18 + 5);
+                ot = (ulong **)(uint)bVar8;
+                bVar9 = *(byte *)(puVar18 + 7) ^ *(byte *)(puVar18 + 9);
+                *(byte *)(puVar18 + 7) = bVar9;
+                bVar9 = bVar9 ^ *(byte *)(puVar18 + 9);
+                *(byte *)(puVar18 + 5) = bVar8;
+                *(byte *)(puVar18 + 9) = bVar9;
+                *(byte *)(puVar18 + 3) = *(byte *)(puVar18 + 3) ^ bVar8;
+                *(byte *)(puVar18 + 7) = *(byte *)(puVar18 + 7) ^ bVar9;
+              }
+              *puVar19 = *(uint *)(uVar16 + 0x1c);
+              puVar19 = puVar19 + 10;
+              puVar11 = (uint *)(wcTransform->m + in_stack_00000044 * 2);
+              *puVar18 = *puVar11 & 0xffffff | 0x9000000;
+              puVar17 = puVar18 + 10;
+            }
+          }
+          *puVar11 = (uint)puVar18 & 0xffffff;
+          puVar18 = puVar17;
+        }
+      }
+LAB_800452ec:
+      uVar16 = uVar21;
+    } while (uVar21 != 0);
+  }
+  p_Stack00000078 = primPool;
+  FUN_800bce3c();
+                    /* WARNING: Subroutine does not return */
+  FUN_800bce1c();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_DrawList(struct _FXTracker *fxTracker /*stack 0*/, struct GameTracker *gameTracker /*$a1*/, unsigned long **ot /*$s5*/, struct MATRIX *wcTransform /*$s7*/)
+ // line 1985, offset 0x80044958
+	/* begin block 1 */
+		// Start line: 1986
+		// Start offset: 0x80044958
+		// Variables:
+	// 		struct TextureMT3 *texture; // $a1
+	// 		struct _PrimPool *primPool; // $fp
+	// 		long *prim; // $s1
+	// 		struct _FX_PRIM *fxPrim; // $s0
+	// 		struct _FX_PRIM *nextFXPrim; // $s6
+	// 		struct SVECTOR sv0; // stack offset -104
+	// 		struct SVECTOR sv1; // stack offset -96
+	// 		struct SVECTOR sv2; // stack offset -88
+	// 		long otz; // stack offset -52
+	// 		long sz0; // stack offset -64
+	// 		long sz1; // stack offset -60
+	// 		long sz2; // stack offset -56
+	// 		char whitec[4]; // stack offset -80
+	// 		int sizex; // stack offset -48
+	// 		int sizey; // $t4
+	// 		int matrix_wc; // $t2
+
+		/* begin block 1.1 */
+			// Start line: 2007
+			// Start offset: 0x800449DC
+			// Variables:
+		// 		long flags; // $s3
+
+			/* begin block 1.1.1 */
+				// Start line: 2095
+				// Start offset: 0x80044CC8
+				// Variables:
+			// 		struct _POLY_NG4 *ng4; // $a2
+
+				/* begin block 1.1.1.1 */
+					// Start line: 2097
+					// Start offset: 0x80044CC8
+					// Variables:
+				// 		int n; // $a0
+				// 		long *ptr; // $a1
+				/* end block 1.1.1.1 */
+				// End offset: 0x80044D88
+				// End Line: 2122
+			/* end block 1.1.1 */
+			// End offset: 0x80044D88
+			// End Line: 2144
+
+			/* begin block 1.1.2 */
+				// Start line: 2161
+				// Start offset: 0x80044DC0
+			/* end block 1.1.2 */
+			// End offset: 0x80044DC0
+			// End Line: 2163
+
+			/* begin block 1.1.3 */
+				// Start line: 2251
+				// Start offset: 0x80044F40
+				// Variables:
+			// 		struct POLY_FT4 *ft4; // $a2
+			// 		unsigned short uMin; // $t1
+			// 		unsigned short uMax; // $t0
+			// 		unsigned short vMin; // $a3
+			// 		unsigned short vMax; // $v1
+			/* end block 1.1.3 */
+			// End offset: 0x8004518C
+			// End Line: 2282
+
+			/* begin block 1.1.4 */
+				// Start line: 2289
+				// Start offset: 0x800451C8
+				// Variables:
+			// 		struct POLY_FT3 *ft3; // $t0
+
+				/* begin block 1.1.4.1 */
+					// Start line: 2302
+					// Start offset: 0x80045214
+					// Variables:
+				// 		short uMin; // $a3
+				// 		short uMax; // $a2
+				/* end block 1.1.4.1 */
+				// End offset: 0x80045318
+				// End Line: 2310
+			/* end block 1.1.4 */
+			// End offset: 0x80045354
+			// End Line: 2316
+		/* end block 1.1 */
+		// End offset: 0x80045354
+		// End Line: 2320
+
+		/* begin block 1.2 */
+			// Start line: 2331
+			// Start offset: 0x80045394
+			// Variables:
+		// 		struct DVECTOR xy_pos; // stack offset -72
+		// 		long flags; // $t2
+
+			/* begin block 1.2.1 */
+				// Start line: 2400
+				// Start offset: 0x800455D0
+				// Variables:
+			// 		struct _POLY_SG4 *sg4; // $a1
+
+				/* begin block 1.2.1.1 */
+					// Start line: 2402
+					// Start offset: 0x800455D0
+					// Variables:
+				// 		int n; // $a3
+				// 		long *src; // $t2
+				// 		long *dst; // $t1
+				// 		long *ptr; // $t3
+				/* end block 1.2.1.1 */
+				// End offset: 0x800456C8
+				// End Line: 2433
+			/* end block 1.2.1 */
+			// End offset: 0x800456C8
+			// End Line: 2455
+
+			/* begin block 1.2.2 */
+				// Start line: 2467
+				// Start offset: 0x8004575C
+			/* end block 1.2.2 */
+			// End offset: 0x8004575C
+			// End Line: 2471
+
+			/* begin block 1.2.3 */
+				// Start line: 2499
+				// Start offset: 0x80045834
+				// Variables:
+			// 		unsigned short uMin; // $t3
+			// 		unsigned short uMax; // $t1
+			// 		unsigned short vMin; // $a3
+			// 		unsigned short vMax; // $v1
+			// 		struct POLY_FT4 *ft4; // $a2
+			/* end block 1.2.3 */
+			// End offset: 0x80045AA0
+			// End Line: 2537
+		/* end block 1.2 */
+		// End offset: 0x80045B0C
+		// End Line: 2556
+	/* end block 1 */
+	// End offset: 0x80045B18
+	// End Line: 2560
+
+	/* begin block 2 */
+		// Start line: 4713
+	/* end block 2 */
+	// End Line: 4714
+
+void FX_DrawList(_FXTracker *fxTracker,GameTracker *gameTracker,ulong **ot,MATRIX *wcTransform)
+
+{
+  byte bVar1;
+  byte bVar2;
+  bool bVar3;
+  uint uVar4;
+  GameTracker *pGVar5;
+  undefined4 in_zero;
+  undefined4 in_at;
+  char cVar6;
+  char cVar7;
+  ushort uVar8;
+  int iVar9;
+  byte bVar10;
+  byte bVar11;
+  int iVar12;
+  uint *puVar13;
+  char cVar14;
+  ushort uVar15;
+  int in_t2;
+  undefined4 uVar16;
+  undefined4 uVar17;
+  undefined4 uVar18;
+  int unaff_s0;
+  uint *unaff_s1;
+  uint *puVar19;
+  uint *puVar20;
+  uint uVar21;
+  uint unaff_s4;
+  uint uVar22;
+  int unaff_s5;
+  int iVar23;
+  undefined4 *unaff_s7;
+  int unaff_s8;
+  uint in_stack_00000010;
+  uint in_stack_00000014;
+  uint in_stack_00000018;
+  uint in_stack_0000001c;
+  uint in_stack_00000020;
+  uint in_stack_00000024;
+  GameTracker *in_stack_00000038;
+  GameTracker *in_stack_0000003c;
+  int in_stack_00000040;
+  int in_stack_00000044;
+  
+  uVar22 = unaff_s4 | 0xffff;
+  puVar20 = unaff_s1 + 1;
+  do {
+    if (*(uint **)(unaff_s8 + 8) <= unaff_s1 + 10) break;
+    uVar21 = *(uint *)(unaff_s0 + 0xc);
+    iVar23 = *(int *)(unaff_s0 + 4);
+    if ((uVar21 & 0x10) == 0) {
+      if ((uVar21 & 0x10000) == 0) {
+        *(int *)(*(int *)(unaff_s0 + 0x18) + 0x20) = (int)*(short *)(unaff_s0 + 0x2c);
+        *(int *)(*(int *)(unaff_s0 + 0x18) + 0x24) = (int)*(short *)(unaff_s0 + 0x2e);
+        *(int *)(*(int *)(unaff_s0 + 0x18) + 0x28) = (int)*(short *)(unaff_s0 + 0x30);
+        FUN_800bfa58();
+        FUN_800bce3c(0x1f800000);
+                    /* WARNING: Subroutine does not return */
+        FUN_800bce1c(0x1f800000);
+      }
+      if (in_t2 == 0) {
+        setCopControlWord(2,0,*unaff_s7);
+        setCopControlWord(2,0x800,unaff_s7[1]);
+        setCopControlWord(2,0x1000,unaff_s7[2]);
+        setCopControlWord(2,0x1800,unaff_s7[3]);
+        setCopControlWord(2,0x2000,unaff_s7[4]);
+        setCopControlWord(2,0x2800,unaff_s7[5]);
+        setCopControlWord(2,0x3000,unaff_s7[6]);
+        setCopControlWord(2,0x3800,unaff_s7[7]);
+        in_t2 = 1;
+      }
+      if ((uVar21 & 0x2000) == 0) {
+        setCopReg(2,in_zero,*(undefined4 *)(unaff_s0 + 0x3c));
+        setCopReg(2,in_at,*(undefined4 *)(unaff_s0 + 0x40));
+        setCopReg(2,(undefined4 *)(unaff_s0 + 0x4c),*(undefined4 *)(unaff_s0 + 0x44));
+        setCopReg(2,(undefined4 *)(unaff_s0 + 0x44),*(undefined4 *)(unaff_s0 + 0x48));
+        setCopReg(2,(undefined4 *)(unaff_s0 + 0x3c),*(undefined4 *)(unaff_s0 + 0x4c));
+        setCopReg(2,gameTracker,*(undefined4 *)(unaff_s0 + 0x50));
+      }
+      else {
+        in_stack_00000014 =
+             in_stack_00000014 & 0xffff0000 |
+             (int)*(short *)(unaff_s0 + 0x40) * (int)*(short *)(unaff_s0 + 0x4e) >> 0xc & 0xffffU;
+        in_stack_0000001c =
+             in_stack_0000001c & 0xffff0000 |
+             (int)*(short *)(unaff_s0 + 0x48) * (int)*(short *)(unaff_s0 + 0x4e) >> 0xc & 0xffffU;
+        in_stack_00000010 =
+             (int)*(short *)(unaff_s0 + 0x3c) * (int)*(short *)(unaff_s0 + 0x3e) >> 0xc & 0xffff;
+        in_stack_00000018 =
+             (int)*(short *)(unaff_s0 + 0x44) * (int)*(short *)(unaff_s0 + 0x3e) >> 0xc & 0xffff;
+        in_stack_00000020 =
+             (int)*(short *)(unaff_s0 + 0x4c) * (int)*(short *)(unaff_s0 + 0x3e) >> 0xc & 0xffff;
+        in_stack_00000024 =
+             in_stack_00000024 & 0xffff0000 |
+             (int)*(short *)(unaff_s0 + 0x50) * (int)*(short *)(unaff_s0 + 0x4e) >> 0xc & 0xffffU;
+        setCopReg(2,in_zero,in_stack_00000010);
+        setCopReg(2,in_at,in_stack_00000014);
+        setCopReg(2,&stack0x00000010,in_stack_00000018);
+        setCopReg(2,&stack0x00000020,in_stack_0000001c);
+        setCopReg(2,&stack0x00000018,in_stack_00000020);
+        setCopReg(2,gameTracker,in_stack_00000024);
+      }
+      copFunction(2,0x280030);
+      if ((uVar21 & 0x1000000) == 0) {
+        if ((uVar21 & 0x4000) == 0) {
+          in_stack_00000044 = getCopReg(2,0x9800);
+          in_stack_00000044 = in_stack_00000044 >> 2;
+        }
+        else {
+          gameTracker = (GameTracker *)getCopReg(2,0x11);
+          in_stack_0000003c = (GameTracker *)getCopReg(2,0x12);
+          in_stack_00000040 = getCopReg(2,0x13);
+          in_stack_00000044 = in_stack_00000040 >> 2;
+          pGVar5 = in_stack_0000003c;
+          if ((int)in_stack_0000003c < (int)gameTracker) {
+            pGVar5 = gameTracker;
+          }
+          in_stack_00000038 = gameTracker;
+          if (in_stack_00000040 < (int)pGVar5) {
+            in_stack_00000044 = (int)pGVar5 >> 2;
+            in_stack_00000038 = gameTracker;
+          }
+        }
+      }
+      else {
+        in_stack_00000038 = (GameTracker *)getCopReg(2,0x11);
+        in_stack_0000003c = (GameTracker *)getCopReg(2,0x12);
+        in_stack_00000040 = getCopReg(2,0x13);
+        in_stack_00000044 = (int)in_stack_00000038 >> 2;
+      }
+      if ((uVar21 & 0x8000) != 0) {
+        in_stack_00000044 = in_stack_00000044 + -0x14;
+      }
+      if (in_stack_00000044 - 1U < 0xbff) {
+        if ((uVar21 & 1) == 0) {
+          if ((uVar21 & 8) == 0) {
+            if ((uVar21 & 0x1000000) == 0) {
+              *puVar20 = *(uint *)(unaff_s0 + 0x1c);
+              uVar21 = getCopReg(2,0xc);
+              unaff_s1[2] = uVar21;
+              uVar21 = getCopReg(2,0xd);
+              unaff_s1[3] = uVar21;
+              uVar21 = getCopReg(2,0xe);
+              unaff_s1[4] = uVar21;
+              puVar20 = puVar20 + 5;
+              puVar13 = (uint *)(in_stack_00000044 * 4 + unaff_s5);
+              *unaff_s1 = *puVar13 & uVar22 | 0x4000000;
+              puVar19 = unaff_s1 + 5;
+            }
+            else {
+              if ((uVar21 & 0x80000) == 0) goto LAB_800452ec;
+              puVar20[1] = *(uint *)(unaff_s0 + 0x1c);
+              uVar21 = *(uint *)(unaff_s0 + 0x24);
+              *puVar20 = 0xe1000620;
+              puVar20[3] = uVar21;
+              uVar21 = getCopReg(2,0xc);
+              unaff_s1[5] = uVar21;
+              uVar21 = getCopReg(2,0xd);
+              unaff_s1[3] = uVar21;
+              *(undefined *)((int)puVar20 + 7) = 0x52;
+              puVar20 = puVar20 + 6;
+              puVar13 = (uint *)(in_stack_00000044 * 4 + unaff_s5);
+              *unaff_s1 = *puVar13 & uVar22 | 0x5000000;
+              puVar19 = unaff_s1 + 6;
+            }
+          }
+          else {
+            if ((uVar21 & 0x80000) != 0) {
+              uVar21 = getCopReg(2,0xc);
+              unaff_s1[3] = uVar21;
+              uVar21 = getCopReg(2,0xd);
+              unaff_s1[5] = uVar21;
+              uVar21 = getCopReg(2,0xe);
+              unaff_s1[7] = uVar21;
+              setCopReg(2,in_zero,*(undefined4 *)(unaff_s0 + 0x54));
+              setCopReg(2,in_at,*(undefined4 *)(unaff_s0 + 0x58));
+              copFunction(2,0x180001);
+              *puVar20 = 0xe1000620;
+              uVar21 = getCopReg(2,0xe);
+              unaff_s1[9] = uVar21;
+              gameTracker = (GameTracker *)(unaff_s1 + 2);
+              iVar12 = 0;
+              iVar9 = unaff_s0;
+              do {
+                setCopReg(2,0x4000,0x1000 - (int)*(short *)(iVar9 + 0x34));
+                setCopReg(2,0x4800,(uint)*(byte *)(unaff_s0 + 0x1c));
+                setCopReg(2,0x5000,(uint)*(byte *)(unaff_s0 + 0x1d));
+                setCopReg(2,0x5800,(uint)*(byte *)(unaff_s0 + 0x1e));
+                copFunction(2,0x198003d);
+                uVar16 = getCopReg(2,0x4800);
+                uVar17 = getCopReg(2,0x5000);
+                uVar18 = getCopReg(2,0x5800);
+                *(char *)&(gameTracker->gameData).asmData.drawBackFaces = (char)uVar16;
+                *(undefined *)((int)&(gameTracker->gameData).asmData.drawBackFaces + 1) =
+                     (char)uVar17;
+                *(undefined *)((int)&(gameTracker->gameData).asmData.drawBackFaces + 2) =
+                     (char)uVar18;
+                gameTracker = (GameTracker *)&(gameTracker->gameData).asmData.MorphTime;
+                iVar12 = iVar12 + 1;
+                iVar9 = iVar9 + 2;
+              } while (iVar12 < 4);
+              puVar13 = (uint *)(in_stack_00000044 * 4 + unaff_s5);
+              *unaff_s1 = *puVar13 & uVar22 | 0x9000000;
+              *puVar13 = (uint)unaff_s1 & uVar22;
+              *(undefined *)((int)unaff_s1 + 0xb) = 0x3a;
+              unaff_s1 = unaff_s1 + 10;
+              puVar20 = puVar20 + 10;
+              goto LAB_800452ec;
+            }
+            uVar21 = getCopReg(2,0xc);
+            unaff_s1[2] = uVar21;
+            uVar21 = getCopReg(2,0xd);
+            unaff_s1[4] = uVar21;
+            uVar21 = getCopReg(2,0xe);
+            unaff_s1[6] = uVar21;
+            setCopReg(2,in_zero,*(undefined4 *)(unaff_s0 + 0x54));
+            setCopReg(2,in_at,*(undefined4 *)(unaff_s0 + 0x58));
+            copFunction(2,0x180001);
+            *puVar20 = *(uint *)(unaff_s0 + 0x1c);
+            puVar20[2] = *(uint *)(unaff_s0 + 0x1c);
+            puVar20[4] = *(uint *)(unaff_s0 + 0x1c);
+            uVar21 = *(uint *)(unaff_s0 + 0x1c);
+            *(undefined *)((int)puVar20 + -1) = 8;
+            *(undefined *)((int)puVar20 + 3) = 0x38;
+            puVar20[6] = uVar21;
+            uVar21 = getCopReg(2,0xe);
+            unaff_s1[8] = uVar21;
+            puVar20 = puVar20 + 9;
+            puVar13 = (uint *)(in_stack_00000044 * 4 + unaff_s5);
+            *unaff_s1 = *puVar13 & uVar22 | 0x8000000;
+            puVar19 = unaff_s1 + 9;
+          }
+        }
+        else {
+          gameTracker = *(GameTracker **)(unaff_s0 + 8);
+          if ((uVar21 & 8) == 0) {
+            uVar4 = getCopReg(2,0xc);
+            unaff_s1[2] = uVar4;
+            uVar4 = getCopReg(2,0xd);
+            unaff_s1[4] = uVar4;
+            uVar4 = getCopReg(2,0xe);
+            unaff_s1[6] = uVar4;
+            puVar20[2] = (gameTracker->gameData).asmData.drawBackFaces;
+            puVar20[4] = (gameTracker->gameData).asmData.dispPage;
+            puVar20[6] = *(uint *)&(gameTracker->gameData).asmData.MorphTime;
+            if ((uVar21 & 0x1000) != 0) {
+              bVar10 = *(byte *)&(gameTracker->gameData).asmData.drawBackFaces;
+              bVar11 = *(byte *)&(gameTracker->gameData).asmData.dispPage;
+              if (bVar10 < bVar11) {
+                bVar3 = bVar11 < bVar10;
+                if (*(byte *)&(gameTracker->gameData).asmData.MorphTime <= bVar10) {
+LAB_80045204:
+                  cVar7 = *(char *)&(gameTracker->gameData).asmData.MorphTime;
+                  goto LAB_80045208;
+                }
+                cVar7 = *(char *)&(gameTracker->gameData).asmData.drawBackFaces;
+              }
+              else {
+                if (*(byte *)&(gameTracker->gameData).asmData.MorphTime <= bVar11)
+                goto LAB_80045204;
+                cVar7 = *(char *)&(gameTracker->gameData).asmData.dispPage;
+LAB_80045208:
+                bVar10 = *(byte *)&(gameTracker->gameData).asmData.drawBackFaces;
+                bVar11 = *(byte *)&(gameTracker->gameData).asmData.dispPage;
+                bVar3 = bVar11 < bVar10;
+              }
+              if (bVar3) {
+                if (*(byte *)&(gameTracker->gameData).asmData.MorphTime < bVar10) {
+                  cVar14 = *(char *)&(gameTracker->gameData).asmData.drawBackFaces;
+                }
+                else {
+LAB_80045260:
+                  cVar14 = *(char *)&(gameTracker->gameData).asmData.MorphTime;
+                }
+              }
+              else {
+                if (bVar11 <= *(byte *)&(gameTracker->gameData).asmData.MorphTime)
+                goto LAB_80045260;
+                cVar14 = *(char *)&(gameTracker->gameData).asmData.dispPage;
+              }
+              cVar6 = cVar7;
+              if (*(char *)&(gameTracker->gameData).asmData.drawBackFaces == cVar7) {
+                cVar6 = cVar14;
+              }
+              *(char *)(unaff_s1 + 3) = cVar6;
+              cVar6 = cVar7;
+              if (*(char *)&(gameTracker->gameData).asmData.dispPage == cVar7) {
+                cVar6 = cVar14;
+              }
+              *(char *)(unaff_s1 + 5) = cVar6;
+              if (*(char *)&(gameTracker->gameData).asmData.MorphTime == cVar7) {
+                cVar7 = cVar14;
+              }
+              *(char *)(unaff_s1 + 7) = cVar7;
+            }
+            *puVar20 = *(uint *)(unaff_s0 + 0x1c);
+            puVar20 = puVar20 + 8;
+            puVar13 = (uint *)(in_stack_00000044 * 4 + unaff_s5);
+            *unaff_s1 = *puVar13 & uVar22 | 0x7000000;
+            puVar19 = unaff_s1 + 8;
+          }
+          else {
+            uVar4 = getCopReg(2,0xc);
+            unaff_s1[2] = uVar4;
+            uVar4 = getCopReg(2,0xd);
+            unaff_s1[4] = uVar4;
+            uVar4 = getCopReg(2,0xe);
+            unaff_s1[6] = uVar4;
+            setCopReg(2,in_zero,*(undefined4 *)(unaff_s0 + 0x54));
+            setCopReg(2,in_at,*(undefined4 *)(unaff_s0 + 0x58));
+            copFunction(2,0x180001);
+            bVar10 = *(byte *)&(gameTracker->gameData).asmData.drawBackFaces;
+            bVar11 = *(byte *)&(gameTracker->gameData).asmData.dispPage;
+            if (bVar10 < bVar11) {
+              bVar3 = bVar11 < bVar10;
+              if (*(byte *)&(gameTracker->gameData).asmData.MorphTime <= bVar10) {
+LAB_80044f60:
+                bVar1 = *(byte *)&(gameTracker->gameData).asmData.MorphTime;
+                goto LAB_80044f64;
+              }
+              bVar1 = *(byte *)&(gameTracker->gameData).asmData.drawBackFaces;
+            }
+            else {
+              if (*(byte *)&(gameTracker->gameData).asmData.MorphTime <= bVar11) goto LAB_80044f60;
+              bVar1 = *(byte *)&(gameTracker->gameData).asmData.dispPage;
+LAB_80044f64:
+              bVar10 = *(byte *)&(gameTracker->gameData).asmData.drawBackFaces;
+              bVar11 = *(byte *)&(gameTracker->gameData).asmData.dispPage;
+              bVar3 = bVar11 < bVar10;
+            }
+            if (bVar3) {
+              if (*(byte *)&(gameTracker->gameData).asmData.MorphTime < bVar10) {
+                uVar15 = (ushort)*(byte *)&(gameTracker->gameData).asmData.drawBackFaces;
+              }
+              else {
+LAB_80044fbc:
+                uVar15 = (ushort)*(byte *)&(gameTracker->gameData).asmData.MorphTime;
+              }
+            }
+            else {
+              if (bVar11 <= *(byte *)&(gameTracker->gameData).asmData.MorphTime) goto LAB_80044fbc;
+              uVar15 = (ushort)*(byte *)&(gameTracker->gameData).asmData.dispPage;
+            }
+            bVar10 = *(byte *)((int)&(gameTracker->gameData).asmData.drawBackFaces + 1);
+            bVar11 = *(byte *)((int)&(gameTracker->gameData).asmData.dispPage + 1);
+            if (bVar10 < bVar11) {
+              if (*(byte *)((int)&(gameTracker->gameData).asmData.MorphTime + 1) <= bVar10) {
+LAB_80045018:
+                bVar2 = *(byte *)((int)&(gameTracker->gameData).asmData.MorphTime + 1);
+                goto LAB_80045024;
+              }
+              bVar2 = *(byte *)((int)&(gameTracker->gameData).asmData.drawBackFaces + 1);
+            }
+            else {
+              if (*(byte *)((int)&(gameTracker->gameData).asmData.MorphTime + 1) <= bVar11)
+              goto LAB_80045018;
+              bVar2 = *(byte *)((int)&(gameTracker->gameData).asmData.dispPage + 1);
+LAB_80045024:
+              bVar10 = *(byte *)((int)&(gameTracker->gameData).asmData.drawBackFaces + 1);
+              bVar11 = *(byte *)((int)&(gameTracker->gameData).asmData.dispPage + 1);
+            }
+            if (bVar11 < bVar10) {
+              if (*(byte *)((int)&(gameTracker->gameData).asmData.MorphTime + 1) < bVar10) {
+                uVar8 = (ushort)*(byte *)((int)&(gameTracker->gameData).asmData.drawBackFaces + 1)
+                        << 8;
+              }
+              else {
+LAB_8004507c:
+                uVar8 = (ushort)*(byte *)((int)&(gameTracker->gameData).asmData.MorphTime + 1) << 8;
+              }
+            }
+            else {
+              if (bVar11 <= *(byte *)((int)&(gameTracker->gameData).asmData.MorphTime + 1))
+              goto LAB_8004507c;
+              uVar8 = (ushort)*(byte *)((int)&(gameTracker->gameData).asmData.dispPage + 1) << 8;
+            }
+            *(ushort *)(unaff_s1 + 3) = CONCAT11(bVar2,bVar1);
+            *(ushort *)(unaff_s1 + 5) = uVar15 | (ushort)bVar2 << 8;
+            *(ushort *)(unaff_s1 + 7) = (ushort)bVar1 | uVar8;
+            *(ushort *)(unaff_s1 + 9) = uVar15 | uVar8;
+            *(undefined2 *)((int)unaff_s1 + 0xe) =
+                 *(undefined2 *)((int)&(gameTracker->gameData).asmData.drawBackFaces + 2);
+            *(undefined2 *)((int)unaff_s1 + 0x16) =
+                 *(undefined2 *)((int)&(gameTracker->gameData).asmData.dispPage + 2);
+            uVar4 = getCopReg(2,0xe);
+            unaff_s1[8] = uVar4;
+            if ((uVar21 & 0x1000) != 0) {
+              bVar10 = *(byte *)(unaff_s1 + 3) ^ *(byte *)(unaff_s1 + 5);
+              *(byte *)(unaff_s1 + 3) = bVar10;
+              bVar10 = bVar10 ^ *(byte *)(unaff_s1 + 5);
+              gameTracker = (GameTracker *)(uint)bVar10;
+              bVar11 = *(byte *)(unaff_s1 + 7) ^ *(byte *)(unaff_s1 + 9);
+              *(byte *)(unaff_s1 + 7) = bVar11;
+              bVar11 = bVar11 ^ *(byte *)(unaff_s1 + 9);
+              *(byte *)(unaff_s1 + 5) = bVar10;
+              *(byte *)(unaff_s1 + 9) = bVar11;
+              *(byte *)(unaff_s1 + 3) = *(byte *)(unaff_s1 + 3) ^ bVar10;
+              *(byte *)(unaff_s1 + 7) = *(byte *)(unaff_s1 + 7) ^ bVar11;
+            }
+            *puVar20 = *(uint *)(unaff_s0 + 0x1c);
+            puVar20 = puVar20 + 10;
+            puVar13 = (uint *)(in_stack_00000044 * 4 + unaff_s5);
+            *unaff_s1 = *puVar13 & uVar22 | 0x9000000;
+            puVar19 = unaff_s1 + 10;
+          }
+        }
+        *puVar13 = (uint)unaff_s1 & uVar22;
+        unaff_s1 = puVar19;
+      }
+    }
+LAB_800452ec:
+    unaff_s0 = iVar23;
+  } while (iVar23 != 0);
+  FUN_800bce3c();
+                    /* WARNING: Subroutine does not return */
+  FUN_800bce1c();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_SimpleQuadSetup(struct _FX_PRIM *fxPrim /*$s5*/, TDRFuncPtr_FX_SimpleQuadSetup1fxProcess fxProcess /*stack 4*/, struct _FX_MATRIX *fxMatrix /*stack 8*/, struct _Instance *instance /*$a3*/, struct _MFace *mface /*stack 16*/, struct _MVertex *vertexList /*stack 20*/, struct SVECTOR *center /*stack 24*/, struct SVECTOR *vel /*stack 28*/, struct SVECTOR *accl /*stack 32*/, struct _FXTracker *fxTracker /*stack 36*/, int timeToLive /*stack 40*/)
+ // line 2727, offset 0x80045b60
+	/* begin block 1 */
+		// Start line: 2728
+		// Start offset: 0x80045B60
+		// Variables:
+	// 		struct _MVertex *vertex1; // $s2
+	// 		struct _MVertex *vertex2; // $s3
+	// 		struct _MVertex *vertex3; // $s4
+
+		/* begin block 1.1 */
+			// Start line: 2728
+			// Start offset: 0x80045B60
+			// Variables:
+		// 		short _x1; // $v0
+		// 		short _y1; // $v1
+		// 		short _z1; // $a0
+		// 		struct _Position *_v0; // $v0
+		/* end block 1.1 */
+		// End offset: 0x80045B60
+		// End Line: 2728
+
+		/* begin block 1.2 */
+			// Start line: 2728
+			// Start offset: 0x80045B60
+			// Variables:
+		// 		short _x1; // $v0
+		// 		short _y1; // $v1
+		// 		short _z1; // $a0
+		// 		struct _SVector *_v0; // $v0
+		/* end block 1.2 */
+		// End offset: 0x80045B60
+		// End Line: 2728
+
+		/* begin block 1.3 */
+			// Start line: 2728
+			// Start offset: 0x80045B60
+			// Variables:
+		// 		short _x1; // $v0
+		// 		short _y1; // $v1
+		// 		short _z1; // $a0
+		// 		struct _SVector *_v0; // $v0
+		/* end block 1.3 */
+		// End offset: 0x80045B60
+		// End Line: 2728
+
+		/* begin block 1.4 */
+			// Start line: 2728
+			// Start offset: 0x80045B60
+			// Variables:
+		// 		short _x1; // $v0
+		// 		short _y1; // $v1
+		// 		short _z1; // $a0
+		// 		struct _SVector *_v0; // $v0
+		/* end block 1.4 */
+		// End offset: 0x80045B60
+		// End Line: 2728
+
+		/* begin block 1.5 */
+			// Start line: 2728
+			// Start offset: 0x80045B60
+			// Variables:
+		// 		short _x1; // $v0
+		// 		short _y1; // $v1
+		// 		short _z1; // $a0
+		// 		struct _SVector *_v0; // $v0
+		/* end block 1.5 */
+		// End offset: 0x80045B60
+		// End Line: 2728
+	/* end block 1 */
+	// End offset: 0x80045D58
+	// End Line: 2792
+
+	/* begin block 2 */
+		// Start line: 5454
+	/* end block 2 */
+	// End Line: 5455
+
+void FX_SimpleQuadSetup(_FX_PRIM *fxPrim,TDRFuncPtr_FX_SimpleQuadSetup1fxProcess fxProcess,
+                       _FX_MATRIX *fxMatrix,_Instance *instance,_MFace *mface,_MVertex *vertexList,
+                       SVECTOR *center,SVECTOR *vel,SVECTOR *accl,_FXTracker *fxTracker,
+                       int timeToLive)
+
+{
+  undefined2 uVar1;
+  undefined2 uVar2;
+  int iVar3;
+  uint uVar4;
+  uint uVar5;
+  undefined2 *unaff_s0;
+  undefined2 *unaff_s1;
+  int unaff_s2;
+  int unaff_s3;
+  int unaff_s4;
+  int unaff_s5;
+  int unaff_s6;
+  undefined2 *unaff_s7;
+  undefined2 *unaff_s8;
+  int in_stack_00000044;
+  undefined4 in_stack_00000048;
+  
+  uVar1 = unaff_s0[1];
+  uVar2 = unaff_s0[2];
+  *(undefined2 *)(unaff_s5 + 0x2c) = *unaff_s0;
+  *(undefined2 *)(unaff_s5 + 0x2e) = uVar1;
+  *(undefined2 *)(unaff_s5 + 0x30) = uVar2;
+  uVar1 = unaff_s1[1];
+  uVar2 = unaff_s1[2];
+  *(undefined2 *)(unaff_s5 + 0x3c) = *unaff_s1;
+  *(undefined2 *)(unaff_s5 + 0x3e) = uVar1;
+  *(undefined2 *)(unaff_s5 + 0x40) = uVar2;
+  uVar1 = *(undefined2 *)(unaff_s2 + 2);
+  uVar2 = *(undefined2 *)(unaff_s2 + 4);
+  *(undefined2 *)(unaff_s5 + 0x44) = unaff_s1[4];
+  *(undefined2 *)(unaff_s5 + 0x46) = uVar1;
+  *(undefined2 *)(unaff_s5 + 0x48) = uVar2;
+  uVar1 = *(undefined2 *)(unaff_s3 + 2);
+  uVar2 = *(undefined2 *)(unaff_s3 + 4);
+  *(undefined2 *)(unaff_s5 + 0x4c) = unaff_s1[0xc];
+  *(undefined2 *)(unaff_s5 + 0x4e) = uVar1;
+  *(undefined2 *)(unaff_s5 + 0x50) = uVar2;
+  uVar1 = *(undefined2 *)(unaff_s4 + 2);
+  uVar2 = *(undefined2 *)(unaff_s4 + 4);
+  *(undefined2 *)(unaff_s5 + 0x54) = unaff_s1[8];
+  *(undefined2 *)(unaff_s5 + 0x56) = uVar1;
+  *(undefined2 *)(unaff_s5 + 0x58) = uVar2;
+  uVar4 = *(uint *)(unaff_s5 + 0xc);
+  *(uint *)(unaff_s5 + 0xc) = uVar4 | 8;
+  if ((*(byte *)(unaff_s6 + 7) & 2) == 0) {
+    *(uint *)(unaff_s5 + 0xc) = uVar4 & 0xfffffffe | 8;
+    uVar4 = *(uint *)(unaff_s6 + 8);
+    uVar5 = 0x28000000;
+  }
+  else {
+    *(uint *)(unaff_s5 + 0xc) = uVar4 | 9;
+    iVar3 = *(int *)(unaff_s6 + 8);
+    *(int *)(unaff_s5 + 8) = iVar3;
+    uVar4 = *(uint *)(iVar3 + 0xc);
+    uVar5 = 0x2c000000;
+  }
+  *(uint *)(unaff_s5 + 0x1c) = uVar4 & 0x3ffffff | uVar5;
+  if (in_stack_00000044 == 0) {
+    *(undefined4 *)(unaff_s5 + 0x14) = 0x80042214;
+  }
+  else {
+    *(int *)(unaff_s5 + 0x14) = in_stack_00000044;
+  }
+  *(undefined4 *)(unaff_s5 + 0x18) = in_stack_00000048;
+  if (unaff_s7 == (undefined2 *)0x0) {
+    *(undefined2 *)(unaff_s5 + 0x5c) = 0;
+    *(undefined2 *)(unaff_s5 + 0x5e) = 0;
+    *(undefined2 *)(unaff_s5 + 0x60) = 0;
+  }
+  else {
+    *(undefined2 *)(unaff_s5 + 0x5c) = *unaff_s7;
+    *(undefined2 *)(unaff_s5 + 0x5e) = unaff_s7[1];
+    *(undefined2 *)(unaff_s5 + 0x60) = unaff_s7[2];
+  }
+  if (unaff_s8 == (undefined2 *)0x0) {
+    *(undefined2 *)(unaff_s5 + 0x62) = 0;
+    *(undefined2 *)(unaff_s5 + 100) = 0;
+    *(undefined2 *)(unaff_s5 + 0x66) = 0;
+  }
+  else {
+    *(undefined2 *)(unaff_s5 + 0x62) = *unaff_s8;
+    *(undefined2 *)(unaff_s5 + 100) = unaff_s8[1];
+    *(undefined2 *)(unaff_s5 + 0x66) = unaff_s8[2];
+  }
+  *(undefined2 *)(unaff_s5 + 0x10) = mface._0_2_;
+  *(uint *)(unaff_s5 + 0xc) = *(uint *)(unaff_s5 + 0xc) | 0x4000;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_WaterRingProcess(struct _FX_PRIM *fxPrim /*$a0*/, struct _FXTracker *fxTracker /*$a1*/)
+ // line 2796, offset 0x80045d9c
+	/* begin block 1 */
+		// Start line: 6929
+	/* end block 1 */
+	// End Line: 6930
+
+void FX_WaterRingProcess(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  short in_v1;
+  
+  (fxPrim->v3).y = in_v1;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_WaterBubbleProcess(struct _FX_PRIM *fxPrim /*$s0*/, struct _FXTracker *fxTracker /*$s2*/)
+ // line 2806, offset 0x80045e18
+	/* begin block 1 */
+		// Start line: 2807
+		// Start offset: 0x80045E18
+		// Variables:
+	// 		struct _FX_PRIM *temp; // $a1
+
+		/* begin block 1.1 */
+			// Start line: 2833
+			// Start offset: 0x80045EFC
+			// Variables:
+		// 		struct Object *waterfx; // $v1
+		// 		struct _Model *wxring; // $s1
+		/* end block 1.1 */
+		// End offset: 0x80046018
+		// End Line: 2863
+	/* end block 1 */
+	// End offset: 0x80046018
+	// End Line: 2864
+
+	/* begin block 2 */
+		// Start line: 6952
+	/* end block 2 */
+	// End Line: 6953
+
+void FX_WaterBubbleProcess(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  short in_v0;
+  undefined2 uVar1;
+  short sVar2;
+  short in_v1;
+  int iVar3;
+  undefined4 uVar4;
+  int unaff_s0;
+  int iVar5;
+  int unaff_s2;
+  
+  *(short *)(unaff_s0 + 0x2c) = in_v0 + (short)fxPrim;
+  *(short *)(unaff_s0 + 0x2e) = in_v1 + *(short *)(unaff_s0 + 0x5e);
+  iVar3 = (uint)*(ushort *)(unaff_s0 + 0x42) + 1;
+  *(short *)(unaff_s0 + 0x30) = *(short *)(unaff_s0 + 0x30) + *(short *)(unaff_s0 + 0x60);
+  *(undefined2 *)(unaff_s0 + 0x42) = (short)iVar3;
+  iVar3 = (uint)*(ushort *)(unaff_s0 + 0x5a) - iVar3 * (uint)*(ushort *)(unaff_s0 + 0x52);
+  uVar1 = (undefined2)iVar3;
+  *(undefined2 *)(unaff_s0 + 0x4e) = uVar1;
+  *(undefined2 *)(unaff_s0 + 0x3e) = uVar1;
+  iVar3 = iVar3 * 0x10000 >> 0x10;
+  if ((int)*(short *)(unaff_s0 + 100) <= iVar3) {
+    if (*(short *)(unaff_s0 + 0x30) <= *(short *)(unaff_s0 + 0x10)) {
+      return;
+    }
+    if ((_Normal_ARRAY_800c89d0[1]._4_4_ != 0) && ((int)*(short *)(unaff_s0 + 0x46) < iVar3)) {
+      iVar5 = **(int **)(_Normal_ARRAY_800c89d0[1]._4_4_ + 0xc);
+      iVar3 = FUN_8004208c(fontTracker.font_buffer._1144_4_);
+      if (iVar3 != 0) {
+        uVar1 = *(undefined2 *)(unaff_s0 + 0x30);
+        *(undefined4 *)(iVar3 + 0x2c) = *(undefined4 *)(unaff_s0 + 0x2c);
+        *(undefined2 *)(iVar3 + 0x30) = uVar1;
+        sVar2 = *(short *)(iVar3 + 0x2c) + -8;
+        *(short *)(iVar3 + 0x4c) = sVar2;
+        *(short *)(iVar3 + 0x3c) = sVar2;
+        sVar2 = *(short *)(iVar3 + 0x2e) + -8;
+        *(short *)(iVar3 + 0x46) = sVar2;
+        *(short *)(iVar3 + 0x3e) = sVar2;
+        uVar1 = *(undefined2 *)(iVar3 + 0x30);
+        sVar2 = *(short *)(iVar3 + 0x2c) + 8;
+        *(short *)(iVar3 + 0x54) = sVar2;
+        *(short *)(iVar3 + 0x44) = sVar2;
+        *(undefined2 *)(iVar3 + 0x58) = uVar1;
+        *(undefined2 *)(iVar3 + 0x50) = uVar1;
+        *(undefined2 *)(iVar3 + 0x48) = uVar1;
+        *(undefined2 *)(iVar3 + 0x40) = uVar1;
+        sVar2 = *(short *)(iVar3 + 0x2e) + 8;
+        *(short *)(iVar3 + 0x56) = sVar2;
+        *(short *)(iVar3 + 0x4e) = sVar2;
+        uVar4 = *(undefined4 *)(*(int *)(iVar5 + 0x14) + 8);
+        *(undefined4 *)(iVar3 + 0x14) = 0x80045d34;
+        *(undefined2 *)(iVar3 + 0x10) = 0x10;
+        *(undefined4 *)(iVar3 + 0x1c) = 0x2effffff;
+        *(undefined4 *)(iVar3 + 0x20) = 0xffffff;
+        *(undefined4 *)(iVar3 + 0x24) = 0;
+        *(undefined2 *)(iVar3 + 0x34) = 0;
+        *(uint *)(iVar3 + 0xc) = *(uint *)(iVar3 + 0xc) | 0x50009;
+        *(undefined2 *)(iVar3 + 0x32) = 0x100;
+        *(undefined4 *)(iVar3 + 8) = uVar4;
+        FUN_8004f500(&DAT_00006d90 + unaff_s2);
+      }
+    }
+  }
+  FUN_80041fcc();
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Sprite_Insert(struct NodeType *list /*$a0*/, struct _FX_PRIM *fxPrim /*$s0*/)
+ // line 2867, offset 0x80046030
+	/* begin block 1 */
+		// Start line: 7148
+	/* end block 1 */
+	// End Line: 7149
+
+void FX_Sprite_Insert(NodeType *list,_FX_PRIM *fxPrim)
+
+{
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct TextureMT3 * /*$ra*/ FX_GetTextureObject(struct Object *object /*$a0*/, int modelnum /*$a1*/, int texnum /*$a2*/)
+ // line 2873, offset 0x80046068
+	/* begin block 1 */
+		// Start line: 2875
+		// Start offset: 0x80046068
+		// Variables:
+	// 		struct _Model *model; // $v0
+	// 		struct TextureMT3 *texture; // $v0
+	/* end block 1 */
+	// End offset: 0x80046068
+	// End Line: 2879
+
+	/* begin block 2 */
+		// Start line: 7160
+	/* end block 2 */
+	// End Line: 7161
+
+	/* begin block 3 */
+		// Start line: 7161
+	/* end block 3 */
+	// End Line: 7162
+
+	/* begin block 4 */
+		// Start line: 7165
+	/* end block 4 */
+	// End Line: 7166
+
+TextureMT3 * FX_GetTextureObject(Object *object,int modelnum,int texnum)
+
+{
+  TextureMT3 *in_v0;
+  short in_a3;
+  int unaff_s3;
+  undefined4 uStack00000010;
+  int iStack00000018;
+  undefined4 uStack0000001c;
+  int iStack00000020;
+  
+  if ((unaff_s3 != 0) &&
+     (in_v0 = (TextureMT3 *)FUN_8004208c(fontTracker.font_buffer._1144_4_),
+     in_v0 != (TextureMT3 *)0x0)) {
+    iStack00000020 = (int)in_a3;
+    uStack00000010 = 0x2c000000;
+    uStack0000001c = fontTracker.font_buffer._1144_4_;
+    iStack00000018 = texnum;
+    FUN_800482fc(in_v0);
+                    /* WARNING: Subroutine does not return */
+    FUN_800bcddc();
+  }
+  return in_v0;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_MakeWaterBubble(struct _SVector *position /*$s0*/, struct _SVector *vel /*$s4*/, struct _SVector *accl /*$s5*/, long splashZ /*$s6*/, struct __BubbleParams *BP /*stack 16*/)
+ // line 2887, offset 0x800460a4
+	/* begin block 1 */
+		// Start line: 2888
+		// Start offset: 0x800460A4
+		// Variables:
+	// 		struct Object *waterfx; // $s3
+	// 		struct _FX_PRIM *fxPrim; // $s1
+	/* end block 1 */
+	// End offset: 0x8004622C
+	// End Line: 2919
+
+	/* begin block 2 */
+		// Start line: 7189
+	/* end block 2 */
+	// End Line: 7190
+
+/* WARNING: Variable defined which should be unmapped: BP */
+
+void FX_MakeWaterBubble(_SVector *position,_SVector *vel,_SVector *accl,long splashZ,
+                       __BubbleParams *BP)
+
+{
+  short unaff_s6;
+  undefined4 uStack0000001c;
+  int iStack00000020;
+  
+  iStack00000020 = (int)unaff_s6;
+  uStack0000001c = fontTracker.font_buffer._1144_4_;
+  FUN_800482fc();
+                    /* WARNING: Subroutine does not return */
+  FUN_800bcddc();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_DrawScreenPoly(int transtype /*$t3*/, unsigned long color /*$t2*/, int zdepth /*$a2*/)
+ // line 2977, offset 0x80046254
+	/* begin block 1 */
+		// Start line: 2978
+		// Start offset: 0x80046254
+		// Variables:
+	// 		unsigned long **drawot; // $t0
+	// 		struct _POLY_TF4 *poly; // $a3
+	/* end block 1 */
+	// End offset: 0x800462F8
+	// End Line: 2994
+
+	/* begin block 2 */
+		// Start line: 7394
+	/* end block 2 */
+	// End Line: 7395
+
+void FX_DrawScreenPoly(int transtype,ulong color,int zdepth)
+
+{
+  undefined in_v0;
+  undefined2 in_v1;
+  uint *in_a3;
+  undefined4 in_t1;
+  uint in_t2;
+  
+  *(undefined2 *)((int)in_a3 + 0x12) = 0;
+  *(undefined2 *)(in_a3 + 5) = 0;
+  *(undefined2 *)(in_a3 + 6) = in_v1;
+  in_a3[2] = in_t2;
+  *(undefined *)((int)in_a3 + 0xb) = in_v0;
+  *in_a3 = *(uint *)transtype & color | 0x6000000;
+  *(uint *)transtype = (uint)in_a3 & color;
+  *(undefined4 *)(loadStatus.changeDir + 4) = in_t1;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct POLY_GT4 * /*$ra*/ FX_SetupPolyGT4(int x1 /*$a0*/, int y1 /*$a1*/, int x2 /*$a2*/, int y2 /*$a3*/, int otz /*stack 16*/, struct TextureMT3 *texture /*stack 20*/, long color0 /*stack 24*/, long color1 /*stack 28*/, long color2 /*stack 32*/, long color3 /*stack 36*/)
+ // line 2997, offset 0x80046300
+	/* begin block 1 */
+		// Start line: 2998
+		// Start offset: 0x80046300
+		// Variables:
+	// 		struct POLY_GT4 *poly; // $t0
+	// 		unsigned long **drawot; // $t3
+	/* end block 1 */
+	// End offset: 0x800463FC
+	// End Line: 3029
+
+	/* begin block 2 */
+		// Start line: 7450
+	/* end block 2 */
+	// End Line: 7451
+
+	/* begin block 3 */
+		// Start line: 7454
+	/* end block 3 */
+	// End Line: 7455
+
+POLY_GT4 *
+FX_SetupPolyGT4(int x1,int y1,int x2,int y2,int otz,TextureMT3 *texture,long color0,long color1,
+               long color2,long color3)
+
+{
+  undefined2 in_v0;
+  uint in_v1;
+  uint *puVar1;
+  POLY_GT4 *in_t0;
+  int in_t1;
+  int in_t2;
+  int in_t3;
+  undefined4 in_t4;
+  
+  in_t0->y2 = (short)y2;
+  in_t0->y3 = (short)y2;
+  *(undefined2 *)&in_t0->u2 = in_v0;
+  *(uint *)&in_t0->r0 = color0 | in_v1;
+  *(long *)&in_t0->r1 = color1;
+  *(long *)&in_t0->r2 = color2;
+  in_t0->u3 = (uchar)x1;
+  in_t0->v3 = in_t0->v2;
+  *(long *)&in_t0->r3 = color3;
+  in_t0->tpage = *(ushort *)(in_t2 + 6);
+  in_t0->clut = *(ushort *)(in_t2 + 2);
+  if (in_t1 < 1) {
+    in_t1 = 1;
+  }
+  puVar1 = (uint *)(in_t1 * 4 + in_t3);
+  in_t0->tag = *puVar1 & 0xffffff | 0xc000000;
+  *puVar1 = (uint)in_t0 & 0xffffff;
+  *(undefined4 *)(loadStatus.changeDir + 4) = in_t4;
+  return in_t0;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_MakeWarpArrow(int x /*$s1*/, int y /*$s3*/, int xsize /*$s2*/, int ysize /*$s4*/, int fade /*stack 16*/)
+ // line 3058, offset 0x80046404
+	/* begin block 1 */
+		// Start line: 3059
+		// Start offset: 0x80046404
+		// Variables:
+	// 		struct Object *particle; // $a0
+	// 		long color; // $s0
+	// 		struct POLY_GT4 *poly; // $v1
+	/* end block 1 */
+	// End offset: 0x800464C4
+	// End Line: 3075
+
+	/* begin block 2 */
+		// Start line: 6116
+	/* end block 2 */
+	// End Line: 6117
+
+void FX_MakeWarpArrow(int x,int y,int xsize,int ysize,int fade)
+
+{
+                    /* WARNING: Subroutine does not return */
+  FUN_80046000(x,0,9);
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_MakeMannaIcon(int x /*$s2*/, int y /*$s3*/, int xsize /*$s0*/, int ysize /*$s1*/)
+ // line 3086, offset 0x800464e4
+	/* begin block 1 */
+		// Start line: 3087
+		// Start offset: 0x800464E4
+		// Variables:
+	// 		struct Object *manna; // $a0
+	// 		struct TextureMT3 *texture; // $s4
+	// 		struct POLY_GT4 *poly; // $v1
+	// 		int n; // $s0
+	// 		int newx; // $a0
+	// 		int newy; // $a1
+	// 		int sizex; // $a2
+	// 		int sizey; // $v0
+	// 		unsigned long color; // $v1
+	/* end block 1 */
+	// End offset: 0x80046670
+	// End Line: 3124
+
+	/* begin block 2 */
+		// Start line: 7637
+	/* end block 2 */
+	// End Line: 7638
+
+void FX_MakeMannaIcon(int x,int y,int xsize,int ysize)
+
+{
+  int iVar1;
+  int unaff_s4;
+  
+  iVar1 = FUN_80046298();
+  if (iVar1 != 0) {
+    *(ushort *)(iVar1 + 0x1a) = *(ushort *)(iVar1 + 0x1a) | 0x20;
+  }
+  if (*(int *)(unaff_s4 + 0x54) != 0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_80046000(*(int *)(unaff_s4 + 0x54),0,2);
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_MakeGlyphIcon(struct _Position *position /*$s4*/, struct Object *glyphObject /*$s3*/, int size /*$s0*/, int glyphnum /*$s1*/, int enabled /*stack 16*/)
+ // line 3197, offset 0x80046690
+	/* begin block 1 */
+		// Start line: 3198
+		// Start offset: 0x80046690
+		// Variables:
+	// 		int sizex; // $t0
+	// 		struct POLY_GT4 *poly; // $v1
+	// 		struct TextureMT3 *texture; // $s2
+	// 		struct DVECTOR xy_pos; // stack offset -40
+	// 		int otz; // $t1
+	// 		long *color_array; // $v0
+	// 		struct _GlyphTuneData *glyphtunedata; // $v1
+
+		/* begin block 1.1 */
+			// Start line: 3211
+			// Start offset: 0x800466D4
+			// Variables:
+		// 		struct Object *object; // $a0
+		/* end block 1.1 */
+		// End offset: 0x800466E8
+		// End Line: 3214
+	/* end block 1 */
+	// End offset: 0x80046830
+	// End Line: 3250
+
+	/* begin block 2 */
+		// Start line: 6394
+	/* end block 2 */
+	// End Line: 6395
+
+void FX_MakeGlyphIcon(_Position *position,Object *glyphObject,int size,int glyphnum,int enabled)
+
+{
+  int in_v0;
+  int iVar1;
+  undefined4 *puVar2;
+  int iVar3;
+  int iVar4;
+  int unaff_s0;
+  int iVar5;
+  int unaff_s1;
+  int unaff_s2;
+  int unaff_s3;
+  short *unaff_s4;
+  int unaff_s5;
+  undefined *puStack00000018;
+  undefined *puStack0000001c;
+  undefined *puStack00000020;
+  undefined *puStack00000024;
+  short sStack00000028;
+  short sStack0000002a;
+  
+  iVar5 = unaff_s0 + in_v0 >> 1;
+  sStack00000028 = *unaff_s4;
+  sStack0000002a = unaff_s4[1];
+  iVar1 = (iVar5 << 9) / 0x140;
+  if (unaff_s5 == 0) {
+    puStack00000024 = &DAT_00202020;
+    iVar3 = (int)sStack00000028 - iVar1;
+    iVar4 = (int)sStack0000002a - iVar5;
+    puStack00000018 = &DAT_00202020;
+    puStack0000001c = &DAT_00202020;
+    puStack00000020 = &DAT_00202020;
+  }
+  else {
+    puVar2 = (undefined4 *)(unaff_s1 * 0x10 + *(int *)(unaff_s3 + 0x1c) + 0x1c);
+    iVar3 = (int)sStack00000028 - iVar1;
+    iVar4 = (int)sStack0000002a - iVar5;
+    puStack00000018 = (undefined *)*puVar2;
+    puStack0000001c = (undefined *)puVar2[1];
+    puStack00000020 = (undefined *)puVar2[2];
+    puStack00000024 = (undefined *)puVar2[3];
+  }
+  iVar1 = FUN_80046298(iVar3,iVar4,(int)sStack00000028 + iVar1 + 1,(int)sStack0000002a + iVar5 + 1);
+  if (iVar1 != 0) {
+    *(byte *)(iVar1 + 7) = *(byte *)(unaff_s2 + 0xf) & 3 | 0x3c;
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_SoulDustProcess(struct _FX_PRIM *fxPrim /*$s0*/, struct _FXTracker *fxTracker /*$a1*/)
+ // line 3253, offset 0x80046854
+	/* begin block 1 */
+		// Start line: 3254
+		// Start offset: 0x80046854
+		// Variables:
+	// 		struct MATRIX *swTransform; // $v1
+	// 		struct _Position position; // stack offset -24
+	// 		long color; // stack offset -16
+	// 		long black; // stack offset -12
+	// 		int fade; // $a3
+	/* end block 1 */
+	// End offset: 0x800469F8
+	// End Line: 3291
+
+	/* begin block 2 */
+		// Start line: 7956
+	/* end block 2 */
+	// End Line: 7957
+
+void FX_SoulDustProcess(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  undefined2 uVar1;
+  undefined2 in_v0;
+  int iVar2;
+  int in_v1;
+  int unaff_s0;
+  
+  *(undefined2 *)(unaff_s0 + 0x2c) = in_v0;
+  iVar2 = (int)&(fxPrim->node).prev + (uint)*(ushort *)(unaff_s0 + 0x44);
+  *(undefined2 *)(unaff_s0 + 0x2e) = *(undefined2 *)(in_v1 + 0x18);
+  uVar1 = *(undefined2 *)(in_v1 + 0x1c);
+  *(undefined2 *)(unaff_s0 + 0x44) = (short)iVar2;
+                    /* WARNING: Subroutine does not return */
+  *(undefined2 *)(unaff_s0 + 0x30) = uVar1;
+  FUN_80079104(iVar2 * 0x10000 >> 0x10);
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_MakeSoulDust(struct _Instance *instance /*$s4*/, short segment /*$a1*/)
+ // line 3292, offset 0x80046a08
+	/* begin block 1 */
+		// Start line: 3293
+		// Start offset: 0x80046A08
+		// Variables:
+	// 		struct _FX_PRIM *fxPrim; // $s1
+	// 		struct SVECTOR location; // stack offset -32
+	// 		struct Object *particle; // $s2
+	/* end block 1 */
+	// End offset: 0x80046C28
+	// End Line: 3344
+
+	/* begin block 2 */
+		// Start line: 8084
+	/* end block 2 */
+	// End Line: 8085
+
+void FX_MakeSoulDust(_Instance *instance,short segment)
+
+{
+  int in_v0;
+  int iVar1;
+  int unaff_s1;
+  int unaff_s4;
+  undefined4 uStack00000010;
+  undefined4 uStack00000014;
+  undefined4 uStack00000018;
+  undefined4 uStack0000001c;
+  undefined4 uStack00000020;
+  undefined2 uStack0000002a;
+  short sStack0000002c;
+  
+  uStack0000002a = 0;
+  iVar1 = in_v0;
+  if (in_v0 < 0) {
+    iVar1 = in_v0 + 0x1ff;
+  }
+  sStack0000002c =
+       *(short *)(*(int *)(unaff_s4 + 0x40) + 0x3c) + (short)in_v0 + (short)(iVar1 >> 9) * -0x200 +
+       -0x100;
+  uStack00000010 = 0x2e000000;
+  uStack00000014 = 0;
+  uStack00000018 = 0;
+  uStack0000001c = fontTracker.font_buffer._1144_4_;
+  uStack00000020 = 8;
+  FUN_800482fc();
+                    /* WARNING: Subroutine does not return */
+  *(uint *)(unaff_s1 + 0xc) = *(uint *)(unaff_s1 + 0xc) | 0x2001;
+  FUN_80046000();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_WaterTrailProcess(struct _FX_PRIM *fxPrim /*$s0*/, struct _FXTracker *fxTracker /*$a1*/)
+ // line 3367, offset 0x80046c48
+	/* begin block 1 */
+		// Start line: 6734
+	/* end block 1 */
+	// End Line: 6735
+
+void FX_WaterTrailProcess(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  undefined2 in_v0;
+  int in_v1;
+  int unaff_s0;
+  
+  *(undefined2 *)(unaff_s0 + 0x44) = in_v0;
+  *(undefined2 *)(unaff_s0 + 0x46) = (short)(in_v1 * 7 >> 3);
+  *(undefined2 *)(unaff_s0 + 0x48) = (short)((int)*(short *)(unaff_s0 + 0x48) * 7 >> 3);
+  *(undefined2 *)(unaff_s0 + 0x4c) = (short)((int)*(short *)(unaff_s0 + 0x4c) * 7 >> 3);
+  *(undefined2 *)(unaff_s0 + 0x4e) = (short)((int)*(short *)(unaff_s0 + 0x4e) * 7 >> 3);
+  *(undefined2 *)(unaff_s0 + 0x50) = (short)((int)*(short *)(unaff_s0 + 0x50) * 7 >> 3);
+  *(undefined2 *)(unaff_s0 + 0x54) = (short)((int)*(short *)(unaff_s0 + 0x54) * 7 >> 3);
+  *(undefined2 *)(unaff_s0 + 0x56) = (short)((int)*(short *)(unaff_s0 + 0x56) * 7 >> 3);
+  *(undefined2 *)(unaff_s0 + 0x58) = (short)((int)*(short *)(unaff_s0 + 0x58) * 7 >> 3);
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_MakeWaterTrail(struct _Instance *instance /*$a0*/, int depth /*$a1*/)
+ // line 3386, offset 0x80046d60
+	/* begin block 1 */
+		// Start line: 3387
+		// Start offset: 0x80046D60
+		// Variables:
+	// 		struct Object *waterfx; // $a1
+	// 		struct _Model *wxtrail; // $a0
+	// 		struct _SVector position; // stack offset -48
+	// 		int zvel; // $s0
+
+		/* begin block 1.1 */
+			// Start line: 3423
+			// Start offset: 0x80046E6C
+			// Variables:
+		// 		int n; // $s2
+		// 		int deg; // $s0
+		// 		struct _SVector vel; // stack offset -40
+		// 		struct _SVector accel; // stack offset -32
+		// 		struct _SVector startpos; // stack offset -24
+
+			/* begin block 1.1.1 */
+				// Start line: 3431
+				// Start offset: 0x80046E84
+				// Variables:
+			// 		int sinVal; // $s1
+			// 		int cosVal; // $s0
+			// 		int spd; // $v1
+			/* end block 1.1.1 */
+			// End offset: 0x80046F18
+			// End Line: 3439
+		/* end block 1.1 */
+		// End offset: 0x80046F7C
+		// End Line: 3444
+	/* end block 1 */
+	// End offset: 0x80046F7C
+	// End Line: 3445
+
+	/* begin block 2 */
+		// Start line: 8277
+	/* end block 2 */
+	// End Line: 8278
+
+void FX_MakeWaterTrail(_Instance *instance,int depth)
+
+{
+  int *piVar1;
+  int in_v0;
+  int iVar2;
+  int iVar3;
+  undefined2 uStack0000002a;
+  short sStack0000002c;
+  undefined2 uStack00000038;
+  undefined2 uStack0000003a;
+  undefined2 uStack0000003c;
+  short sStack00000044;
+  
+  uStack0000002a = *(undefined2 *)(in_v0 + 0x38);
+  sStack0000002c = (instance->splitPoint).z;
+  iVar3 = instance->matrix[1].t[2] - instance->oldMatrix[1].t[2];
+  if (_Normal_ARRAY_800c89d0[1]._4_4_ != 0) {
+    piVar1 = (int *)(_Normal_ARRAY_800c89d0[1]._4_4_ + 0xc);
+    *(uint *)(_Normal_ARRAY_800c89d0[1]._4_4_ + 0x2c) =
+         *(uint *)(_Normal_ARRAY_800c89d0[1]._4_4_ + 0x2c) | 0x20000000;
+    iVar2 = *(int *)(*piVar1 + 4);
+    FUN_800427ac(iVar2,*(undefined4 *)(iVar2 + 0x14),&stack0x00000028,0);
+  }
+  if (iVar3 < 0) {
+    iVar3 = -iVar3;
+  }
+  if (0x14 < iVar3) {
+    uStack0000003a = 0;
+    uStack00000038 = 0;
+    uStack0000003c = 0xfffe;
+    sStack00000044 = sStack0000002c;
+                    /* WARNING: Subroutine does not return */
+    FUN_800bcddc();
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXRibbon * /*$ra*/ FX_StartRibbon(struct _Instance *instance /*$s7*/, short startSegment /*$s3*/, short endSegment /*stack -48*/, short type /*$fp*/, int ribbonLifeTime /*stack 16*/, int faceLifeTime /*stack 20*/, int startFadeValue /*stack 24*/, long startColor /*stack 28*/, long endColor /*stack 32*/)
+ // line 3480, offset 0x80046f94
+	/* begin block 1 */
+		// Start line: 3481
+		// Start offset: 0x80046F94
+		// Variables:
+	// 		struct MATRIX *swTransform; // $a0
+	// 		struct _FXRibbon *ribbon; // $s0
+	// 		int i; // $a2
+	// 		int number; // $s1
+	/* end block 1 */
+	// End offset: 0x80047234
+	// End Line: 3563
+
+	/* begin block 2 */
+		// Start line: 6960
+	/* end block 2 */
+	// End Line: 6961
+
+/* WARNING: Variable defined which should be unmapped: startFadeValue */
+
+_FXRibbon *
+FX_StartRibbon(_Instance *instance,short startSegment,short endSegment,short type,int ribbonLifeTime
+              ,int faceLifeTime,int startFadeValue,long startColor,long endColor)
+
+{
+                    /* WARNING: Subroutine does not return */
+  FUN_8004fbb0(0x2c,0xd);
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_RibbonProcess(struct _FX_PRIM *fxPrim /*$a2*/, struct _FXTracker *fxTracker /*$a1*/)
+ // line 3584, offset 0x80047264
+	/* begin block 1 */
+		// Start line: 3585
+		// Start offset: 0x80047264
+		// Variables:
+	// 		int d; // $a1
+	// 		long fade; // $a3
+	/* end block 1 */
+	// End offset: 0x80047348
+	// End Line: 3624
+
+	/* begin block 2 */
+		// Start line: 7168
+	/* end block 2 */
+	// End Line: 7169
+
+void FX_RibbonProcess(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  short sVar1;
+  uint in_v0;
+  int in_a2;
+  short in_a3;
+  int iStack00000010;
+  
+  while( true ) {
+    if (in_v0 == 0) {
+      fxPrim->fadeValue[0] = in_a3;
+    }
+    fxTracker = (_FXTracker *)((int)&fxTracker->matrixPool[0].node.prev + 1);
+    if (3 < (int)fxTracker) break;
+    sVar1 = fxPrim->fadeValue[1] + *(short *)(in_a2 + 0x32);
+    fxPrim->fadeValue[1] = sVar1;
+    in_v0 = (uint)(sVar1 < 0x1001);
+    fxPrim = (_FX_PRIM *)((int)&(fxPrim->node).prev + 2);
+  }
+  if (*(int *)(in_a2 + 0x20) != *(int *)(in_a2 + 0x24)) {
+    sVar1 = *(short *)(in_a2 + 0x28) + *(short *)(in_a2 + 0x2a);
+    *(short *)(in_a2 + 0x28) = sVar1;
+    if (0x1000 < sVar1) {
+      *(undefined2 *)(in_a2 + 0x28) = 0x1000;
+    }
+    iStack00000010 = in_a2 + 0x1c;
+    FUN_800bd394(in_a2 + 0x20,in_a2 + 0x24,0x1000 - (int)*(short *)(in_a2 + 0x28));
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_ConstrictProcess(struct _FX_PRIM *fxPrim /*$s1*/, struct _FXTracker *fxTracker /*$s2*/)
+ // line 3627, offset 0x80047358
+	/* begin block 1 */
+		// Start line: 8805
+	/* end block 1 */
+	// End Line: 8806
+
+void FX_ConstrictProcess(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  undefined2 in_v0;
+  int in_v1;
+  int unaff_s1;
+  
+  *(undefined2 *)(unaff_s1 + 0x4a) = in_v0;
+  *(undefined2 *)(unaff_s1 + 0x42) = in_v0;
+  *(undefined2 *)(unaff_s1 + 0x4a) = 0;
+  if (in_v1 != 0) {
+    *(undefined2 *)(unaff_s1 + 0x36) = 0x1000;
+    *(undefined2 *)(unaff_s1 + 0x34) = 0x1000;
+    *(undefined2 *)(unaff_s1 + 0x3a) = 0;
+    *(undefined2 *)(unaff_s1 + 0x38) = 0;
+                    /* WARNING: Subroutine does not return */
+    FUN_800bd18c((int)*(short *)(unaff_s1 + 0x4e) -
+                 (int)SoundEffectChannel_ARRAY_800d1374[1].pitchChangeSign,
+                 (int)*(short *)(unaff_s1 + 0x4c) -
+                 (int)SoundEffectChannel_ARRAY_800d1374[1].pitchChangePerUpdate);
+  }
+  *(undefined2 *)(unaff_s1 + 0x36) = 0;
+  *(undefined2 *)(unaff_s1 + 0x34) = 0;
+  *(undefined2 *)(unaff_s1 + 0x3a) = 0x1000;
+  *(undefined2 *)(unaff_s1 + 0x38) = 0x1000;
+                    /* WARNING: Subroutine does not return */
+  FUN_800bd18c((int)*(short *)(unaff_s1 + 0x3e) -
+               (int)SoundEffectChannel_ARRAY_800d1374[1].pitchChangeSign,
+               (int)*(short *)(unaff_s1 + 0x3c) -
+               (int)SoundEffectChannel_ARRAY_800d1374[1].pitchChangePerUpdate);
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_StartConstrict(struct _Instance *instance /*$a0*/, struct _SVector *constrict_point /*$a1*/, short startSegment /*$a2*/, short endSegment /*$a3*/)
+ // line 3696, offset 0x800475fc
+	/* begin block 1 */
+		// Start line: 8988
+	/* end block 1 */
+	// End Line: 8989
+
+	/* begin block 2 */
+		// Start line: 8989
+	/* end block 2 */
+	// End Line: 8990
+
+void FX_StartConstrict(_Instance *instance,_SVector *constrict_point,short startSegment,
+                      short endSegment)
+
+{
+  undefined4 uStack00000018;
+  
+  uStack00000018 = 0;
+  FX_ConstrictRibbon = (_FXRibbon *)FUN_80046f2c();
+  FX_ConstrictStage = 0;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_EndConstrict(int ConstrictEnemyFlag /*$a0*/, struct _Instance *instance /*$a1*/)
+ // line 3713, offset 0x8004768c
+	/* begin block 1 */
+		// Start line: 3714
+		// Start offset: 0x8004768C
+
+		/* begin block 1.1 */
+			// Start line: 3721
+			// Start offset: 0x800476AC
+			// Variables:
+		// 		short _x1; // $v1
+		// 		short _y1; // $a0
+		// 		short _z1; // $a1
+		// 		struct _Position *_v0; // $v0
+		// 		struct _Position *_v1; // $v0
+		/* end block 1.1 */
+		// End offset: 0x800476AC
+		// End Line: 3721
+
+		/* begin block 1.2 */
+			// Start line: 3725
+			// Start offset: 0x800476B8
+			// Variables:
+		// 		short _x1; // $v1
+		// 		short _y1; // $a0
+		// 		short _z1; // $a1
+		// 		struct _Position *_v0; // $v0
+		// 		struct _Position *_v1; // $v0
+		/* end block 1.2 */
+		// End offset: 0x800476DC
+		// End Line: 3725
+	/* end block 1 */
+	// End offset: 0x800476DC
+	// End Line: 3729
+
+	/* begin block 2 */
+		// Start line: 9026
+	/* end block 2 */
+	// End Line: 9027
+
+void FX_EndConstrict(int ConstrictEnemyFlag,_Instance *instance)
+
+{
+  MATRIX *pMStackX0;
+  undefined2 uStackX4;
+  long lStack8;
+  undefined2 uStack4;
+  
+  FUN_800bd30c(ConstrictEnemyFlag + 0x3c,&instance->soundInstanceTbl[1].state,0x800,0x800,&lStack8);
+  FUN_800bd30c(ConstrictEnemyFlag + 0x44,&instance->maxCheckDistance,0x800,0x800);
+  *(long *)(ConstrictEnemyFlag + 0x4c) = lStack8;
+  *(undefined2 *)(ConstrictEnemyFlag + 0x50) = uStack4;
+  *(MATRIX **)(ConstrictEnemyFlag + 0x54) = pMStackX0;
+  *(undefined2 *)(ConstrictEnemyFlag + 0x58) = uStackX4;
+  instance->introUniqueID = lStack8;
+  *(undefined2 *)&instance->matrix = uStack4;
+  instance->oldMatrix = pMStackX0;
+  *(undefined2 *)instance->soundInstanceTbl = uStackX4;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_SubDividePrim(struct _FX_PRIM *fxPrim1 /*$s0*/, struct _FX_PRIM *fxPrim2 /*$s1*/)
+ // line 3733, offset 0x800476f8
+	/* begin block 1 */
+		// Start line: 3734
+		// Start offset: 0x800476F8
+		// Variables:
+	// 		struct SVECTOR mp0; // stack offset -32
+	// 		struct SVECTOR mp1; // stack offset -24
+	/* end block 1 */
+	// End offset: 0x800476F8
+	// End Line: 3734
+
+	/* begin block 2 */
+		// Start line: 9067
+	/* end block 2 */
+	// End Line: 9068
+
+void FX_SubDividePrim(_FX_PRIM *fxPrim1,_FX_PRIM *fxPrim2)
+
+{
+  int unaff_s0;
+  int unaff_s1;
+  undefined4 in_stack_00000018;
+  undefined2 in_stack_0000001c;
+  undefined4 in_stack_00000020;
+  undefined2 in_stack_00000024;
+  
+  *(undefined4 *)(unaff_s0 + 0x54) = in_stack_00000020;
+  *(undefined2 *)(unaff_s0 + 0x58) = in_stack_00000024;
+  *(undefined4 *)(unaff_s1 + 0x3c) = in_stack_00000018;
+  *(undefined2 *)(unaff_s1 + 0x40) = in_stack_0000001c;
+  *(undefined4 *)(unaff_s1 + 0x44) = in_stack_00000020;
+  *(undefined2 *)(unaff_s1 + 0x48) = in_stack_00000024;
+  return;
+}
+
+
+
+// autogenerated function stub: 
+// void /*$ra*/ FX_ContinueRibbon(struct _FXRibbon *ribbon /*$s2*/, struct _FXTracker *fxTracker /*$fp*/)
+void FX_ContinueRibbon(struct _FXRibbon *ribbon, struct _FXTracker *fxTracker)
+{ // line 3781, offset 0x800477bc
+	/* begin block 1 */
+		// Start line: 3782
+		// Start offset: 0x800477BC
+		// Variables:
+			struct MATRIX *swTransform; // $a1
+			int i; // $s3
+			int i2; // $s7
+			int i3; // $v1
+			int startIndex; // $a2
+			int period; // stack offset -48
+			int d; // $s5
+			struct _FX_PRIM *fxPrim; // $s0
+			struct _FX_PRIM *fxPrim2; // $s1
+			struct SVECTOR Quad[4]; // stack offset -80
+
+		/* begin block 1.1 */
+			// Start line: 3909
+			// Start offset: 0x80047C38
+			// Variables:
+				int fade; // $v1
+		/* end block 1.1 */
+		// End offset: 0x80047CD4
+		// End Line: 3933
+	/* end block 1 */
+	// End offset: 0x80047D5C
+	// End Line: 3948
+
+	/* begin block 2 */
+		// Start line: 9166
+	/* end block 2 */
+	// End Line: 9167
+
+}
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_StandardFXPrimProcess(struct _FX_PRIM *fxPrim /*$s0*/, struct _FXTracker *fxTracker /*$a3*/)
+ // line 3953, offset 0x80047d8c
+	/* begin block 1 */
+		// Start line: 3954
+		// Start offset: 0x80047D8C
+		// Variables:
+	// 		long flags; // $a2
+
+		/* begin block 1.1 */
+			// Start line: 3969
+			// Start offset: 0x80047DD8
+			// Variables:
+		// 		long start; // stack offset -16
+		// 		long end; // stack offset -12
+		/* end block 1.1 */
+		// End offset: 0x80047EBC
+		// End Line: 3984
+
+		/* begin block 1.2 */
+			// Start line: 3988
+			// Start offset: 0x80047EC8
+			// Variables:
+		// 		int current_scale; // $v1
+		/* end block 1.2 */
+		// End offset: 0x80047EF8
+		// End Line: 3998
+
+		/* begin block 1.3 */
+			// Start line: 4003
+			// Start offset: 0x80047F00
+			// Variables:
+		// 		struct MATRIX *swTransform; // $v1
+		/* end block 1.3 */
+		// End offset: 0x80047F00
+		// End Line: 4004
+
+		/* begin block 1.4 */
+			// Start line: 4173
+			// Start offset: 0x8004808C
+			// Variables:
+		// 		struct _Rotation rot; // stack offset -24
+		/* end block 1.4 */
+		// End offset: 0x800480EC
+		// End Line: 4181
+	/* end block 1 */
+	// End offset: 0x800480EC
+	// End Line: 4190
+
+	/* begin block 2 */
+		// Start line: 9745
+	/* end block 2 */
+	// End Line: 9746
+
+void FX_StandardFXPrimProcess(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  short in_v0;
+  int iVar1;
+  uint in_a2;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  undefined4 uVar4;
+  int unaff_s0;
+  undefined2 uStack00000010;
+  short sStack00000012;
+  short sStack00000014;
+  byte in_stack_00000018;
+  byte in_stack_00000019;
+  byte in_stack_0000001a;
+  byte in_stack_0000001c;
+  byte in_stack_0000001d;
+  byte in_stack_0000001e;
+  
+  *(short *)(unaff_s0 + 0x34) = in_v0;
+  if (0x1000 < in_v0) {
+    *(undefined2 *)(unaff_s0 + 0x34) = 0x1000;
+  }
+  setCopReg(2,0x4000,0x1000 - (int)*(short *)(unaff_s0 + 0x34));
+  setCopReg(2,0x4800,(uint)in_stack_00000018);
+  setCopReg(2,0x5000,(uint)in_stack_00000019);
+  setCopReg(2,0x5800,(uint)in_stack_0000001a);
+  copFunction(2,0x198003d);
+  setCopReg(2,0x4000,(uint)*(ushort *)(unaff_s0 + 0x34));
+  setCopReg(2,0x4800,(uint)in_stack_0000001c);
+  setCopReg(2,0x5000,(uint)in_stack_0000001d);
+  setCopReg(2,0x5800,(uint)in_stack_0000001e);
+  copFunction(2,0x1a8003e);
+  uVar2 = getCopReg(2,0x4800);
+  uVar3 = getCopReg(2,0x5000);
+  uVar4 = getCopReg(2,0x5800);
+  *(undefined *)(unaff_s0 + 0x1c) = (char)uVar2;
+  *(undefined *)(unaff_s0 + 0x1d) = (char)uVar3;
+  *(undefined *)(unaff_s0 + 0x1e) = (char)uVar4;
+  if ((in_a2 & 1) != 0) {
+    *(uint *)(unaff_s0 + 0x1c) = *(uint *)(unaff_s0 + 0x1c) & 0x3ffffff | 0x2c000000;
+  }
+  if ((in_a2 & 0x2000) != 0) {
+    iVar1 = (int)*(short *)(unaff_s0 + 0x3e) - (int)*(short *)(unaff_s0 + 0x5a);
+    if (iVar1 < 1) {
+      FUN_80041fcc();
+      return;
+    }
+    *(undefined2 *)(unaff_s0 + 0x3e) = (short)iVar1;
+  }
+  if ((in_a2 & 0x20) == 0) {
+    if ((in_a2 & 2) == 0) {
+      *(short *)(unaff_s0 + 0x5c) = *(short *)(unaff_s0 + 0x5c) + *(short *)(unaff_s0 + 0x62);
+      *(short *)(unaff_s0 + 0x5e) = *(short *)(unaff_s0 + 0x5e) + *(short *)(unaff_s0 + 100);
+      *(short *)(unaff_s0 + 0x60) = *(short *)(unaff_s0 + 0x60) + *(short *)(unaff_s0 + 0x66);
+      if ((in_a2 & 0x1000000) == 0) {
+        *(short *)(unaff_s0 + 0x2c) = *(short *)(unaff_s0 + 0x2c) + *(short *)(unaff_s0 + 0x5c);
+        *(short *)(unaff_s0 + 0x2e) = *(short *)(unaff_s0 + 0x2e) + *(short *)(unaff_s0 + 0x5e);
+        *(short *)(unaff_s0 + 0x30) = *(short *)(unaff_s0 + 0x30) + *(short *)(unaff_s0 + 0x60);
+      }
+      else {
+        *(short *)(unaff_s0 + 0x3c) = *(short *)(unaff_s0 + 0x3c) + *(short *)(unaff_s0 + 0x5c);
+        *(short *)(unaff_s0 + 0x44) = *(short *)(unaff_s0 + 0x44) + *(short *)(unaff_s0 + 0x5c);
+        *(short *)(unaff_s0 + 0x3e) = *(short *)(unaff_s0 + 0x3e) + *(short *)(unaff_s0 + 0x5e);
+        *(short *)(unaff_s0 + 0x46) = *(short *)(unaff_s0 + 0x46) + *(short *)(unaff_s0 + 0x5e);
+        *(short *)(unaff_s0 + 0x40) = *(short *)(unaff_s0 + 0x40) + *(short *)(unaff_s0 + 0x60);
+        *(short *)(unaff_s0 + 0x48) = *(short *)(unaff_s0 + 0x48) + *(short *)(unaff_s0 + 0x60);
+      }
+      if (((in_a2 & 0x100) != 0) && (*(short *)(unaff_s0 + 0x30) <= *(short *)(unaff_s0 + 0x42))) {
+        *(undefined2 *)(unaff_s0 + 0x30) = *(undefined2 *)(unaff_s0 + 0x42);
+        *(uint *)(unaff_s0 + 0xc) = *(uint *)(unaff_s0 + 0xc) | 2;
+      }
+    }
+  }
+  else {
+    iVar1 = *(int *)(*(int *)(unaff_s0 + 0x5c) + 0x40) + *(int *)(unaff_s0 + 0x60) * 0x20;
+    *(undefined2 *)(unaff_s0 + 0x2c) = *(undefined2 *)(iVar1 + 0x14);
+    *(undefined2 *)(unaff_s0 + 0x2e) = *(undefined2 *)(iVar1 + 0x18);
+    *(undefined2 *)(unaff_s0 + 0x30) = *(undefined2 *)(iVar1 + 0x1c);
+  }
+  if (((((in_a2 & 0x8000000) == 0) && (iVar1 = *(int *)(unaff_s0 + 0x18), iVar1 != 0)) &&
+      ((*(uint *)(iVar1 + 8) & 2) == 0)) &&
+     (*(uint *)(iVar1 + 8) = *(uint *)(iVar1 + 8) | 2, (in_a2 & 0x80) != 0)) {
+    uStack00000010 = (undefined2)((int)*(char *)(unaff_s0 + 0x53) << 2);
+    sStack00000012 = (short)((int)*(char *)(unaff_s0 + 0x5a) << 2);
+    sStack00000014 = (short)((int)*(char *)(unaff_s0 + 0x5b) << 2);
+    FUN_80078bf4((int)*(char *)(unaff_s0 + 0x53) << 2,*(int *)(unaff_s0 + 0x18) + 0xc);
+    FUN_80078d28((int)sStack00000012,*(int *)(unaff_s0 + 0x18) + 0xc);
+                    /* WARNING: Subroutine does not return */
+    FUN_80078e5c((int)sStack00000014,*(int *)(unaff_s0 + 0x18) + 0xc);
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_AttachedParticlePrimProcess(struct _FX_PRIM *fxPrim /*$a2*/, struct _FXTracker *fxTracker /*$a1*/)
+ // line 4192, offset 0x800480fc
+	/* begin block 1 */
+		// Start line: 4193
+		// Start offset: 0x800480FC
+		// Variables:
+	// 		struct MATRIX *swTransform; // $a3
+	// 		struct MATRIX *swTransformOld; // $t0
+	// 		struct _Instance *instance; // $v1
+	/* end block 1 */
+	// End offset: 0x80048178
+	// End Line: 4207
+
+	/* begin block 2 */
+		// Start line: 10243
+	/* end block 2 */
+	// End Line: 10244
+
+void FX_AttachedParticlePrimProcess(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  short in_v1;
+  int in_a2;
+  int in_t0;
+  
+  *(short *)(in_a2 + 0x30) = *(short *)(in_a2 + 0x30) + (in_v1 - *(short *)(in_t0 + 0x1c));
+  FUN_80047d24();
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_FlamePrimProcess(struct _FX_PRIM *fxPrim /*$a3*/, struct _FXTracker *fxTracker /*$a1*/)
+ // line 4210, offset 0x80048190
+	/* begin block 1 */
+		// Start line: 4211
+		// Start offset: 0x80048190
+		// Variables:
+	// 		struct MATRIX *swTransform; // $a0
+	// 		struct MATRIX *swTransformOld; // $a2
+	// 		struct _Instance *instance; // $v0
+	// 		struct _SVector movement; // stack offset -16
+	// 		int total; // $a0
+	/* end block 1 */
+	// End offset: 0x80048354
+	// End Line: 4244
+
+	/* begin block 2 */
+		// Start line: 10282
+	/* end block 2 */
+	// End Line: 10283
+
+void FX_FlamePrimProcess(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  int in_v0;
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int in_a2;
+  int in_a3;
+  short sStack00000010;
+  short sStack00000012;
+  short sStack00000014;
+  
+  iVar1 = in_v0 * 2;
+  if (iVar1 < 0) {
+    iVar1 = iVar1 + 0x7f;
+  }
+  sStack00000010 = (short)(iVar1 >> 7);
+  iVar1 = (int)((int)fxPrim->matrix - *(int *)(in_a2 + 0x18)) * 0x6e;
+  if (iVar1 < 0) {
+    iVar1 = iVar1 + 0x7f;
+  }
+  sStack00000012 = (short)(iVar1 >> 7);
+  iVar1 = (fxPrim->color - *(int *)(in_a2 + 0x1c)) * 0x6e;
+  if (iVar1 < 0) {
+    iVar1 = iVar1 + 0x7f;
+  }
+  sStack00000014 = (short)(iVar1 >> 7);
+  iVar1 = (int)sStack00000010;
+  if (iVar1 < 0) {
+    iVar1 = -iVar1;
+  }
+  iVar2 = (int)sStack00000012;
+  if (iVar2 < 0) {
+    iVar2 = -iVar2;
+  }
+  iVar3 = (int)sStack00000014;
+  if (iVar3 < 0) {
+    iVar3 = -iVar3;
+  }
+  iVar3 = iVar1 + iVar2 + iVar3;
+  if (iVar3 != 0) {
+    *(short *)(in_a3 + 0x2c) = *(short *)(in_a3 + 0x2c) + sStack00000010;
+    *(short *)(in_a3 + 0x2e) = *(short *)(in_a3 + 0x2e) + sStack00000012;
+    *(short *)(in_a3 + 0x30) = *(short *)(in_a3 + 0x30) + sStack00000014;
+  }
+  if (iVar3 < 0x29) {
+    *(undefined2 *)(in_a3 + 0x66) = 1;
+  }
+  else {
+    *(undefined2 *)(in_a3 + 0x66) = 0;
+    iVar1 = (uint)*(ushort *)(in_a3 + 0x3e) - ((int)(iVar3 * 3 + ((uint)(iVar3 * 3) >> 0x1f)) >> 1);
+    *(undefined2 *)(in_a3 + 0x3e) = (short)iVar1;
+    if (iVar1 * 0x10000 < 0) {
+      *(undefined2 *)(in_a3 + 0x3e) = 0;
+    }
+  }
+  FUN_80047d24();
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_DFacadeParticleSetup(struct _FX_PRIM *fxPrim /*$t1*/, struct SVECTOR *center /*$a1*/, short halveWidth /*$a2*/, short halveHeight /*$a3*/, long color /*stack 16*/, struct SVECTOR *vel /*stack 20*/, struct SVECTOR *accl /*stack 24*/, struct _FXTracker *fxTracker /*stack 28*/, int timeToLive /*stack 32*/)
+ // line 4256, offset 0x80048364
+	/* begin block 1 */
+		// Start line: 4257
+		// Start offset: 0x80048364
+
+		/* begin block 1.1 */
+			// Start line: 4257
+			// Start offset: 0x80048364
+			// Variables:
+		// 		short _x1; // $v0
+		// 		short _y1; // $v1
+		// 		short _z1; // $a0
+		// 		struct _Position *_v0; // $v0
+		/* end block 1.1 */
+		// End offset: 0x80048364
+		// End Line: 4257
+	/* end block 1 */
+	// End offset: 0x80048444
+	// End Line: 4298
+
+	/* begin block 2 */
+		// Start line: 10375
+	/* end block 2 */
+	// End Line: 10376
+
+void FX_DFacadeParticleSetup
+               (_FX_PRIM *fxPrim,SVECTOR *center,short halveWidth,short halveHeight,long color,
+               SVECTOR *vel,SVECTOR *accl,_FXTracker *fxTracker,int timeToLive)
+
+{
+  undefined2 *in_v1;
+  int in_t1;
+  
+  if (in_v1 == (undefined2 *)0x0) {
+    *(undefined2 *)(in_t1 + 0x5c) = 0;
+    *(undefined2 *)(in_t1 + 0x5e) = 0;
+    *(undefined2 *)(in_t1 + 0x60) = 0;
+  }
+  else {
+    *(undefined2 *)(in_t1 + 0x5c) = *in_v1;
+    *(undefined2 *)(in_t1 + 0x5e) = in_v1[1];
+    *(undefined2 *)(in_t1 + 0x60) = in_v1[2];
+  }
+  if (accl == (SVECTOR *)0x0) {
+    *(undefined2 *)(in_t1 + 0x62) = 0;
+    *(undefined2 *)(in_t1 + 100) = 0;
+    *(undefined2 *)(in_t1 + 0x66) = 0;
+  }
+  else {
+    *(short *)(in_t1 + 0x62) = accl->vx;
+    *(short *)(in_t1 + 100) = accl->vy;
+    *(short *)(in_t1 + 0x66) = accl->vz;
+  }
+  *(undefined2 *)(in_t1 + 0x10) = (undefined2)timeToLive;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FX_PRIM * /*$ra*/ FX_Dot(struct _SVector *location /*$s4*/, struct _SVector *vel /*$s6*/, struct _SVector *accel /*$s7*/, int scale_speed /*$fp*/, long color /*stack 16*/, long size /*stack 20*/, int lifetime /*stack 24*/, int texture_num /*stack 28*/)
+ // line 4302, offset 0x8004844c
+	/* begin block 1 */
+		// Start line: 4303
+		// Start offset: 0x8004844C
+		// Variables:
+	// 		struct _FX_PRIM *fxPrim; // $s0
+	/* end block 1 */
+	// End offset: 0x80048584
+	// End Line: 4333
+
+	/* begin block 2 */
+		// Start line: 10514
+	/* end block 2 */
+	// End Line: 10515
+
+/* WARNING: Variable defined which should be unmapped: color */
+/* WARNING: Variable defined which should be unmapped: texture_num */
+/* WARNING: Variable defined which should be unmapped: size */
+/* WARNING: Variable defined which should be unmapped: lifetime */
+
+_FX_PRIM *
+FX_Dot(_SVector *location,_SVector *vel,_SVector *accel,int scale_speed,long color,long size,
+      int lifetime,int texture_num)
+
+{
+  uint uVar1;
+  _FX_PRIM *unaff_s0;
+  int unaff_s8;
+  
+  FUN_80049fc0();
+  if (unaff_s8 != 0) {
+    uVar1 = unaff_s0->flags;
+    (unaff_s0->v0).y = 0x1000;
+    unaff_s0->work3 = (short)unaff_s8;
+    unaff_s0->flags = uVar1 | 0x2000;
+  }
+  FUN_80045fc8(&DAT_00006d98 + fontTracker.font_buffer._1144_4_);
+  return unaff_s0;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Blood(struct _SVector *location /*$s4*/, struct _SVector *input_vel /*$s1*/, struct _SVector *accel /*$s5*/, int amount /*$a3*/, long color /*stack 16*/, long size /*stack 20*/)
+ // line 4336, offset 0x800485b8
+	/* begin block 1 */
+		// Start line: 4337
+		// Start offset: 0x800485B8
+		// Variables:
+	// 		int i; // $s0
+
+		/* begin block 1.1 */
+			// Start line: 4342
+			// Start offset: 0x800485F4
+			// Variables:
+		// 		struct _SVector vel; // stack offset -40
+		/* end block 1.1 */
+		// End offset: 0x80048680
+		// End Line: 4346
+	/* end block 1 */
+	// End offset: 0x800486D0
+	// End Line: 4349
+
+	/* begin block 2 */
+		// Start line: 10588
+	/* end block 2 */
+	// End Line: 10589
+
+void FX_Blood(_SVector *location,_SVector *input_vel,_SVector *accel,int amount,long color,long size
+             )
+
+{
+  short in_v0;
+  short in_v1;
+  short sStack00000020;
+  
+  sStack00000020 = in_v0 + in_v1 + -4;
+                    /* WARNING: Subroutine does not return */
+  FUN_800bcddc();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Blood2(struct _SVector *location /*$a0*/, struct _SVector *input_vel /*$a1*/, struct _SVector *accel /*$a2*/, int amount /*$a3*/, long color /*stack 16*/, long dummyCrapShouldRemove /*stack 20*/)
+ // line 4351, offset 0x800486f4
+	/* begin block 1 */
+		// Start line: 10625
+	/* end block 1 */
+	// End Line: 10626
+
+void FX_Blood2(_SVector *location,_SVector *input_vel,_SVector *accel,int amount,long color,
+              long dummyCrapShouldRemove)
+
+{
+  int in_v0;
+  int iVar1;
+  undefined2 uStack00000020;
+  undefined2 uStack00000022;
+  undefined2 uStack00000024;
+  undefined2 uStack00000028;
+  undefined2 uStack0000002a;
+  undefined2 uStack0000002c;
+  short sStack0000003a;
+  short sStack0000003c;
+  
+  sStack0000003a =
+       *(short *)(amount + in_v0 + 0x18) - *(short *)(amount + *(int *)&accel[8].z + 0x18);
+  sStack0000003c =
+       *(short *)(amount + *(int *)(accel + 8) + 0x1c) -
+       *(short *)(amount + *(int *)&accel[8].z + 0x1c);
+  iVar1 = ((int)input_vel << 0x10) >> 0xb;
+  uStack00000020 = *(undefined2 *)(iVar1 + *(int *)(location + 8) + 0x14);
+  uStack00000022 = *(undefined2 *)(iVar1 + *(int *)(location + 8) + 0x18);
+  uStack00000024 = *(undefined2 *)(iVar1 + *(int *)(location + 8) + 0x1c);
+  uStack00000028 = 0;
+  uStack0000002a = 0;
+  uStack0000002c = 0xfffe;
+                    /* WARNING: Subroutine does not return */
+  FUN_800bcddc();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Blood_Impale(struct _Instance *locinst /*$a0*/, short locseg /*$a1*/, struct _Instance *instance /*$a2*/, short segment /*$a3*/)
+ // line 4383, offset 0x80048720
+	/* begin block 1 */
+		// Start line: 4384
+		// Start offset: 0x80048720
+		// Variables:
+	// 		struct _SVector location; // stack offset -40
+	// 		struct _SVector accel; // stack offset -32
+	// 		struct _SVector vel; // stack offset -24
+	// 		struct _SVector input_vel; // stack offset -16
+	// 		int i; // $s0
+	/* end block 1 */
+	// End offset: 0x800488DC
+	// End Line: 4409
+
+	/* begin block 2 */
+		// Start line: 8766
+	/* end block 2 */
+	// End Line: 8767
+
+void FX_Blood_Impale(_Instance *locinst,short locseg,_Instance *instance,short segment)
+
+{
+  int in_v0;
+  int in_v1;
+  int iVar1;
+  undefined2 in_register_0000001e;
+  undefined2 uStack00000020;
+  undefined2 uStack00000022;
+  undefined2 uStack00000024;
+  undefined2 uStack00000028;
+  undefined2 uStack0000002a;
+  undefined2 uStack0000002c;
+  short sStack0000003c;
+  
+  sStack0000003c =
+       *(short *)(in_v0 + 0x1c) - *(short *)(CONCAT22(in_register_0000001e,segment) + in_v1 + 0x1c);
+  iVar1 = (int)((uint)(ushort)locseg << 0x10) >> 0xb;
+  uStack00000020 = *(undefined2 *)((int)locinst->matrix->t + iVar1);
+  uStack00000022 = *(undefined2 *)((int)locinst->matrix->t + iVar1 + 4);
+  uStack00000024 = *(undefined2 *)((int)locinst->matrix->t + iVar1 + 8);
+  uStack00000028 = 0;
+  uStack0000002a = 0;
+  uStack0000002c = 0xfffe;
+                    /* WARNING: Subroutine does not return */
+  FUN_800bcddc();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXParticle * /*$ra*/ FX_BloodCone(struct _Instance *instance /*$a0*/, short startSegment /*$a1*/, long time /*$s2*/)
+ // line 4415, offset 0x800488ec
+	/* begin block 1 */
+		// Start line: 4416
+		// Start offset: 0x800488EC
+		// Variables:
+	// 		struct _FXParticle *currentParticle; // $s0
+	// 		struct Object *particle; // $s1
+	/* end block 1 */
+	// End offset: 0x800489A0
+	// End Line: 4444
+
+	/* begin block 2 */
+		// Start line: 10745
+	/* end block 2 */
+	// End Line: 10746
+
+_FXParticle * FX_BloodCone(_Instance *instance,short startSegment,long time)
+
+{
+  long in_v1;
+  _FXParticle *unaff_s0;
+  short unaff_s2;
+  
+  unaff_s0->birthRadius = 0x14;
+  (unaff_s0->direction).x = 0x100;
+  (unaff_s0->direction).y = 0x100;
+  (unaff_s0->direction).z = 0x100;
+  (unaff_s0->acceleration).z = -2;
+  unaff_s0->numberBirthParticles = '\n';
+  (unaff_s0->acceleration).x = 0;
+  (unaff_s0->acceleration).y = 0;
+  unaff_s0->startColor = in_v1;
+  unaff_s0->endColor = 0;
+  unaff_s0->lifeTime = unaff_s2;
+  unaff_s0->primLifeTime = 10;
+  FUN_8004ae18();
+  return unaff_s0;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXParticle * /*$ra*/ FX_GetTorchParticle(struct _Instance *instance /*$s1*/, short startSegment /*$a1*/, int tex /*$s2*/, int birthRadius /*$s3*/, int num /*stack 16*/)
+ // line 4447, offset 0x800489b8
+	/* begin block 1 */
+		// Start line: 4448
+		// Start offset: 0x800489B8
+		// Variables:
+	// 		struct _FXParticle *currentParticle; // $s0
+	/* end block 1 */
+	// End offset: 0x80048A7C
+	// End Line: 4472
+
+	/* begin block 2 */
+		// Start line: 10838
+	/* end block 2 */
+	// End Line: 10839
+
+_FXParticle *
+FX_GetTorchParticle(_Instance *instance,short startSegment,int tex,int birthRadius,int num)
+
+{
+  ushort uVar1;
+  TextureMT3 *in_v0;
+  _FXParticle *unaff_s0;
+  short unaff_s3;
+  char in_stack_00000038;
+  
+  uVar1 = unaff_s0->flag_bits;
+  unaff_s0->texture = in_v0;
+  unaff_s0->primLifeTime = 0x10;
+  (unaff_s0->acceleration).z = 1;
+  unaff_s0->lifeTime = -1;
+  unaff_s0->startFadeValue = 5;
+  unaff_s0->fadeStep = 5;
+  unaff_s0->size = 0x30;
+  unaff_s0->endColor = 0;
+  unaff_s0->scaleSpeed = 100;
+  unaff_s0->birthRadius = unaff_s3;
+  unaff_s0->numberBirthParticles = in_stack_00000038;
+  unaff_s0->flag_bits = uVar1 | 1;
+  FUN_8004ae18();
+  return unaff_s0;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXParticle * /*$ra*/ FX_TorchFlame(struct _Instance *instance /*$s2*/, short startSegment /*$a1*/)
+ // line 4475, offset 0x80048a9c
+	/* begin block 1 */
+		// Start line: 4476
+		// Start offset: 0x80048A9C
+		// Variables:
+	// 		struct _FXParticle *currentParticle; // $s0
+	// 		struct Object *particle; // $s3
+	/* end block 1 */
+	// End offset: 0x80048BD8
+	// End Line: 4524
+
+	/* begin block 2 */
+		// Start line: 10917
+	/* end block 2 */
+	// End Line: 10918
+
+_FXParticle * FX_TorchFlame(_Instance *instance,short startSegment)
+
+{
+  undefined2 in_v0;
+  int iVar1;
+  int unaff_s0;
+  undefined4 uStack00000010;
+  
+  *(undefined2 *)(unaff_s0 + 0x26) = in_v0;
+  *(undefined2 *)(unaff_s0 + 0x28) = 0x38;
+  uStack00000010 = 0xffffffff;
+  iVar1 = FUN_80048950();
+  if (iVar1 != 0) {
+    *(undefined2 *)(iVar1 + 0x24) = 0x18;
+    *(undefined2 *)(iVar1 + 0x26) = 0x10;
+    *(undefined2 *)(iVar1 + 0x28) = 0x10;
+  }
+  iVar1 = FUN_800420fc();
+  if (iVar1 != 0) {
+                    /* WARNING: Subroutine does not return */
+    *(undefined2 *)(iVar1 + 0x1c) = 10;
+    FUN_80046000();
+  }
+  return (_FXParticle *)0x0;
+}
+
+
+
+// autogenerated function stub: 
+// int /*$ra*/ FX_GetMorphFadeVal()
+int FX_GetMorphFadeVal()
+{ // line 4526, offset 0x80048bf8
+	/* begin block 1 */
+		// Start line: 4528
+		// Start offset: 0x80048BF8
+		// Variables:
+			int fade; // $a0
+	/* end block 1 */
+	// End offset: 0x80048C30
+	// End Line: 4531
+
+	/* begin block 2 */
+		// Start line: 11050
+	/* end block 2 */
+	// End Line: 11051
+
+	/* begin block 3 */
+		// Start line: 11051
+	/* end block 3 */
+	// End Line: 11052
+
+	return 0;
+}
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_ConvertCamPersToWorld(struct SVECTOR *campos /*$s0*/, struct SVECTOR *worldpos /*$s1*/)
+ // line 4550, offset 0x80048c38
+	/* begin block 1 */
+		// Start line: 11098
+	/* end block 1 */
+	// End Line: 11099
+
+void FX_ConvertCamPersToWorld(SVECTOR *campos,SVECTOR *worldpos)
+
+{
+  undefined4 in_zero;
+  undefined4 in_at;
+  int in_v0;
+  undefined4 uVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  undefined4 *unaff_s0;
+  undefined2 *unaff_s1;
+  
+  *(short *)((int)unaff_s0 + 2) = *(short *)((int)unaff_s0 + 2) + -0x78;
+  *(short *)unaff_s0 = (short)(((int)campos * in_v0) / 0x140);
+  *(undefined2 *)((int)unaff_s0 + 2) =
+       (short)(((int)*(short *)((int)unaff_s0 + 2) * (int)*(short *)(unaff_s0 + 1)) / 0x140);
+  setCopReg(2,in_zero,*unaff_s0);
+  setCopReg(2,in_at,unaff_s0[1]);
+  copFunction(2,0x480012);
+  uVar1 = getCopReg(2,0x4800);
+  uVar2 = getCopReg(2,0x5000);
+  uVar3 = getCopReg(2,0x5800);
+  *unaff_s1 = (short)uVar1;
+  unaff_s1[1] = (short)uVar2;
+  unaff_s1[2] = (short)uVar3;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_GetRandomScreenPt(struct SVECTOR *point /*$s0*/)
+ // line 4570, offset 0x80048d50
+	/* begin block 1 */
+		// Start line: 11148
+	/* end block 1 */
+	// End Line: 11149
+
+void FX_GetRandomScreenPt(SVECTOR *point)
+
+{
+  undefined2 in_v0;
+  int unaff_s0;
+  
+                    /* WARNING: Subroutine does not return */
+  *(undefined2 *)(unaff_s0 + 2) = in_v0;
+  FUN_800bcddc();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_ProcessSnow(struct _FX_PRIM *fxPrim /*$s0*/, struct _FXTracker *fxTracker /*$s1*/)
+ // line 4577, offset 0x80048ddc
+	/* begin block 1 */
+		// Start line: 4578
+		// Start offset: 0x80048DDC
+
+		/* begin block 1.1 */
+			// Start line: 4581
+			// Start offset: 0x80048E00
+			// Variables:
+		// 		struct SVECTOR position; // stack offset -24
+		/* end block 1.1 */
+		// End offset: 0x80048E48
+		// End Line: 4597
+	/* end block 1 */
+	// End offset: 0x80048EFC
+	// End Line: 4611
+
+	/* begin block 2 */
+		// Start line: 11162
+	/* end block 2 */
+	// End Line: 11163
+
+void FX_ProcessSnow(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  int unaff_s0;
+  
+  if (0 < *(short *)(unaff_s0 + 0x10)) {
+    *(short *)(unaff_s0 + 0x10) = *(short *)(unaff_s0 + 0x10) + -1;
+  }
+  if (*(short *)(unaff_s0 + 0x10) == 0) {
+    FUN_80041fcc();
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_800bcddc(fxPrim,unaff_s0 + 0x2c);
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_ContinueSnow(struct _FXTracker *fxTracker /*$s1*/)
+ // line 4613, offset 0x80048f10
+	/* begin block 1 */
+		// Start line: 4614
+		// Start offset: 0x80048F10
+		// Variables:
+	// 		struct _FX_PRIM *fxPrim; // $s0
+	// 		struct SVECTOR position; // stack offset -40
+	// 		struct SVECTOR vel; // stack offset -32
+
+		/* begin block 1.1 */
+			// Start line: 4631
+			// Start offset: 0x80048F8C
+			// Variables:
+		// 		struct SVECTOR campos; // stack offset -24
+		/* end block 1.1 */
+		// End offset: 0x80049054
+		// End Line: 4653
+	/* end block 1 */
+	// End offset: 0x80049054
+	// End Line: 4655
+
+	/* begin block 2 */
+		// Start line: 11236
+	/* end block 2 */
+	// End Line: 11237
+
+void FX_ContinueSnow(_FXTracker *fxTracker)
+
+{
+  int iVar1;
+  undefined2 uStack00000030;
+  undefined2 uStack00000032;
+  
+  iVar1 = FUN_8004208c();
+  if (iVar1 != 0) {
+    uStack00000030 = 0;
+                    /* WARNING: Subroutine does not return */
+    uStack00000032 = 0;
+    FUN_800bcddc();
+  }
+  return;
+}
+
+
+
+// autogenerated function stub: 
+// void /*$ra*/ FX_UpdateWind(struct _FXTracker *fxTracker /*$a0*/)
+void FX_UpdateWind(struct _FXTracker *fxTracker)
+{ // line 4657, offset 0x80049068
+	/* begin block 1 */
+		// Start line: 4658
+		// Start offset: 0x80049068
+		// Variables:
+			short change; // $s0
+	/* end block 1 */
+	// End offset: 0x800491C4
+	// End Line: 4675
+
+	/* begin block 2 */
+		// Start line: 11335
+	/* end block 2 */
+	// End Line: 11336
+
+}
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_ProcessRain(struct _FX_PRIM *fxPrim /*$a2*/, struct _FXTracker *fxTracker /*$a1*/)
+ // line 4682, offset 0x800491e0
+	/* begin block 1 */
+		// Start line: 4683
+		// Start offset: 0x800491E0
+		// Variables:
+	// 		int zvel; // $a3
+	/* end block 1 */
+	// End offset: 0x800492A0
+	// End Line: 4705
+
+	/* begin block 2 */
+		// Start line: 11389
+	/* end block 2 */
+	// End Line: 11390
+
+void FX_ProcessRain(_FX_PRIM *fxPrim,_FXTracker *fxTracker)
+
+{
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_ContinueRain(struct _FXTracker *fxTracker /*$s7*/)
+ // line 4707, offset 0x800492b0
+	/* begin block 1 */
+		// Start line: 4708
+		// Start offset: 0x800492B0
+		// Variables:
+	// 		struct _FX_PRIM *fxPrim; // $s0
+	// 		struct SVECTOR campos; // stack offset -56
+	// 		int n; // $s4
+	// 		int rain_pct; // $s6
+	// 		long waterZLevel; // $s2
+	// 		int slack; // $s1
+	// 		int fade; // $v0
+
+		/* begin block 1.1 */
+			// Start line: 4753
+			// Start offset: 0x800493F8
+			// Variables:
+		// 		struct _SVector worldpos; // stack offset -48
+		// 		int zvel; // $s3
+		/* end block 1.1 */
+		// End offset: 0x800495AC
+		// End Line: 4796
+	/* end block 1 */
+	// End offset: 0x800495BC
+	// End Line: 4798
+
+	/* begin block 2 */
+		// Start line: 11452
+	/* end block 2 */
+	// End Line: 11453
+
+void FX_ContinueRain(_FXTracker *fxTracker)
+
+{
+  FUN_80059340(*(undefined4 *)(loadStatus.bigFile.searchDirID + 0x38));
+                    /* WARNING: Subroutine does not return */
+  FUN_800bcddc();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_MakeSpark(struct _Instance *instance /*$a0*/, struct _Model *model /*$a1*/, int segment /*$a2*/)
+ // line 4803, offset 0x800495e8
+	/* begin block 1 */
+		// Start line: 4804
+		// Start offset: 0x800495E8
+		// Variables:
+	// 		struct _FXParticle *currentParticle; // $s0
+	// 		struct Object *particle; // $s1
+	/* end block 1 */
+	// End offset: 0x80049690
+	// End Line: 4833
+
+	/* begin block 2 */
+		// Start line: 11768
+	/* end block 2 */
+	// End Line: 11769
+
+void FX_MakeSpark(_Instance *instance,_Model *model,int segment)
+
+{
+  undefined2 in_v0;
+  int unaff_s0;
+  
+  *(undefined2 *)(unaff_s0 + 0x2e) = 0;
+                    /* WARNING: Subroutine does not return */
+  *(undefined2 *)(unaff_s0 + 0x30) = in_v0;
+  FUN_80046000();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_ContinueParticle(struct _FXParticle *currentParticle /*$s2*/, struct _FXTracker *fxTracker /*stack 4*/)
+ // line 4835, offset 0x800496a4
+	/* begin block 1 */
+		// Start line: 4836
+		// Start offset: 0x800496A4
+		// Variables:
+	// 		struct _FX_PRIM *fxPrim; // $s1
+	// 		struct VECTOR movement; // stack offset -64
+	// 		int i; // $fp
+	// 		int num; // stack offset -44
+	// 		struct MATRIX *swTransform; // $s4
+	// 		struct MATRIX *swOldTransform; // $a1
+	// 		long birthRadius; // $s5
+	// 		struct _Instance *instance; // $s6
+	// 		int InstanceFade; // $s3
+	// 		unsigned long black; // stack offset -48
+
+		/* begin block 1.1 */
+			// Start line: 4956
+			// Start offset: 0x80049C20
+			// Variables:
+		// 		int tmp_blue; // $v1
+		// 		struct CVECTOR *ptr; // $s0
+
+			/* begin block 1.1.1 */
+				// Start line: 4963
+				// Start offset: 0x80049C44
+				// Variables:
+			// 		int fade; // $v0
+			/* end block 1.1.1 */
+			// End offset: 0x80049C68
+			// End Line: 4969
+		/* end block 1.1 */
+		// End offset: 0x80049C68
+		// End Line: 4970
+	/* end block 1 */
+	// End offset: 0x80049EB4
+	// End Line: 5035
+
+	/* begin block 2 */
+		// Start line: 11864
+	/* end block 2 */
+	// End Line: 11865
+
+void FX_ContinueParticle(_FXParticle *currentParticle,_FXTracker *fxTracker)
+
+{
+  int iVar1;
+  int in_v1;
+  int unaff_s2;
+  int iVar2;
+  uint uStack0000002c;
+  
+  uStack0000002c = (uint)(in_v1 == 0);
+  iVar2 = *(int *)(unaff_s2 + 8);
+  if ((((((*(uint *)(iVar2 + 0x14) & 0x800) == 0) && ((*(uint *)(iVar2 + 0x18) & 0x4000000) == 0))
+       && ((*(uint *)(iVar2 + 0x14) & 0x200) != 0)) &&
+      ((*(int *)(iVar2 + 0x40) != 0 && (*(int *)(iVar2 + 0x44) != 0)))) && (in_v1 == 0)) {
+    if ((iVar2 != loadStatus.bigFile.searchDirID) && ((short)loadStatus.decompressLen != 1000)) {
+      FUN_800355d4(iVar2);
+    }
+    iVar2 = 0;
+    if (0 < (int)uStack0000002c) {
+      do {
+        iVar1 = FUN_8004208c(fontTracker.font_buffer._1144_4_);
+        if (iVar1 != 0) {
+                    /* WARNING: Subroutine does not return */
+          FUN_800bcddc();
+        }
+        iVar2 = iVar2 + 1;
+      } while (iVar2 < (int)uStack0000002c);
+    }
+  }
+  if ((0 < *(short *)(unaff_s2 + 0xe)) &&
+     (iVar2 = (uint)*(ushort *)(unaff_s2 + 0xe) -
+              (uint)(ushort)SoundEffectChannel_ARRAY_800d13bc[0].volume,
+     *(undefined2 *)(unaff_s2 + 0xe) = (short)iVar2, iVar2 * 0x10000 < 1)) {
+    FUN_8004ae28();
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_UpdraftPrimModify(struct _FX_PRIM *fxPrim /*$s3*/, struct _Instance *instance /*$a1*/, struct _FXParticle *particle /*$s1*/, struct _FXTracker *fxTracker /*$a3*/)
+ // line 5037, offset 0x80049ee4
+	/* begin block 1 */
+		// Start line: 5038
+		// Start offset: 0x80049EE4
+		// Variables:
+	// 		int deg; // $s2
+	/* end block 1 */
+	// End offset: 0x80049FF8
+	// End Line: 5044
+
+	/* begin block 2 */
+		// Start line: 12443
+	/* end block 2 */
+	// End Line: 12444
+
+void FX_UpdraftPrimModify
+               (_FX_PRIM *fxPrim,_Instance *instance,_FXParticle *particle,_FXTracker *fxTracker)
+
+{
+  int in_v0;
+  int in_v1;
+  int unaff_s3;
+  int iVar1;
+  
+  iVar1 = in_v1 / in_v0;
+  if (iVar1 < 0) {
+    iVar1 = iVar1 + 0xfff;
+  }
+  *(undefined2 *)(unaff_s3 + 0x5c) = (short)(iVar1 >> 0xc);
+  FUN_800790d4();
+                    /* WARNING: Subroutine does not return */
+  FUN_800bcddc();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_MakeParticleTexFX(struct _FX_PRIM *fxPrim /*$s0*/, struct _SVector *position /*$a1*/, struct Object *object /*$s1*/, int modelnum /*$s4*/, int texnum /*stack 16*/, struct _SVector *vel /*stack 20*/, struct _SVector *accl /*stack 24*/, long color /*stack 28*/, int size /*stack 32*/, int life /*stack 36*/)
+ // line 5047, offset 0x8004a028
+	/* begin block 1 */
+		// Start line: 12463
+	/* end block 1 */
+	// End Line: 12464
+
+void FX_MakeParticleTexFX
+               (_FX_PRIM *fxPrim,_SVector *position,Object *object,int modelnum,int texnum,
+               _SVector *vel,_SVector *accl,long color,int size,int life)
+
+{
+  FUN_800482fc();
+                    /* WARNING: Subroutine does not return */
+  FUN_80046000();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_MakeHitFX(struct _SVector *position /*$s1*/)
+ // line 5070, offset 0x8004a130
+	/* begin block 1 */
+		// Start line: 5071
+		// Start offset: 0x8004A130
+		// Variables:
+	// 		struct _FX_PRIM *fxPrim; // $s0
+	/* end block 1 */
+	// End offset: 0x8004A1B0
+	// End Line: 5082
+
+	/* begin block 2 */
+		// Start line: 12529
+	/* end block 2 */
+	// End Line: 12530
+
+void FX_MakeHitFX(_SVector *position)
+
+{
+  int unaff_s0;
+  
+  FUN_80045fc8(position + 0xdb3);
+  *(uint *)(unaff_s0 + 0xc) = *(uint *)(unaff_s0 + 0xc) | 0x8000;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_ContinueLightning(struct _FXLightning *zap /*$a0*/, struct _FXTracker *fxTracker /*$a1*/)
+ // line 5108, offset 0x8004a1c4
+	/* begin block 1 */
+		// Start line: 12608
+	/* end block 1 */
+	// End Line: 12609
+
+void FX_ContinueLightning(_FXLightning *zap,_FXTracker *fxTracker)
+
+{
+  undefined auStack128 [88];
+  
+  if ((((*(short *)(*(int *)&zap[5].end_offset + 2) != 0) &&
+       (*(int *)(loadStatus.changeDir + 4) + 0x640U < *(uint *)(loadStatus.changeDir + 8))) &&
+      (_Normal_ARRAY_800c89d0[8]._4_4_ != 0)) &&
+     ((((*(uint *)&zap->start_offset & 0x200) != 0 && ((*(uint *)&zap->start_offset & 0x800) == 0))
+      && ((zap[1].continue_process != (void *)0x0 && (zap[1].instance != (_Instance *)0x0)))))) {
+    FUN_800bfa58(level2SelectMenu.type,(int)zap[1].continue_process + 0x20,auStack128);
+    FUN_800bce3c(auStack128);
+                    /* WARNING: Subroutine does not return */
+    FUN_800bce1c(auStack128);
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_SetReaverInstance(struct _Instance *instance /*$a0*/)
+ // line 5120, offset 0x8004a224
+	/* begin block 1 */
+		// Start line: 12632
+	/* end block 1 */
+	// End Line: 12633
+
+	/* begin block 2 */
+		// Start line: 12633
+	/* end block 2 */
+	// End Line: 12634
+
+void FX_SetReaverInstance(_Instance *instance)
+
+{
+  int in_v0;
+  undefined2 uStack00000014;
+  
+  if ((((*(int *)(in_v0 + -0x75ec) != 0) && ((instance->flags & 0x200U) != 0)) &&
+      ((instance->flags & 0x800U) == 0)) &&
+     ((instance->matrix != (MATRIX *)0x0 && (instance->oldMatrix != (MATRIX *)0x0)))) {
+    uStack00000014 = 0;
+    FUN_800bfa58(level2SelectMenu.type,instance->matrix + 1,&stack0x00000018);
+    FUN_800bce3c(&stack0x00000018);
+                    /* WARNING: Subroutine does not return */
+    FUN_800bce1c(&stack0x00000018);
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_SoulReaverBlade(struct _Instance *instance /*$a0*/, unsigned long **drawot /*stack 4*/)
+ // line 5128, offset 0x8004a230
+	/* begin block 1 */
+		// Start line: 5129
+		// Start offset: 0x8004A230
+		// Variables:
+	// 		struct SVECTOR location; // stack offset -136
+	// 		int i; // $s3
+	// 		int size; // $s2
+	// 		int reaverScale; // $s7
+	// 		struct Object *sreaver; // $s2
+	// 		struct __ReaverData *data; // $s1
+	// 		short deg; // $s4
+	// 		long color; // $fp
+	// 		struct TextureMT3 *texture; // $v0
+	// 		struct MATRIX mat; // stack offset -128
+	// 		struct DVECTOR xy_pos; // stack offset -96
+	// 		long sizex; // stack offset -48
+	// 		long sizey; // $a0
+	// 		long otz; // stack offset -44
+	// 		struct POLY_FT4 *poly; // $s5
+	// 		struct POLY_FT4 poly2; // stack offset -88
+
+		/* begin block 1.1 */
+			// Start line: 5186
+			// Start offset: 0x8004A398
+			// Variables:
+		// 		int scale1; // $s0
+		/* end block 1.1 */
+		// End offset: 0x8004A5C4
+		// End Line: 5252
+	/* end block 1 */
+	// End offset: 0x8004A5F0
+	// End Line: 5256
+
+	/* begin block 2 */
+		// Start line: 12648
+	/* end block 2 */
+	// End Line: 12649
+
+void FX_SoulReaverBlade(_Instance *instance,ulong **drawot)
+
+{
+  int unaff_s2;
+  undefined2 uStack00000014;
+  
+  if ((((unaff_s2 != 0) && ((instance->flags & 0x200U) != 0)) && ((instance->flags & 0x800U) == 0))
+     && ((instance->matrix != (MATRIX *)0x0 && (instance->oldMatrix != (MATRIX *)0x0)))) {
+    uStack00000014 = 0;
+    FUN_800bfa58(level2SelectMenu.type,instance->matrix + 1,&stack0x00000018);
+    FUN_800bce3c(&stack0x00000018);
+                    /* WARNING: Subroutine does not return */
+    FUN_800bce1c(&stack0x00000018);
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_ReaverBladeInit()
+ // line 5268, offset 0x8004a620
+	/* begin block 1 */
+		// Start line: 13199
+	/* end block 1 */
+	// End Line: 13200
+
+	/* begin block 2 */
+		// Start line: 13200
+	/* end block 2 */
+	// End Line: 13201
+
+/* WARNING: Unknown calling convention yet parameter storage is locked */
+
+void FX_ReaverBladeInit(void)
+
+{
+  short sVar1;
+  undefined4 in_a0;
+  int unaff_s4;
+  undefined4 uVar2;
+  int iVar3;
+  int iVar4;
+  undefined *puStack00000010;
+  undefined *puStack00000014;
+  undefined4 uStack00000018;
+  undefined4 uStack0000001c;
+  undefined4 uStack00000020;
+  undefined4 uStack00000024;
+  undefined4 uStack00000028;
+  undefined4 uStack0000002c;
+  undefined4 uStack00000030;
+  undefined2 uStack00000058;
+  undefined2 uStack0000005a;
+  undefined2 uStack0000005c;
+  undefined2 uStack00000060;
+  undefined2 uStack00000062;
+  undefined2 uStack00000064;
+  undefined4 uStack00000068;
+  int in_stack_00000098;
+  undefined4 in_stack_000000a0;
+  undefined4 in_stack_000000a4;
+  
+  sVar1 = *(short *)(unaff_s4 + 6);
+  FUN_800bfa58(in_a0,*(int *)(loadStatus.bigFile.searchDirID + 0x40) + 0x500,&stack0x00000038);
+  iVar3 = (int)-sVar1;
+  uStack0000005c = 0;
+  uStack0000005a = 0;
+  uStack00000058 = 0;
+  uStack00000062 = 0;
+  uStack00000060 = 0;
+  uStack00000064 = 0xff80;
+  uVar2 = *(undefined4 *)(unaff_s4 + 0x14);
+  uStack00000030 = *(undefined4 *)(unaff_s4 + 0x18);
+  uStack00000018 = 0x1e;
+  uStack0000001c = 10;
+  uStack00000020 = 0x10;
+  uStack00000024 = 0x20;
+  uStack00000028 = 0;
+  puStack00000010 = &stack0x00000058;
+  puStack00000014 = &stack0x00000060;
+  uStack0000002c = uVar2;
+  uStack00000068 = uStack00000030;
+  FUN_8004ea98(in_stack_000000a4,in_stack_000000a0,&stack0x00000038,iVar3);
+  FUN_800bfa58(in_stack_000000a4,*(int *)(loadStatus.bigFile.searchDirID + 0x40) + 0x4e0,
+               &stack0x00000038);
+  uStack00000064 = 0xffa0;
+  uStack00000018 = 0x1e;
+  uStack0000001c = 10;
+  uStack00000020 = 0x10;
+  uStack00000024 = 0x20;
+  uStack00000028 = 0;
+  uStack00000030 = uStack00000068;
+  puStack00000010 = &stack0x00000058;
+  puStack00000014 = &stack0x00000060;
+  uStack0000002c = uVar2;
+  FUN_8004ea98(in_stack_000000a4,in_stack_000000a0,&stack0x00000038,iVar3);
+  iVar4 = (int)*(short *)(unaff_s4 + 2) * (int)*(short *)(unaff_s4 + 0x1c);
+  if (iVar4 < 0) {
+    iVar4 = iVar4 + 0xfff;
+  }
+  iVar4 = (iVar4 >> 0xc) * -0x17c;
+  if (iVar4 < 0) {
+    iVar4 = iVar4 + 0xfff;
+  }
+  uStack00000064 = (undefined2)(iVar4 >> 0xc);
+  if (*(short *)(unaff_s4 + 4) == 1) {
+    uVar2 = 0xfcffd3;
+  }
+  FUN_800bfa58(in_stack_000000a4,*(int *)(in_stack_00000098 + 0x40) + 0x20,&stack0x00000038);
+  uStack0000001c = 0x19;
+  uStack00000020 = 4;
+  uStack00000018 = 0;
+  uStack00000024 = 8;
+  uStack00000028 = 0;
+  uStack00000030 = uStack00000068;
+  puStack00000010 = &stack0x00000058;
+  puStack00000014 = &stack0x00000060;
+  uStack0000002c = uVar2;
+  FUN_8004ea98(in_stack_000000a4,in_stack_000000a0,&stack0x00000038,iVar3);
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_SoulReaverWinding(struct _Instance *instance /*stack 0*/, struct _PrimPool *primPool /*$a1*/, unsigned long **ot /*stack 8*/, struct MATRIX *wcTransform /*stack 12*/)
+ // line 5275, offset 0x8004a628
+	/* begin block 1 */
+		// Start line: 5276
+		// Start offset: 0x8004A628
+		// Variables:
+	// 		struct MATRIX mat; // stack offset -96
+	// 		struct MATRIX *swTransform; // $a1
+	// 		struct _SVector start; // stack offset -64
+	// 		struct _SVector end; // stack offset -56
+	// 		struct __ReaverData *data; // $s4
+	// 		long color; // $s5
+	// 		long glow_color; // stack offset -48
+	/* end block 1 */
+	// End offset: 0x8004A848
+	// End Line: 5350
+
+	/* begin block 2 */
+		// Start line: 13213
+	/* end block 2 */
+	// End Line: 13214
+
+void FX_SoulReaverWinding(_Instance *instance,_PrimPool *primPool,ulong **ot,MATRIX *wcTransform)
+
+{
+  short sVar1;
+  int in_v0;
+  int unaff_s4;
+  undefined4 uVar2;
+  int iVar3;
+  int iVar4;
+  undefined *puStack00000010;
+  undefined *puStack00000014;
+  undefined4 uStack00000018;
+  undefined4 uStack0000001c;
+  undefined4 uStack00000020;
+  undefined4 uStack00000024;
+  undefined4 uStack00000028;
+  undefined4 uStack0000002c;
+  undefined4 uStack00000030;
+  undefined2 uStack00000058;
+  undefined2 uStack0000005a;
+  undefined2 uStack0000005c;
+  undefined2 uStack00000060;
+  undefined2 uStack00000062;
+  undefined2 uStack00000064;
+  undefined4 uStack00000068;
+  int in_stack_00000098;
+  undefined4 in_stack_000000a0;
+  undefined4 in_stack_000000a4;
+  
+  sVar1 = *(short *)(unaff_s4 + 6);
+  FUN_800bfa58(instance,*(int *)(in_v0 + 0x40) + 0x500);
+  iVar3 = (int)-sVar1;
+  uStack0000005c = 0;
+  uStack0000005a = 0;
+  uStack00000058 = 0;
+  uStack00000062 = 0;
+  uStack00000060 = 0;
+  uStack00000064 = 0xff80;
+  uVar2 = *(undefined4 *)(unaff_s4 + 0x14);
+  uStack00000030 = *(undefined4 *)(unaff_s4 + 0x18);
+  uStack00000018 = 0x1e;
+  uStack0000001c = 10;
+  uStack00000020 = 0x10;
+  uStack00000024 = 0x20;
+  uStack00000028 = 0;
+  puStack00000010 = &stack0x00000058;
+  puStack00000014 = &stack0x00000060;
+  uStack0000002c = uVar2;
+  uStack00000068 = uStack00000030;
+  FUN_8004ea98(in_stack_000000a4,in_stack_000000a0,&stack0x00000038,iVar3);
+  FUN_800bfa58(in_stack_000000a4,*(int *)(loadStatus.bigFile.searchDirID + 0x40) + 0x4e0,
+               &stack0x00000038);
+  uStack00000064 = 0xffa0;
+  uStack00000018 = 0x1e;
+  uStack0000001c = 10;
+  uStack00000020 = 0x10;
+  uStack00000024 = 0x20;
+  uStack00000028 = 0;
+  uStack00000030 = uStack00000068;
+  puStack00000010 = &stack0x00000058;
+  puStack00000014 = &stack0x00000060;
+  uStack0000002c = uVar2;
+  FUN_8004ea98(in_stack_000000a4,in_stack_000000a0,&stack0x00000038,iVar3);
+  iVar4 = (int)*(short *)(unaff_s4 + 2) * (int)*(short *)(unaff_s4 + 0x1c);
+  if (iVar4 < 0) {
+    iVar4 = iVar4 + 0xfff;
+  }
+  iVar4 = (iVar4 >> 0xc) * -0x17c;
+  if (iVar4 < 0) {
+    iVar4 = iVar4 + 0xfff;
+  }
+  uStack00000064 = (undefined2)(iVar4 >> 0xc);
+  if (*(short *)(unaff_s4 + 4) == 1) {
+    uVar2 = 0xfcffd3;
+  }
+  FUN_800bfa58(in_stack_000000a4,*(int *)(in_stack_00000098 + 0x40) + 0x20,&stack0x00000038);
+  uStack0000001c = 0x19;
+  uStack00000020 = 4;
+  uStack00000018 = 0;
+  uStack00000024 = 8;
+  uStack00000028 = 0;
+  uStack00000030 = uStack00000068;
+  puStack00000010 = &stack0x00000058;
+  puStack00000014 = &stack0x00000060;
+  uStack0000002c = uVar2;
+  FUN_8004ea98(in_stack_000000a4,in_stack_000000a0,&stack0x00000038,iVar3);
+  return;
+}
+
+
+
+// autogenerated function stub: 
+// void /*$ra*/ FX_UpdateInstanceWaterSplit(struct _Instance *instance /*$s0*/)
+void FX_UpdateInstanceWaterSplit(struct _Instance *instance)
+{ // line 5356, offset 0x8004a878
+	/* begin block 1 */
+		// Start line: 5357
+		// Start offset: 0x8004A878
+		// Variables:
+			struct _SVector normal; // stack offset -16
+	/* end block 1 */
+	// End offset: 0x8004A938
+	// End Line: 5391
+
+	/* begin block 2 */
+		// Start line: 13407
+	/* end block 2 */
+	// End Line: 13408
+
+}
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_GetPlaneEquation(struct _SVector *normal /*$a0*/, struct _SVector *poPlane /*$a1*/, struct _PlaneConstants *plane /*$a2*/)
+ // line 5393, offset 0x8004a948
+	/* begin block 1 */
+		// Start line: 13486
+	/* end block 1 */
+	// End Line: 13487
+
+	/* begin block 2 */
+		// Start line: 13488
+	/* end block 2 */
+	// End Line: 13489
+
+void FX_GetPlaneEquation(_SVector *normal,_SVector *poPlane,_PlaneConstants *plane)
+
+{
+  int in_v0;
+  
+  plane->d = -in_v0;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_DoInstancePowerRing(struct _Instance *instance /*$s4*/, long atuTime /*$s1*/, long *color /*$s3*/, long numColors /*$s2*/, int follow_halveplane /*stack 16*/)
+ // line 5436, offset 0x8004a9bc
+	/* begin block 1 */
+		// Start line: 5437
+		// Start offset: 0x8004A9BC
+		// Variables:
+	// 		struct _FXHalvePlane *ring; // $s0
+	// 		struct _SVector normal; // stack offset -40
+	// 		struct _SVector point; // stack offset -32
+	// 		long i; // $a1
+	/* end block 1 */
+	// End offset: 0x8004AB1C
+	// End Line: 5484
+
+	/* begin block 2 */
+		// Start line: 10872
+	/* end block 2 */
+	// End Line: 10873
+
+void FX_DoInstancePowerRing
+               (_Instance *instance,long atuTime,long *color,long numColors,int follow_halveplane)
+
+{
+  undefined in_v0;
+  undefined4 uVar1;
+  int iVar2;
+  undefined4 in_v1;
+  int iVar3;
+  undefined4 *puVar4;
+  int unaff_s0;
+  int unaff_s2;
+  undefined4 *unaff_s3;
+  int unaff_s4;
+  int in_hi;
+  undefined2 uStack00000014;
+  undefined2 uStack00000018;
+  undefined2 uStack0000001a;
+  undefined2 uStack0000001c;
+  undefined in_stack_00000048;
+  
+  *(undefined *)(unaff_s0 + 0xc) = in_v0;
+  *(undefined4 *)(unaff_s0 + 4) = 0x8004ad58;
+  *(undefined4 *)(unaff_s0 + 0x10) = 0;
+  *(int *)(unaff_s0 + 8) = unaff_s4;
+  *(undefined4 *)(unaff_s0 + 0x24) = 0;
+  *(undefined2 *)(unaff_s0 + 0x2a) = 0;
+  *(undefined2 *)(unaff_s0 + 0x28) = (short)unaff_s2;
+  *(undefined *)(unaff_s0 + 0xd) = in_stack_00000048;
+  *(short *)(unaff_s0 + 0xe) = (short)(in_hi >> 7) - (short)((int)in_v1 >> 0x1f);
+  if (unaff_s2 < 2) {
+    if (unaff_s3 == (undefined4 *)0x0) {
+      uVar1 = 0xff8010;
+      goto code_r0x8004aa70;
+    }
+  }
+  else {
+    *(int *)(unaff_s0 + 0x24) = unaff_s0 + 0x2c;
+    iVar3 = 0;
+    puVar4 = unaff_s3;
+    if (0 < unaff_s2) {
+      do {
+        iVar2 = iVar3 * 4;
+        iVar3 = iVar3 + 1;
+        *(undefined4 *)(iVar2 + *(int *)(unaff_s0 + 0x24)) = *puVar4;
+        puVar4 = puVar4 + 1;
+      } while (iVar3 < unaff_s2);
+    }
+    *(undefined2 *)(unaff_s0 + 0x2a) = (short)((int)*(short *)(unaff_s0 + 0xe) / (unaff_s2 + -1));
+  }
+  uVar1 = *unaff_s3;
+code_r0x8004aa70:
+  *(undefined4 *)(unaff_s0 + 0x20) = uVar1;
+  follow_halveplane = 0;
+  uStack00000014 = 0x1000;
+  uStack00000018 = *(undefined2 *)(unaff_s4 + 0x5c);
+  uStack0000001a = *(undefined2 *)(unaff_s4 + 0x5e);
+  uStack0000001c = *(undefined2 *)(unaff_s4 + 0x60);
+  FUN_8004a8e0(&follow_halveplane,&stack0x00000018,unaff_s0 + 0x14);
+  FUN_8004ae18();
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_UpdatePowerRing(struct _FXHalvePlane *ring /*$s2*/)
+ // line 5488, offset 0x8004ab3c
+	/* begin block 1 */
+		// Start line: 5489
+		// Start offset: 0x8004AB3C
+		// Variables:
+	// 		struct _Instance *instance; // $v1
+	// 		struct _PlaneConstants *cPlane; // $s1
+	// 		long offset; // $s5
+	// 		long offset2; // $s4
+	// 		long cutX; // $s6
+	// 		long cutY; // $s7
+	// 		long cutZ; // $s3
+	// 		long colorIndex; // $a2
+	// 		long percent; // $a1
+	/* end block 1 */
+	// End offset: 0x8004AD80
+	// End Line: 5548
+
+	/* begin block 2 */
+		// Start line: 13665
+	/* end block 2 */
+	// End Line: 13666
+
+void FX_UpdatePowerRing(_FXHalvePlane *ring)
+
+{
+  int in_v0;
+  int iVar1;
+  int iVar2;
+  undefined4 in_a1;
+  int in_a2;
+  uint in_a3;
+  int in_t0;
+  int unaff_s2;
+  uint uVar3;
+  uint uVar4;
+  
+  uVar4 = (uint)((ulonglong)(uint)((int)((int)ring + in_v0 * -8) * 0x1000) * (ulonglong)in_a3 >>
+                0x20);
+  uVar3 = uVar4 >> 6;
+  if (in_a2 >= in_t0) {
+    *(int *)(unaff_s2 + 0x10) = in_t0;
+    *(undefined2 *)(unaff_s2 + 0xe) = 0;
+  }
+  *(undefined2 *)(unaff_s2 + 0x1a) = 0;
+  iVar1 = FUN_800790d4(200,in_a1,(uint)(in_a2 < in_t0),uVar4);
+  iVar2 = FUN_800790d4(uVar3);
+  *(undefined2 *)(unaff_s2 + 0x14) = (short)(iVar1 * iVar2 >> 0xc);
+  FUN_800790d4(200);
+                    /* WARNING: Subroutine does not return */
+  FUN_80079104(uVar3);
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_UpdateInstanceSplitRing(struct _FXHalvePlane *ring /*$s0*/, struct _FXTracker *fxTracker /*$a1*/)
+ // line 5633, offset 0x8004adc0
+	/* begin block 1 */
+		// Start line: 13978
+	/* end block 1 */
+	// End Line: 13979
+
+void FX_UpdateInstanceSplitRing(_FXHalvePlane *ring,_FXTracker *fxTracker)
+
+{
+  int unaff_s0;
+  
+  if (*(short *)(unaff_s0 + 0xe) == 0) {
+    FUN_8004ae28();
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_UpdateGlowEffect(struct _FXGlowEffect *effect /*$a0*/, struct _FXTracker *fxTracker /*$a1*/)
+ // line 5656, offset 0x8004ae50
+	/* begin block 1 */
+		// Start line: 14025
+	/* end block 1 */
+	// End Line: 14026
+
+void FX_UpdateGlowEffect(_FXGlowEffect *effect,_FXTracker *fxTracker)
+
+{
+  _FXGeneralEffect **in_v1;
+  _FXGeneralEffect **unaff_s0;
+  
+  if (in_v1 != (_FXGeneralEffect **)0x0) {
+    *in_v1 = *unaff_s0;
+    FX_DeleteGeneralEffect((_FXGeneralEffect *)effect);
+    return;
+  }
+  FX_GeneralEffectTracker = *unaff_s0;
+  FX_DeleteGeneralEffect((_FXGeneralEffect *)effect);
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_InsertGeneralEffect(void *ptr /*$a0*/)
+ // line 5664, offset 0x8004ae80
+	/* begin block 1 */
+		// Start line: 5666
+		// Start offset: 0x8004AE80
+	/* end block 1 */
+	// End offset: 0x8004AE80
+	// End Line: 5667
+
+	/* begin block 2 */
+		// Start line: 14041
+	/* end block 2 */
+	// End Line: 14042
+
+	/* begin block 3 */
+		// Start line: 14042
+	/* end block 3 */
+	// End Line: 14043
+
+	/* begin block 4 */
+		// Start line: 14043
+	/* end block 4 */
+	// End Line: 14044
+
+/* WARNING: Type propagation algorithm not settling */
+
+void FX_InsertGeneralEffect(void *ptr)
+
+{
+  _FXGeneralEffect *in_v0;
+  _FXGeneralEffect *in_v1;
+  _FXGeneralEffect *p_Var1;
+  _FXGeneralEffect *unaff_s0;
+  
+  while (p_Var1 = in_v1, in_v0 = (_FXGeneralEffect *)in_v0->next, in_v0 != (_FXGeneralEffect *)0x0)
+  {
+    in_v1 = in_v0;
+    if (in_v0 == unaff_s0) {
+      if (p_Var1 == (_FXGeneralEffect *)0x0) {
+        FX_GeneralEffectTracker = (_FXGeneralEffect *)unaff_s0->next;
+        FX_DeleteGeneralEffect((_FXGeneralEffect *)ptr);
+        return;
+      }
+      *(_FXGeneralEffect **)&p_Var1->next = (_FXGeneralEffect *)unaff_s0->next;
+      FX_DeleteGeneralEffect((_FXGeneralEffect *)ptr);
+      return;
+    }
+  }
+  if (unaff_s0->effectType != '\0') {
+                    /* WARNING: Subroutine does not return */
+    FUN_8004fe84();
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_8004fe84(*(_FXGeneralEffect **)((int)(unaff_s0 + 1) + 4));
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_DeleteGeneralEffect(struct _FXGeneralEffect *effect /*$s0*/)
+ // line 5672, offset 0x8004ae90
+	/* begin block 1 */
+		// Start line: 5673
+		// Start offset: 0x8004AE90
+		// Variables:
+	// 		struct _FXGeneralEffect *currentEffect; // $v0
+	// 		struct _FXGeneralEffect *previousEffect; // $v1
+	/* end block 1 */
+	// End offset: 0x8004AF1C
+	// End Line: 5705
+
+	/* begin block 2 */
+		// Start line: 14058
+	/* end block 2 */
+	// End Line: 14059
+
+void FX_DeleteGeneralEffect(_FXGeneralEffect *effect)
+
+{
+  int unaff_s0;
+  
+  if (*(char *)(unaff_s0 + 0xc) == '\0') {
+                    /* WARNING: Subroutine does not return */
+    FUN_8004fe84(*(undefined4 *)(unaff_s0 + 0x14));
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_8004fe84();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXGlowEffect * /*$ra*/ FX_DoInstanceOneSegmentGlow(struct _Instance *instance /*$s3*/, long segment /*$s4*/, long *color /*$s2*/, long numColors /*$s1*/, long atuColorCycleRate /*stack 16*/, long width /*stack 20*/, long height /*stack 24*/)
+ // line 5710, offset 0x8004af2c
+	/* begin block 1 */
+		// Start line: 5711
+		// Start offset: 0x8004AF2C
+		// Variables:
+	// 		struct _FXGlowEffect *glowEffect; // $a2
+
+		/* begin block 1.1 */
+			// Start line: 5743
+			// Start offset: 0x8004AFF4
+			// Variables:
+		// 		int i; // $a1
+		/* end block 1.1 */
+		// End offset: 0x8004B04C
+		// End Line: 5756
+	/* end block 1 */
+	// End offset: 0x8004B058
+	// End Line: 5762
+
+	/* begin block 2 */
+		// Start line: 14134
+	/* end block 2 */
+	// End Line: 14135
+
+_FXGlowEffect *
+FX_DoInstanceOneSegmentGlow
+          (_Instance *instance,long segment,long *color,long numColors,long atuColorCycleRate,
+          long width,long height)
+
+{
+  _FXGeneralEffect *p_Var1;
+  long lVar2;
+  int iVar3;
+  int iVar4;
+  long *plVar5;
+  int unaff_s0;
+  int unaff_s1;
+  long *unaff_s2;
+  int unaff_s3;
+  undefined2 unaff_s4;
+  undefined2 in_stack_0000003c;
+  undefined2 in_stack_00000040;
+  
+  *(short *)(color + 7) = (short)unaff_s1;
+  *(undefined2 *)((int)color + 0x1e) = (short)unaff_s0;
+  *(undefined2 *)(color + 8) = in_stack_0000003c;
+  color[2] = unaff_s3;
+  *(undefined2 *)((int)color + 0x26) = unaff_s4;
+  color[4] = 0;
+  *(undefined2 *)(color + 10) = 0;
+  *(undefined2 *)((int)color + 0x2a) = 0;
+  *(undefined2 *)((int)color + 0x22) = in_stack_00000040;
+  *(undefined2 *)((int)color + 0xe) = 0xffff;
+  *(undefined *)((int)color + 0x25) = 1;
+  *(undefined *)(color + 9) = 1;
+  if (unaff_s1 < 2) {
+    if (unaff_s2 == (long *)0x0) {
+      lVar2 = 0xff8010;
+      goto code_r0x8004afe0;
+    }
+  }
+  else {
+    *(long **)(color + 5) = color + 0xb;
+    iVar4 = 0;
+    plVar5 = unaff_s2;
+    if (0 < unaff_s1) {
+      do {
+        iVar3 = iVar4 * 4;
+        iVar4 = iVar4 + 1;
+        *(long *)(iVar3 + color[5]) = *plVar5;
+        plVar5 = plVar5 + 1;
+      } while (iVar4 < unaff_s1);
+    }
+    *(undefined2 *)((int)color + 0x1e) = (short)(unaff_s0 / (unaff_s1 + -1));
+  }
+  lVar2 = *unaff_s2;
+code_r0x8004afe0:
+  color[6] = lVar2;
+  p_Var1 = (_FXGeneralEffect *)color;
+  *(_FXGeneralEffect **)color = FX_GeneralEffectTracker;
+  FX_GeneralEffectTracker = p_Var1;
+  *(uint *)(unaff_s3 + 0x18) = *(uint *)(unaff_s3 + 0x18) | 0x200;
+  return (_FXGlowEffect *)color;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_SetGlowFades(struct _FXGlowEffect *glowEffect /*$a0*/, int fadein /*$a1*/, int fadeout /*$a2*/)
+ // line 5767, offset 0x8004b08c
+	/* begin block 1 */
+		// Start line: 14270
+	/* end block 1 */
+	// End Line: 14271
+
+	/* begin block 2 */
+		// Start line: 14271
+	/* end block 2 */
+	// End Line: 14272
+
+void FX_SetGlowFades(_FXGlowEffect *glowEffect,int fadein,int fadeout)
+
+{
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXGlowEffect * /*$ra*/ FX_DoInstanceTwoSegmentGlow(struct _Instance *instance /*$a0*/, long segment /*$a1*/, long segmentEnd /*$a2*/, long *color /*$a3*/, long numColors /*stack 16*/, long atuColorCycleRate /*stack 20*/, long height /*stack 24*/)
+ // line 5773, offset 0x8004b0a8
+	/* begin block 1 */
+		// Start line: 5774
+		// Start offset: 0x8004B0A8
+		// Variables:
+	// 		struct _FXGlowEffect *glowEffect; // $v0
+	// 		int inc; // $s0
+	/* end block 1 */
+	// End offset: 0x8004B0C8
+	// End Line: 5782
+
+	/* begin block 2 */
+		// Start line: 14282
+	/* end block 2 */
+	// End Line: 14283
+
+_FXGlowEffect *
+FX_DoInstanceTwoSegmentGlow
+          (_Instance *instance,long segment,long segmentEnd,long *color,long numColors,
+          long atuColorCycleRate,long height)
+
+{
+  _FXGlowEffect *p_Var1;
+  uchar unaff_s0;
+  undefined4 in_stack_00000038;
+  
+  p_Var1 = (_FXGlowEffect *)FUN_8004aec4(instance,segment,color,in_stack_00000038);
+  p_Var1->numSegments = unaff_s0;
+  return p_Var1;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXGlowEffect * /*$ra*/ FX_DoInstanceManySegmentGlow(struct _Instance *instance /*$a0*/, long segment /*$a1*/, long numSegments /*$s0*/, long *color /*$a3*/, long numColors /*stack 16*/, long atuColorCycleRate /*stack 20*/, long height /*stack 24*/)
+ // line 5789, offset 0x8004b100
+	/* begin block 1 */
+		// Start line: 5790
+		// Start offset: 0x8004B100
+		// Variables:
+	// 		struct _FXGlowEffect *glowEffect; // $v0
+	/* end block 1 */
+	// End offset: 0x8004B100
+	// End Line: 5790
+
+	/* begin block 2 */
+		// Start line: 14318
+	/* end block 2 */
+	// End Line: 14319
+
+_FXGlowEffect *
+FX_DoInstanceManySegmentGlow
+          (_Instance *instance,long segment,long numSegments,long *color,long numColors,
+          long atuColorCycleRate,long height)
+
+{
+  _FXGlowEffect *p_Var1;
+  short unaff_s0;
+  
+  p_Var1 = (_FXGlowEffect *)FUN_8004aec4();
+  p_Var1->lifeTime = unaff_s0 * 0x21;
+  return p_Var1;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXGlowEffect * /*$ra*/ FX_DoInstanceOneSegmentGlowWithTime(struct _Instance *instance /*$a0*/, long segment /*$a1*/, long *color /*$a2*/, long numColors /*$a3*/, long atuColorCycleRate /*stack 16*/, long width /*stack 20*/, long height /*stack 24*/, long ATULifeTime /*stack 28*/)
+ // line 5800, offset 0x8004b148
+	/* begin block 1 */
+		// Start line: 5801
+		// Start offset: 0x8004B148
+		// Variables:
+	// 		struct _FXGlowEffect *glowEffect; // $v0
+	/* end block 1 */
+	// End offset: 0x8004B148
+	// End Line: 5801
+
+	/* begin block 2 */
+		// Start line: 14343
+	/* end block 2 */
+	// End Line: 14344
+
+/* WARNING: Variable defined which should be unmapped: width */
+/* WARNING: Variable defined which should be unmapped: height */
+
+_FXGlowEffect *
+FX_DoInstanceOneSegmentGlowWithTime
+          (_Instance *instance,long segment,long *color,long numColors,long atuColorCycleRate,
+          long width,long height,long ATULifeTime)
+
+{
+  _Instance *in_v0;
+  int unaff_s0;
+  _Instance *p_Var1;
+  _Instance *unaff_s3;
+  
+  if (instance != (_Instance *)0x0) {
+    do {
+      in_v0 = (_Instance *)(uint)*(byte *)&instance->prev;
+      p_Var1 = (_Instance *)(instance->node).prev;
+      if ((*(byte *)&instance->prev == 0x83) && (in_v0 = instance->next, in_v0 == unaff_s3)) {
+        if (unaff_s0 == 0) {
+          in_v0 = (_Instance *)FUN_8004ae28();
+        }
+        else {
+          *(undefined2 *)((int)&instance->introData + 2) = (short)unaff_s0;
+          *(undefined2 *)((int)&instance->prev + 2) = (short)unaff_s0;
+        }
+      }
+      instance = p_Var1;
+    } while (p_Var1 != (_Instance *)0x0);
+  }
+  return (_FXGlowEffect *)in_v0;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_StopAllGlowEffects(struct _Instance *instance /*$s3*/, int fadeout_time /*$s0*/)
+ // line 5812, offset 0x8004b190
+	/* begin block 1 */
+		// Start line: 5813
+		// Start offset: 0x8004B190
+		// Variables:
+	// 		struct _FXGlowEffect *currentEffect; // $a0
+	// 		struct _FXGlowEffect *previousEffect; // $s1
+
+		/* begin block 1.1 */
+			// Start line: 5828
+			// Start offset: 0x8004B1E8
+		/* end block 1.1 */
+		// End offset: 0x8004B1E8
+		// End Line: 5829
+	/* end block 1 */
+	// End offset: 0x8004B208
+	// End Line: 5837
+
+	/* begin block 2 */
+		// Start line: 14367
+	/* end block 2 */
+	// End Line: 14368
+
+void FX_StopAllGlowEffects(_Instance *instance,int fadeout_time)
+
+{
+  int unaff_s0;
+  undefined4 *unaff_s1;
+  undefined4 *puVar1;
+  uint unaff_s2;
+  int unaff_s3;
+  
+  while (puVar1 = unaff_s1, puVar1 != (undefined4 *)0x0) {
+    unaff_s1 = (undefined4 *)*puVar1;
+    if (((uint)*(byte *)(puVar1 + 3) == unaff_s2) && (puVar1[2] == unaff_s3)) {
+      if (unaff_s0 == 0) {
+        FUN_8004ae28();
+      }
+      else {
+        *(undefined2 *)((int)puVar1 + 0x2a) = (short)unaff_s0;
+        *(undefined2 *)((int)puVar1 + 0xe) = (short)unaff_s0;
+      }
+    }
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_StopGlowEffect(struct _FXGlowEffect *glowEffect /*$s1*/, int fadeout_time /*$a1*/)
+ // line 5839, offset 0x8004b224
+	/* begin block 1 */
+		// Start line: 5840
+		// Start offset: 0x8004B224
+
+		/* begin block 1.1 */
+			// Start line: 5849
+			// Start offset: 0x8004B268
+			// Variables:
+		// 		struct _FXGeneralEffect *currentEffect; // $a0
+		// 		struct _FXGeneralEffect *previousEffect; // $s0
+		/* end block 1.1 */
+		// End offset: 0x8004B294
+		// End Line: 5862
+	/* end block 1 */
+	// End offset: 0x8004B294
+	// End Line: 5863
+
+	/* begin block 2 */
+		// Start line: 14433
+	/* end block 2 */
+	// End Line: 14434
+
+void FX_StopGlowEffect(_FXGlowEffect *glowEffect,int fadeout_time)
+
+{
+  _FXGlowEffect *p_Var1;
+  _FXGlowEffect *unaff_s1;
+  uint unaff_s2;
+  
+  while (p_Var1 = glowEffect, p_Var1 != (_FXGlowEffect *)0x0) {
+    glowEffect = (_FXGlowEffect *)p_Var1->next;
+    if (((uint)p_Var1->effectType == unaff_s2) && (p_Var1 == unaff_s1)) {
+      FUN_8004ae28();
+    }
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_DrawLightning(struct _FXLightning *zap /*$s1*/, struct MATRIX *wcTransform /*$s2*/, unsigned long **ot /*$s3*/)
+ // line 5865, offset 0x8004b2ac
+	/* begin block 1 */
+		// Start line: 5866
+		// Start offset: 0x8004B2AC
+		// Variables:
+	// 		struct _SVector start; // stack offset -80
+	// 		struct _SVector end; // stack offset -72
+	// 		struct _SVector offset; // stack offset -64
+	// 		struct MATRIX *swtransform; // $s0
+	// 		struct MATRIX mat; // stack offset -56
+	/* end block 1 */
+	// End offset: 0x8004B4D8
+	// End Line: 5928
+
+	/* begin block 2 */
+		// Start line: 14487
+	/* end block 2 */
+	// End Line: 14488
+
+void FX_DrawLightning(_FXLightning *zap,MATRIX *wcTransform,ulong **ot)
+
+{
+  int in_v0;
+  int iVar1;
+  int unaff_s1;
+  undefined *puStack00000010;
+  undefined *puStack00000014;
+  int iStack00000018;
+  int iStack0000001c;
+  int iStack00000020;
+  int iStack00000024;
+  int iStack00000028;
+  undefined4 uStack0000002c;
+  undefined4 uStack00000030;
+  undefined2 uStack00000038;
+  undefined2 uStack0000003a;
+  undefined2 uStack0000003c;
+  undefined2 uStack00000040;
+  undefined2 uStack00000042;
+  undefined2 uStack00000044;
+  
+  if (*(int *)(in_v0 + 0x40) != 0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_800bd12c(*(int *)(in_v0 + 0x40) + (int)*(short *)(unaff_s1 + 0x1a) * 0x20,unaff_s1 + 0x14,
+                 &stack0x00000048);
+  }
+  uStack00000038 = *(undefined2 *)(in_v0 + 0x5c);
+  uStack0000003a = *(undefined2 *)(*(int *)(unaff_s1 + 8) + 0x5e);
+  uStack0000003c = *(undefined2 *)(*(int *)(unaff_s1 + 8) + 0x60);
+  if (((uint)*(byte *)(unaff_s1 + 0xd) - 1 < 2) || (*(short *)(unaff_s1 + 0x28) != -1)) {
+    uStack00000040 = *(undefined2 *)(unaff_s1 + 0x20);
+    uStack00000042 = *(undefined2 *)(unaff_s1 + 0x22);
+    uStack00000044 = *(undefined2 *)(unaff_s1 + 0x24);
+  }
+  else {
+    iVar1 = *(int *)(*(int *)(unaff_s1 + 0x1c) + 0x40);
+    if (iVar1 != 0) {
+                    /* WARNING: Subroutine does not return */
+      FUN_800bd12c(iVar1 + (int)*(short *)(unaff_s1 + 0x26) * 0x20,unaff_s1 + 0x20,&stack0x00000048)
+      ;
+    }
+    uStack00000040 = *(undefined2 *)(*(int *)(unaff_s1 + 8) + 0x5c);
+    uStack00000042 = *(undefined2 *)(*(int *)(unaff_s1 + 8) + 0x5e);
+    uStack00000044 = *(undefined2 *)(*(int *)(unaff_s1 + 8) + 0x60);
+  }
+  if ((*(short *)(unaff_s1 + 0x28) != -1) && (*(int *)(*(int *)(unaff_s1 + 8) + 0x40) != 0)) {
+    FUN_800bfa58();
+  }
+  puStack00000010 = &stack0x00000038;
+  puStack00000014 = &stack0x00000040;
+  iStack00000018 = (int)*(short *)(unaff_s1 + 0x2a);
+  iStack0000001c = (int)*(short *)(unaff_s1 + 0x2c);
+  iStack00000020 = (int)*(short *)(unaff_s1 + 0x2e);
+  iStack00000024 = (int)*(short *)(unaff_s1 + 0x30);
+  iStack00000028 = (int)*(short *)(unaff_s1 + 0x32);
+  uStack0000002c = *(undefined4 *)(unaff_s1 + 0x34);
+  uStack00000030 = *(undefined4 *)(unaff_s1 + 0x38);
+  FUN_8004ea98();
+  return;
+}
+
+
+
+// autogenerated function stub: 
+// void /*$ra*/ FX_DrawAllGeneralEffects(struct MATRIX *wcTransform /*$s1*/, struct _VertexPool *vertexPool /*$s3*/, struct _PrimPool *primPool /*$s4*/, unsigned long **ot /*$s2*/)
+void FX_DrawAllGeneralEffects(struct MATRIX *wcTransform, struct _VertexPool *vertexPool, struct _PrimPool *primPool, unsigned long **ot)
+{ // line 5935, offset 0x8004b560
+	/* begin block 1 */
+		// Start line: 5936
+		// Start offset: 0x8004B560
+		// Variables:
+			struct _Instance *instance; // $a0
+			struct _FXGeneralEffect *currentEffect; // $s0
+
+		/* begin block 1.1 */
+			// Start line: 5949
+			// Start offset: 0x8004B5EC
+			// Variables:
+				struct _FXGlowEffect *currentGlow; // $t0
+		/* end block 1.1 */
+		// End offset: 0x8004B61C
+		// End Line: 5957
+
+		/* begin block 1.2 */
+			// Start line: 5961
+			// Start offset: 0x8004B644
+		/* end block 1.2 */
+		// End offset: 0x8004B644
+		// End Line: 5962
+
+		/* begin block 1.3 */
+			// Start line: 5971
+			// Start offset: 0x8004B688
+		/* end block 1.3 */
+		// End offset: 0x8004B688
+		// End Line: 5973
+
+		/* begin block 1.4 */
+			// Start line: 5981
+			// Start offset: 0x8004B6E0
+		/* end block 1.4 */
+		// End offset: 0x8004B6E0
+		// End Line: 5983
+	/* end block 1 */
+	// End offset: 0x8004B718
+	// End Line: 5993
+
+	/* begin block 2 */
+		// Start line: 14629
+	/* end block 2 */
+	// End Line: 14630
+
+}
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_ContinueBlastRing(struct _FXBlastringEffect *blast /*$s0*/, struct _FXTracker *fxTracker /*$a1*/)
+ // line 6003, offset 0x8004b738
+	/* begin block 1 */
+		// Start line: 6004
+		// Start offset: 0x8004B738
+		// Variables:
+	// 		int fade; // $a2
+	// 		int tm; // $v0
+
+		/* begin block 1.1 */
+			// Start line: 6015
+			// Start offset: 0x8004B7A8
+			// Variables:
+		// 		int rad; // $v0
+		// 		int crad; // $a0
+		// 		int endrad; // $v1
+		/* end block 1.1 */
+		// End offset: 0x8004B850
+		// End Line: 6047
+
+		/* begin block 1.2 */
+			// Start line: 6051
+			// Start offset: 0x8004B860
+			// Variables:
+		// 		unsigned long *colorPtr; // $a0
+		// 		unsigned long black; // stack offset -16
+		// 		int fade; // $a3
+		/* end block 1.2 */
+		// End offset: 0x8004B8A8
+		// End Line: 6059
+	/* end block 1 */
+	// End offset: 0x8004B93C
+	// End Line: 6080
+
+	/* begin block 2 */
+		// Start line: 14770
+	/* end block 2 */
+	// End Line: 14771
+
+	/* begin block 3 */
+		// Start line: 14775
+	/* end block 3 */
+	// End Line: 14776
+
+void FX_ContinueBlastRing(_FXBlastringEffect *blast,_FXTracker *fxTracker)
+
+{
+  ushort uVar1;
+  int in_v0;
+  int in_v1;
+  int iVar2;
+  int iVar3;
+  int unaff_s0;
+  undefined4 in_stack_00000018;
+  
+  *(_FXTracker **)(unaff_s0 + 0x54) = fxTracker;
+  if (in_v0 != 0) {
+    if (in_v1 < 0) {
+      in_v1 = in_v1 + 0xfff;
+    }
+    if ((int)blast < 0) {
+      blast = (_FXBlastringEffect *)((int)&blast[0x22].lifeTime + 1);
+    }
+    iVar2 = *(int *)(unaff_s0 + 0x4c);
+    iVar3 = (int)blast >> 0xc;
+    if (iVar2 < 0) {
+      iVar2 = iVar2 + 0xfff;
+    }
+    if ((int)fxTracker < 0) {
+      iVar2 = *(int *)(unaff_s0 + 0x48);
+      if (iVar2 < 0) {
+        iVar2 = iVar2 + 0xfff;
+      }
+      iVar2 = (((in_v1 >> 0xc) - iVar3) * 0x1000) / ((iVar2 >> 0xc) - iVar3);
+    }
+    else {
+      iVar2 = (((in_v1 >> 0xc) - iVar3) * 0x1000) / ((iVar2 >> 0xc) - iVar3);
+    }
+    if (iVar2 < 0x1000) {
+      FUN_800bd394(unaff_s0 + 0x74,unaff_s0 + 0x70,iVar2,0x1000 - iVar2);
+    }
+    else {
+      *(undefined4 *)(unaff_s0 + 0x6c) = 0;
+    }
+  }
+  if ((short)loadStatus.decompressLen != 1000) {
+    in_stack_00000018 = 0;
+    iVar2 = FUN_800355d4(*(undefined4 *)(unaff_s0 + 8));
+    if (*(int *)(unaff_s0 + 0x50) < *(int *)(unaff_s0 + 0x3c)) {
+      iVar3 = unaff_s0 + 0x6c;
+    }
+    else {
+      iVar3 = unaff_s0 + 0x70;
+    }
+    FUN_800bd394(iVar3,&stack0x00000018,0x1000 - iVar2);
+  }
+  *(uint *)(unaff_s0 + 0x6c) = *(uint *)(unaff_s0 + 0x6c) & 0xffffff;
+  if (((*(short *)(unaff_s0 + 0xe) != -99) &&
+      (((0 < *(int *)(unaff_s0 + 0x54) && (*(int *)(unaff_s0 + 0x4c) < *(int *)(unaff_s0 + 0x3c)))
+       || ((*(int *)(unaff_s0 + 0x54) < 0 && (*(int *)(unaff_s0 + 0x3c) < *(int *)(unaff_s0 + 0x4c))
+           ))))) ||
+     ((uVar1 = *(short *)(unaff_s0 + 0xe) - 1, -1 < *(short *)(unaff_s0 + 0xe) &&
+      (*(ushort *)(unaff_s0 + 0xe) = uVar1, (int)((uint)uVar1 << 0x10) < 1)))) {
+    FUN_8004ae28();
+  }
+  return;
+}
+
+
+
+// autogenerated function stub: 
+// struct _FXBlastringEffect * /*$ra*/ FX_DoBlastRing(struct _Instance *instance /*$s2*/, struct _SVector *position /*$s5*/, struct MATRIX *mat /*$s3*/, int segment /*$s6*/, int radius /*stack 16*/, int endRadius /*stack 20*/, int colorChangeRadius /*stack 24*/, int size1 /*stack 28*/, int size2 /*stack 32*/, int vel /*stack 36*/, int accl /*stack 40*/, int height1 /*stack 44*/, int height2 /*stack 48*/, int height3 /*stack 52*/, long startColor /*stack 56*/, long endColor /*stack 60*/, int pred_offset /*stack 64*/, int lifeTime /*stack 68*/, int sortInWorld /*stack 72*/)
+struct _FXBlastringEffect * FX_DoBlastRing(struct _Instance *instance, struct _SVector *position, struct MATRIX *mat, int segment, int radius, int endRadius, int colorChangeRadius, int size1, int size2, int vel, int accl, int height1, int height2, int height3, long startColor, long endColor, int pred_offset, int lifeTime, int sortInWorld)
+{ // line 6110, offset 0x8004b94c
+	/* begin block 1 */
+		// Start line: 6111
+		// Start offset: 0x8004B94C
+		// Variables:
+			struct _FXBlastringEffect *blast; // $s0
+	/* end block 1 */
+	// End offset: 0x8004BAF4
+	// End Line: 6151
+
+	/* begin block 2 */
+		// Start line: 14998
+	/* end block 2 */
+	// End Line: 14999
+
+	return null;
+}
+
+
+// autogenerated function stub: 
+// void /*$ra*/ FX_DrawBlastring(struct MATRIX *wcTransform /*$s3*/, struct _FXBlastringEffect *blast /*$s1*/)
+void FX_DrawBlastring(struct MATRIX *wcTransform, struct _FXBlastringEffect *blast)
+{ // line 6154, offset 0x8004bb20
+	/* begin block 1 */
+		// Start line: 6155
+		// Start offset: 0x8004BB20
+		// Variables:
+			int radius; // $s2
+			struct _SVector position; // stack offset -64
+			struct MATRIX mat; // stack offset -56
+
+		/* begin block 1.1 */
+			// Start line: 6162
+			// Start offset: 0x8004BB60
+			// Variables:
+				struct MATRIX *swtransform; // $s0
+		/* end block 1.1 */
+		// End offset: 0x8004BB9C
+		// End Line: 6175
+	/* end block 1 */
+	// End offset: 0x8004BCD0
+	// End Line: 6197
+
+	/* begin block 2 */
+		// Start line: 15098
+	/* end block 2 */
+	// End Line: 15099
+
+}
+
+
+// autogenerated function stub: 
+// void /*$ra*/ FX_ContinueFlash(struct _FXFlash *flash /*$a0*/, struct _FXTracker *fxTracker /*$a1*/)
+void FX_ContinueFlash(struct _FXFlash *flash, struct _FXTracker *fxTracker)
+{ // line 6200, offset 0x8004bcec
+	/* begin block 1 */
+		// Start line: 15190
+	/* end block 1 */
+	// End Line: 15191
+
+}
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_DrawFlash(struct _FXFlash *flash /*$a0*/)
+ // line 6210, offset 0x8004bd3c
+	/* begin block 1 */
+		// Start line: 6211
+		// Start offset: 0x8004BD3C
+		// Variables:
+	// 		int time; // $a1
+	// 		int div; // $a2
+	// 		int transtype; // $s0
+	// 		int interp; // $a3
+	// 		unsigned long color; // stack offset -16
+	// 		unsigned long black; // stack offset -12
+	/* end block 1 */
+	// End offset: 0x8004BE30
+	// End Line: 6241
+
+	/* begin block 2 */
+		// Start line: 15210
+	/* end block 2 */
+	// End Line: 15211
+
+void FX_DrawFlash(_FXFlash *flash)
+
+{
+  int in_v0;
+  int in_a3;
+  undefined *puStack00000010;
+  
+  puStack00000010 = &stack0x00000018;
+  if (in_v0 == 0) {
+    in_a3 = 0x1000;
+  }
+  FUN_800bd394(puStack00000010,&stack0x0000001c,in_a3,0x1000 - in_a3);
+  FUN_800461ec();
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_RelocateGeneric(struct Object *object /*$a0*/, long offset /*$a1*/)
+ // line 6244, offset 0x8004be50
+	/* begin block 1 */
+		// Start line: 6246
+		// Start offset: 0x8004BE50
+		// Variables:
+	// 		struct GenericFXObject *GFXO; // $v0
+	/* end block 1 */
+	// End offset: 0x8004BEE4
+	// End Line: 6255
+
+	/* begin block 2 */
+		// Start line: 15281
+	/* end block 2 */
+	// End Line: 15282
+
+	/* begin block 3 */
+		// Start line: 15282
+	/* end block 3 */
+	// End Line: 15283
+
+	/* begin block 4 */
+		// Start line: 15284
+	/* end block 4 */
+	// End Line: 15285
+
+void FX_RelocateGeneric(Object *object,long offset)
+
+{
+  int in_v0;
+  int in_v1;
+  int iVar1;
+  int iVar2;
+  
+  iVar2 = 0;
+  *(int *)(in_v0 + 0x10) = in_v1 + offset;
+  if (*(int *)(in_v0 + 0x14) != 0) {
+    iVar2 = *(int *)(in_v0 + 0x14) + offset;
+  }
+  iVar1 = 0;
+  *(int *)(in_v0 + 0x14) = iVar2;
+  if (*(int *)(in_v0 + 0x18) != 0) {
+    iVar1 = *(int *)(in_v0 + 0x18) + offset;
+  }
+  *(int *)(in_v0 + 0x18) = iVar1;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXParticle * /*$ra*/ FX_StartGenericParticle(struct _Instance *instance /*$a0*/, int num /*$a1*/, int segOverride /*$s3*/, int lifeOverride /*$s4*/, int InitFlag /*stack 16*/)
+ // line 6258, offset 0x8004beec
+	/* begin block 1 */
+		// Start line: 6259
+		// Start offset: 0x8004BEEC
+		// Variables:
+	// 		struct _FXParticle *currentParticle; // $s0
+	// 		struct GenericFXObject *GFXO; // $v1
+	// 		struct _GenericParticleParams *GPP; // $s1
+	// 		struct Object *texture_obj; // $s2
+	// 		struct Object *particle; // $a2
+
+		/* begin block 1.1 */
+			// Start line: 6324
+			// Start offset: 0x8004C14C
+			// Variables:
+		// 		struct TextureMT3 *texture; // $v0
+		/* end block 1.1 */
+		// End offset: 0x8004C174
+		// End Line: 6328
+
+		/* begin block 1.2 */
+			// Start line: 6338
+			// Start offset: 0x8004C1EC
+			// Variables:
+		// 		int tmp_blue; // $a0
+		// 		struct CVECTOR *ptr; // $v1
+		/* end block 1.2 */
+		// End offset: 0x8004C210
+		// End Line: 6347
+	/* end block 1 */
+	// End offset: 0x8004C21C
+	// End Line: 6352
+
+	/* begin block 2 */
+		// Start line: 15309
+	/* end block 2 */
+	// End Line: 15310
+
+_FXParticle *
+FX_StartGenericParticle(_Instance *instance,int num,int segOverride,int lifeOverride,int InitFlag)
+
+{
+  undefined uVar1;
+  short sVar2;
+  _FXParticle *p_Var3;
+  int iVar4;
+  short *unaff_s1;
+  Object *unaff_s2;
+  int unaff_s3;
+  int unaff_s4;
+  
+  if ((*(char *)((int)unaff_s1 + 0x1f) != '\0') &&
+     (instance = instance->LinkChild, instance == (_Instance *)0x0)) {
+    return (_FXParticle *)0x0;
+  }
+  if (*(char *)((int)unaff_s1 + 0x1b) != -1) {
+    if (*(char *)((int)unaff_s1 + 0x13) != '\0') {
+      segOverride = (int)instance->object;
+    }
+    unaff_s2 = (Object *)segOverride;
+    if ((Object *)segOverride == (Object *)0x0) {
+      return (_FXParticle *)0x0;
+    }
+  }
+  p_Var3 = (_FXParticle *)FUN_800420fc(instance,0);
+  if (p_Var3 != (_FXParticle *)0x0) {
+    p_Var3->numberBirthParticles = *(char *)(unaff_s1 + 0x12);
+    p_Var3->size = *unaff_s1;
+    p_Var3->type = *(uchar *)((int)unaff_s1 + 3);
+    p_Var3->birthRadius = unaff_s1[2];
+    if (unaff_s3 == 0) {
+      p_Var3->startSegment = *(char *)(unaff_s1 + 3);
+    }
+    else {
+      p_Var3->startSegment = (char)unaff_s3;
+    }
+    p_Var3->endSegment = *(char *)((int)unaff_s1 + 7);
+    sVar2 = unaff_s1[6];
+    *(undefined4 *)&p_Var3->direction = *(undefined4 *)(unaff_s1 + 4);
+    (p_Var3->direction).z = sVar2;
+    (p_Var3->acceleration).x = (short)*(char *)(unaff_s1 + 8);
+    (p_Var3->acceleration).y = (short)*(char *)((int)unaff_s1 + 0x11);
+    (p_Var3->acceleration).z = (short)*(char *)(unaff_s1 + 9);
+    p_Var3->startColor = *(uint *)(unaff_s1 + 10) & 0xffffff;
+    p_Var3->endColor = *(uint *)(unaff_s1 + 0xc) & 0xffffff;
+    if (unaff_s4 == 0) {
+      p_Var3->lifeTime = unaff_s1[0xe];
+    }
+    else {
+      p_Var3->lifeTime = (short)unaff_s4;
+    }
+    p_Var3->primLifeTime = (ushort)*(byte *)(unaff_s1 + 0xf);
+    p_Var3->startFadeValue = unaff_s1[0x10];
+    p_Var3->startScale = unaff_s1[0x17];
+    p_Var3->scaleSpeed = unaff_s1[0x13];
+    (p_Var3->offset).x = unaff_s1[0x14];
+    (p_Var3->offset).y = unaff_s1[0x15];
+    (p_Var3->offset).z = unaff_s1[0x16];
+    p_Var3->z_undulate = *(char *)((int)unaff_s1 + 0x25);
+    if ((unaff_s1[0x11] == -1) && (*(char *)(unaff_s1 + 0xf) != '\0')) {
+      p_Var3->fadeStep =
+           (short)((0x1000 - (int)p_Var3->startFadeValue) / (int)(uint)*(byte *)(unaff_s1 + 0xf));
+    }
+    else {
+      p_Var3->fadeStep = unaff_s1[0x11];
+    }
+    if (*(char *)((int)unaff_s1 + 0x1b) != -1) {
+                    /* WARNING: Subroutine does not return */
+      FUN_80046000(unaff_s2,(int)*(char *)((int)unaff_s1 + 0x17));
+    }
+    if (*(char *)((int)unaff_s1 + 3) == '\x01') {
+      *(code **)&p_Var3->fxprim_process = FUN_80048094;
+    }
+    if (*(char *)(unaff_s1 + 7) == '\x01') {
+      p_Var3->flag_bits = p_Var3->flag_bits | 1;
+    }
+    if (*(char *)((int)unaff_s1 + 0xf) != '\0') {
+      p_Var3->flag_bits = p_Var3->flag_bits | 2;
+    }
+    if ((*(char *)(unaff_s1 + 7) == '\x02') && (iVar4 = FUN_8007a8ec(), iVar4 != 0)) {
+      uVar1 = *(undefined *)((int)&p_Var3->startColor + 2);
+      *(undefined *)((int)&p_Var3->startColor + 2) = *(undefined *)&p_Var3->startColor;
+      *(undefined *)&p_Var3->startColor = uVar1;
+      uVar1 = *(undefined *)((int)&p_Var3->endColor + 2);
+      *(undefined *)((int)&p_Var3->endColor + 2) = *(undefined *)&p_Var3->endColor;
+      *(undefined *)&p_Var3->endColor = uVar1;
+    }
+    FUN_8004ae18(p_Var3);
+  }
+  return p_Var3;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_StartGenericRibbon(struct _Instance *instance /*$a0*/, int num /*$a1*/, int segOverride /*$a2*/, int endOverride /*$a3*/, int InitFlag /*stack 16*/)
+ // line 6354, offset 0x8004c23c
+	/* begin block 1 */
+		// Start line: 6355
+		// Start offset: 0x8004C23C
+		// Variables:
+	// 		struct Object *particle; // $v1
+	// 		struct GenericFXObject *GFXO; // $v1
+	// 		struct _GenericRibbonParams *GRP; // $v1
+	/* end block 1 */
+	// End offset: 0x8004C2E8
+	// End Line: 6390
+
+	/* begin block 2 */
+		// Start line: 15519
+	/* end block 2 */
+	// End Line: 15520
+
+void FX_StartGenericRibbon(_Instance *instance,int num,int segOverride,int endOverride,int InitFlag)
+
+{
+  int in_v1;
+  int iStack00000014;
+  int iStack00000018;
+  undefined4 uStack0000001c;
+  undefined4 uStack00000020;
+  
+  iStack00000014 = (int)*(short *)(in_v1 + 8);
+  iStack00000018 = (int)*(short *)(in_v1 + 10);
+  uStack0000001c = *(undefined4 *)(in_v1 + 0xc);
+  uStack00000020 = *(undefined4 *)(in_v1 + 0x10);
+  FUN_80046f2c(instance,(int)*(char *)(in_v1 + 2),(int)*(char *)(in_v1 + 3),
+               (int)*(char *)(in_v1 + 4));
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_StartGenericGlow(struct _Instance *instance /*$a0*/, int num /*$a1*/, int segOverride /*$t0*/, int seg2Override /*$a3*/, int InitFlag /*stack 16*/)
+ // line 6392, offset 0x8004c2f8
+	/* begin block 1 */
+		// Start line: 6393
+		// Start offset: 0x8004C2F8
+		// Variables:
+	// 		struct Object *particle; // $v1
+	// 		struct GenericFXObject *GFXO; // $t1
+	// 		struct _GenericGlowParams *GGP; // $s0
+	// 		struct _FXGlowEffect *glowEffect; // $a0
+	// 		long *color; // $v1
+
+		/* begin block 1.1 */
+			// Start line: 6420
+			// Start offset: 0x8004C384
+			// Variables:
+		// 		int seg; // $a1
+		/* end block 1.1 */
+		// End offset: 0x8004C390
+		// End Line: 6422
+
+		/* begin block 1.2 */
+			// Start line: 6426
+			// Start offset: 0x8004C3C8
+			// Variables:
+		// 		int seg; // $a1
+		// 		int segEnd; // $a2
+		/* end block 1.2 */
+		// End offset: 0x8004C3E8
+		// End Line: 6437
+
+		/* begin block 1.3 */
+			// Start line: 6441
+			// Start offset: 0x8004C418
+			// Variables:
+		// 		int seg; // $a1
+		// 		int numSeg; // $a2
+		/* end block 1.3 */
+		// End offset: 0x8004C460
+		// End Line: 6460
+	/* end block 1 */
+	// End offset: 0x8004C490
+	// End Line: 6467
+
+	/* begin block 2 */
+		// Start line: 15602
+	/* end block 2 */
+	// End Line: 15603
+
+void FX_StartGenericGlow(_Instance *instance,int num,int segOverride,int seg2Override,int InitFlag)
+
+{
+  int iVar1;
+  int unaff_s0;
+  int iStack00000014;
+  int iStack00000018;
+  
+  if (*(char *)(unaff_s0 + 3) < '\x02') {
+    iStack00000014 = (int)*(short *)(unaff_s0 + 0xc);
+    iStack00000018 = (int)*(short *)(unaff_s0 + 0xe);
+    iVar1 = FUN_8004aec4();
+  }
+  else {
+    if (*(char *)(unaff_s0 + 3) == '\x02') {
+      iStack00000014 = *(int *)(unaff_s0 + 8);
+      iStack00000018 = (int)*(short *)(unaff_s0 + 0xc);
+      iVar1 = FUN_8004b040();
+    }
+    else {
+      iStack00000014 = *(int *)(unaff_s0 + 8);
+      iStack00000018 = (int)*(short *)(unaff_s0 + 0xc);
+      iVar1 = FUN_8004b098();
+    }
+  }
+  if ((iVar1 != 0) && (0 < *(int *)(unaff_s0 + 0x10))) {
+    *(short *)(iVar1 + 0xe) = (short)*(int *)(unaff_s0 + 0x10) * 0x21;
+    FUN_8004b024(iVar1,(int)*(short *)(unaff_s0 + 0x14),(int)*(short *)(unaff_s0 + 0x16));
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXLightning * /*$ra*/ FX_CreateLightning(struct _Instance *instance /*$s1*/, int lifeTime /*$s2*/, int deg /*$s3*/, int deg_inc /*$s4*/, int width /*stack 16*/, int small_width /*stack 20*/, int segs /*stack 24*/, int sine_size /*stack 28*/, int variation /*stack 32*/, unsigned long color /*stack 36*/, unsigned long glow_color /*stack 40*/)
+ // line 6487, offset 0x8004c4a0
+	/* begin block 1 */
+		// Start line: 6488
+		// Start offset: 0x8004C4A0
+		// Variables:
+	// 		struct _FXLightning *zap; // $s0
+	/* end block 1 */
+	// End offset: 0x8004C584
+	// End Line: 6523
+
+	/* begin block 2 */
+		// Start line: 15802
+	/* end block 2 */
+	// End Line: 15803
+
+_FXLightning *
+FX_CreateLightning(_Instance *instance,int lifeTime,int deg,int deg_inc,int width,int small_width,
+                  int segs,int sine_size,int variation,ulong color,ulong glow_color)
+
+{
+  _FXLightning *unaff_s0;
+  short unaff_s4;
+  short in_stack_00000038;
+  short in_stack_0000003c;
+  short in_stack_00000040;
+  short in_stack_00000044;
+  short in_stack_00000048;
+  long in_stack_0000004c;
+  long in_stack_00000050;
+  
+  unaff_s0->deg_inc = unaff_s4;
+  unaff_s0->width = in_stack_00000038;
+  unaff_s0->small_width = in_stack_0000003c;
+  unaff_s0->segs = in_stack_00000040;
+  unaff_s0->sine_size = in_stack_00000044;
+  unaff_s0->variation = in_stack_00000048;
+  unaff_s0->color = in_stack_0000004c;
+  (unaff_s0->start_offset).x = 0;
+  (unaff_s0->start_offset).y = 0;
+  (unaff_s0->start_offset).z = 0;
+  (unaff_s0->end_offset).x = 0;
+  (unaff_s0->end_offset).y = 0;
+  (unaff_s0->end_offset).z = 0;
+  unaff_s0->glow_color = in_stack_00000050;
+  unaff_s0->matrixSeg = -1;
+  FUN_8004ae18();
+  return unaff_s0;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_SetLightingPos(struct _FXLightning *zap /*$a0*/, struct _Instance *startInstance /*$a1*/, int startSeg /*$a2*/, struct _Position *startOffset /*$a3*/, struct _Instance *endInstance /*stack 16*/, int endSeg /*stack 20*/, struct _Position *endOffset /*stack 24*/, int matrixSeg /*stack 28*/)
+ // line 6544, offset 0x8004c5a8
+	/* begin block 1 */
+		// Start line: 15928
+	/* end block 1 */
+	// End Line: 15929
+
+void FX_SetLightingPos(_FXLightning *zap,_Instance *startInstance,int startSeg,
+                      _Position *startOffset,_Instance *endInstance,int endSeg,_Position *endOffset,
+                      int matrixSeg)
+
+{
+  short sVar1;
+  undefined4 *in_t0;
+  short in_t2;
+  
+  (zap->start_offset).z = in_t2;
+  if (in_t0 != (undefined4 *)0x0) {
+    sVar1 = *(short *)(in_t0 + 1);
+    *(undefined4 *)&zap->end_offset = *in_t0;
+    (zap->end_offset).z = sVar1;
+  }
+  zap->startSeg = (short)startSeg;
+  zap->endSeg = (short)endSeg;
+  zap->matrixSeg = (short)matrixSeg;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXLightning * /*$ra*/ FX_StartGenericLightning(struct _Instance *instance /*$s2*/, int num /*$a1*/, int segOverride /*$s3*/, int endSegOverride /*$s4*/)
+ // line 6573, offset 0x8004c658
+	/* begin block 1 */
+		// Start line: 6574
+		// Start offset: 0x8004C658
+		// Variables:
+	// 		struct _FXLightning *zap; // $s1
+	// 		struct GenericFXObject *GFXO; // $v1
+	// 		struct _GenericLightningParams *GLP; // $s0
+	// 		struct Object *particle; // $v1
+
+		/* begin block 1.1 */
+			// Start line: 6600
+			// Start offset: 0x8004C74C
+			// Variables:
+		// 		int startSeg; // $a2
+		// 		int endSeg; // $a3
+
+			/* begin block 1.1.1 */
+				// Start line: 6626
+				// Start offset: 0x8004C7B4
+				// Variables:
+			// 		int tmp_blue; // $a0
+			// 		struct CVECTOR *ptr; // $v1
+			/* end block 1.1.1 */
+			// End offset: 0x8004C7D8
+			// End Line: 6635
+		/* end block 1.1 */
+		// End offset: 0x8004C7D8
+		// End Line: 6636
+	/* end block 1 */
+	// End offset: 0x8004C7DC
+	// End Line: 6639
+
+	/* begin block 2 */
+		// Start line: 15986
+	/* end block 2 */
+	// End Line: 15987
+
+	/* begin block 3 */
+		// Start line: 15992
+	/* end block 3 */
+	// End Line: 15993
+
+_FXLightning *
+FX_StartGenericLightning(_Instance *instance,int num,int segOverride,int endSegOverride)
+
+{
+  undefined uVar1;
+  _FXLightning *p_Var2;
+  int iVar3;
+  char *unaff_s0;
+  int unaff_s2;
+  int unaff_s4;
+  int iStack00000010;
+  int iStack00000014;
+  char *pcStack00000018;
+  int iStack0000001c;
+  int iStack00000020;
+  undefined4 uStack00000024;
+  undefined4 uStack00000028;
+  
+  if ((unaff_s0[1] == '\0') || (unaff_s2 = *(int *)(unaff_s2 + 0x130), unaff_s2 != 0)) {
+    iStack00000010 = (int)*(short *)(unaff_s0 + 0x18);
+    iStack00000014 = (int)*(short *)(unaff_s0 + 0x1a);
+    pcStack00000018 = (char *)(uint)(byte)unaff_s0[0x17];
+    iStack0000001c = (int)*(short *)(unaff_s0 + 0x1c);
+    iStack00000020 = (int)*(short *)(unaff_s0 + 0x1e);
+    uStack00000024 = *(undefined4 *)(unaff_s0 + 0x20);
+    uStack00000028 = *(undefined4 *)(unaff_s0 + 0x24);
+    p_Var2 = (_FXLightning *)
+             FUN_8004c438(unaff_s2,(int)*(short *)(unaff_s0 + 2),(int)*(short *)(unaff_s0 + 4),
+                          (int)*(short *)(unaff_s0 + 6));
+    if (p_Var2 != (_FXLightning *)0x0) {
+      if (unaff_s4 == 0) {
+        unaff_s4 = (int)unaff_s0[0xf];
+      }
+      pcStack00000018 = unaff_s0 + 0x10;
+      iStack0000001c = (int)unaff_s0[0x16];
+      iStack00000010 = unaff_s2;
+      iStack00000014 = unaff_s4;
+      FUN_8004c540(p_Var2);
+      if ((*unaff_s0 == '\x01') && (iVar3 = FUN_8007a8ec(), iVar3 != 0)) {
+        uVar1 = *(undefined *)((int)&p_Var2->color + 2);
+        *(undefined *)((int)&p_Var2->color + 2) = *(undefined *)&p_Var2->color;
+        *(undefined *)&p_Var2->color = uVar1;
+        uVar1 = *(undefined *)((int)&p_Var2->glow_color + 2);
+        *(undefined *)((int)&p_Var2->glow_color + 2) = *(undefined *)&p_Var2->glow_color;
+        *(undefined *)&p_Var2->glow_color = uVar1;
+      }
+    }
+  }
+  else {
+    p_Var2 = (_FXLightning *)0x0;
+  }
+  return p_Var2;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXBlastringEffect * /*$ra*/ FX_StartGenericBlastring(struct _Instance *instance /*$s1*/, int num /*$a1*/, int segOverride /*$a2*/, int matrixSegOverride /*$a3*/)
+ // line 6642, offset 0x8004c7fc
+	/* begin block 1 */
+		// Start line: 6643
+		// Start offset: 0x8004C7FC
+		// Variables:
+	// 		struct _FXBlastringEffect *blast; // $v0
+	// 		struct GenericFXObject *GFXO; // $v1
+	// 		struct _GenericBlastringParams *GBP; // $s0
+	// 		struct Object *particle; // $v1
+	// 		struct _SVector position; // stack offset -64
+	// 		int segment; // $s2
+	// 		int matrix_segment; // $s3
+	// 		struct MATRIX mat; // stack offset -56
+	// 		struct MATRIX *swTransform; // $v0
+	/* end block 1 */
+	// End offset: 0x8004C9E8
+	// End Line: 6706
+
+	/* begin block 2 */
+		// Start line: 16135
+	/* end block 2 */
+	// End Line: 16136
+
+	/* begin block 3 */
+		// Start line: 16146
+	/* end block 3 */
+	// End Line: 16147
+
+_FXBlastringEffect *
+FX_StartGenericBlastring(_Instance *instance,int num,int segOverride,int matrixSegOverride)
+
+{
+  int iVar1;
+  _FXBlastringEffect *p_Var2;
+  int unaff_s0;
+  int unaff_s1;
+  int iStack00000010;
+  int iStack00000014;
+  int iStack00000018;
+  int iStack0000001c;
+  int iStack00000020;
+  int iStack00000024;
+  undefined4 uStack00000028;
+  int iStack0000002c;
+  int iStack00000030;
+  int iStack00000034;
+  undefined4 uStack00000038;
+  undefined4 uStack0000003c;
+  int iStack00000040;
+  int iStack00000044;
+  int iStack00000048;
+  short sStack00000050;
+  short sStack00000052;
+  short sStack00000054;
+  
+  if (segOverride == 0) {
+    segOverride = (int)*(char *)(unaff_s0 + 0xc);
+  }
+  FUN_80039ae8(&stack0x00000058);
+  if (*(int *)(unaff_s1 + 0x40) == 0) {
+    sStack00000050 = *(short *)(unaff_s1 + 0x5c);
+    sStack00000052 = *(short *)(unaff_s1 + 0x5e);
+    sStack00000054 = *(short *)(unaff_s1 + 0x60);
+  }
+  else {
+    iVar1 = *(int *)(unaff_s1 + 0x40) + segOverride * 0x20;
+    sStack00000050 = *(short *)(iVar1 + 0x14);
+    sStack00000052 = *(short *)(iVar1 + 0x18);
+    sStack00000054 = *(short *)(iVar1 + 0x1c);
+  }
+  sStack00000050 = sStack00000050 + *(short *)(unaff_s0 + 4);
+  sStack00000052 = sStack00000052 + *(short *)(unaff_s0 + 6);
+  sStack00000054 = sStack00000054 + *(short *)(unaff_s0 + 8);
+  iStack00000010 = (int)*(short *)(unaff_s0 + 0xe);
+  iStack00000014 = (int)*(short *)(unaff_s0 + 0x14);
+  iStack00000018 = (int)*(short *)(unaff_s0 + 0x16);
+  iStack0000001c = (int)*(short *)(unaff_s0 + 0x10);
+  iStack00000020 = (int)*(short *)(unaff_s0 + 0x12);
+  iStack00000024 = *(int *)(unaff_s0 + 0x18) << 0xc;
+  uStack00000028 = *(undefined4 *)(unaff_s0 + 0x1c);
+  iStack0000002c = (int)*(short *)(unaff_s0 + 0x20);
+  iStack00000030 = (int)*(short *)(unaff_s0 + 0x22);
+  iStack00000034 = (int)*(short *)(unaff_s0 + 0x24);
+  uStack00000038 = *(undefined4 *)(unaff_s0 + 0x28);
+  uStack0000003c = *(undefined4 *)(unaff_s0 + 0x2c);
+  iStack00000040 = (int)*(char *)(unaff_s0 + 0x26);
+  iStack00000044 = (int)*(short *)(unaff_s0 + 2);
+  iStack00000048 = (int)*(char *)(unaff_s0 + 0xd);
+  p_Var2 = (_FXBlastringEffect *)FUN_8004b8e4();
+  p_Var2->stay_in_place = *(char *)(unaff_s0 + 0x27);
+  return p_Var2;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// struct _FXFlash * /*$ra*/ FX_StartGenericFlash(struct _Instance *instance /*$s2*/, int num /*$a1*/)
+ // line 6708, offset 0x8004ca04
+	/* begin block 1 */
+		// Start line: 6709
+		// Start offset: 0x8004CA04
+		// Variables:
+	// 		struct GenericFXObject *GFXO; // $v1
+	// 		struct _GenericFlashParams *GFP; // $s1
+	// 		struct Object *particle; // $v1
+	// 		struct _FXFlash *flash; // $s0
+	/* end block 1 */
+	// End offset: 0x8004CACC
+	// End Line: 6740
+
+	/* begin block 2 */
+		// Start line: 16279
+	/* end block 2 */
+	// End Line: 16280
+
+	/* begin block 3 */
+		// Start line: 16285
+	/* end block 3 */
+	// End Line: 16286
+
+_FXFlash * FX_StartGenericFlash(_Instance *instance,int num)
+
+{
+  uchar in_v0;
+  long lVar1;
+  int iVar2;
+  _FXFlash *unaff_s0;
+  int unaff_s1;
+  _Instance *unaff_s2;
+  
+  unaff_s0->effectType = in_v0;
+  unaff_s0->instance = unaff_s2;
+  unaff_s0->type = '\0';
+  unaff_s0->lifeTime = -1;
+  lVar1 = *(long *)(unaff_s1 + 4);
+  unaff_s0->currentTime = 0;
+  unaff_s0->color = lVar1;
+  iVar2 = (int)*(short *)(unaff_s1 + 2) * 0x100;
+  unaff_s0->timeToColor = iVar2;
+  iVar2 = iVar2 + (int)*(short *)(unaff_s1 + 8) * 0x100;
+  unaff_s0->timeAtColor = iVar2;
+  unaff_s0->timeFromColor = iVar2 + (int)*(short *)(unaff_s1 + 10) * 0x100;
+  FUN_8004ae18();
+  return unaff_s0;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// long /*$ra*/ FX_GetHealthColor(int currentHealth /*$a0*/)
+ // line 6742, offset 0x8004cae4
+	/* begin block 1 */
+		// Start line: 6763
+		// Start offset: 0x8004CAE4
+		// Variables:
+	// 		static long HealthColors[6]; // offset 0x0
+	// 		long color; // $v1
+	/* end block 1 */
+	// End offset: 0x8004CB28
+	// End Line: 6780
+
+	/* begin block 2 */
+		// Start line: 16362
+	/* end block 2 */
+	// End Line: 16363
+
+	/* begin block 3 */
+		// Start line: 16382
+	/* end block 3 */
+	// End Line: 16383
+
+	/* begin block 4 */
+		// Start line: 16393
+	/* end block 4 */
+	// End Line: 16394
+
+long FX_GetHealthColor(int currentHealth)
+
+{
+  int in_v0;
+  int in_v1;
+  
+  snow_amount = (short)(int)((longlong)in_v0 * (longlong)in_v1 >> 0x25) - (short)(in_v0 >> 0x1f);
+  return in_v0 >> 0x1f;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Start_Snow(int percent /*$a0*/)
+ // line 6784, offset 0x8004cb38
+	/* begin block 1 */
+		// Start line: 16446
+	/* end block 1 */
+	// End Line: 16447
+
+	/* begin block 2 */
+		// Start line: 16447
+	/* end block 2 */
+	// End Line: 16448
+
+void FX_Start_Snow(int percent)
+
+{
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Start_Rain(int percent /*$a0*/)
+ // line 6789, offset 0x8004cb6c
+	/* begin block 1 */
+		// Start line: 16456
+	/* end block 1 */
+	// End Line: 16457
+
+	/* begin block 2 */
+		// Start line: 16457
+	/* end block 2 */
+	// End Line: 16458
+
+void FX_Start_Rain(int percent)
+
+{
+                    /* WARNING: Subroutine does not return */
+  FUN_8004fbb0(0x18,0xd);
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_StartLightbeam(struct _Instance *instance /*$s1*/, int startSeg /*$s2*/, int endSeg /*$s3*/, int color_num /*$a3*/)
+ // line 6796, offset 0x8004cba8
+	/* begin block 1 */
+		// Start line: 6797
+		// Start offset: 0x8004CBA8
+		// Variables:
+	// 		struct Object *particle; // $v0
+	// 		struct _FXLightBeam *beam; // $v0
+	// 		struct GenericFXObject *GFXO; // $v0
+	// 		long color; // $s0
+	/* end block 1 */
+	// End offset: 0x8004CC30
+	// End Line: 6821
+
+	/* begin block 2 */
+		// Start line: 16470
+	/* end block 2 */
+	// End Line: 16471
+
+	/* begin block 3 */
+		// Start line: 16476
+	/* end block 3 */
+	// End Line: 16477
+
+void FX_StartLightbeam(_Instance *instance,int startSeg,int endSeg,int color_num)
+
+{
+  undefined2 in_v0;
+  long unaff_s0;
+  _Instance *unaff_s1;
+  undefined2 unaff_s2;
+  undefined2 unaff_s3;
+  
+  instance->next = unaff_s1;
+  (instance->node).next = (NodeType *)0x0;
+  *(undefined *)((int)&instance->prev + 1) = 0;
+  *(undefined2 *)((int)&instance->prev + 2) = in_v0;
+  *(undefined2 *)&instance->instanceID = unaff_s2;
+  *(undefined2 *)((int)&instance->instanceID + 2) = unaff_s3;
+  instance->flags = unaff_s0;
+  FUN_8004ae18();
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_StartInstanceEffect(struct _Instance *instance /*$s2*/, struct ObjectEffect *effect /*$s0*/, int InitFlag /*$s3*/)
+ // line 6835, offset 0x8004cc4c
+	/* begin block 1 */
+		// Start line: 6836
+		// Start offset: 0x8004CC4C
+		// Variables:
+	// 		long color; // stack offset -32
+
+		/* begin block 1.1 */
+			// Start line: 6869
+			// Start offset: 0x8004CD20
+			// Variables:
+		// 		long numberOfSegments; // $a2
+		/* end block 1.1 */
+		// End offset: 0x8004CD68
+		// End Line: 6889
+
+		/* begin block 1.2 */
+			// Start line: 6954
+			// Start offset: 0x8004CE2C
+			// Variables:
+		// 		struct _FXParticle *currentParticle; // $a0
+		// 		struct evObjectDraftData *draft; // $s1
+		/* end block 1.2 */
+		// End offset: 0x8004CE64
+		// End Line: 6963
+
+		/* begin block 1.3 */
+			// Start line: 6990
+			// Start offset: 0x8004CF14
+			// Variables:
+		// 		struct FXSplinter *splinterData; // $s0
+		// 		struct GenericTune *tune; // $a0
+		// 		short shardFlags; // $s1
+
+			/* begin block 1.3.1 */
+				// Start line: 6996
+				// Start offset: 0x8004CF34
+				// Variables:
+			// 		struct PhysObSplinter *splintDef; // $v0
+			/* end block 1.3.1 */
+			// End offset: 0x8004CF44
+			// End Line: 6999
+		/* end block 1.3 */
+		// End offset: 0x8004CF70
+		// End Line: 7010
+
+		/* begin block 1.4 */
+			// Start line: 7024
+			// Start offset: 0x8004CFF0
+			// Variables:
+		// 		int shock; // $a0
+		// 		int amt; // $a1
+		/* end block 1.4 */
+		// End offset: 0x8004D050
+		// End Line: 7034
+	/* end block 1 */
+	// End offset: 0x8004D050
+	// End Line: 7040
+
+	/* begin block 2 */
+		// Start line: 16561
+	/* end block 2 */
+	// End Line: 16562
+
+void FX_StartInstanceEffect(_Instance *instance,ObjectEffect *effect,int InitFlag)
+
+{
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_EndInstanceEffects(struct _Instance *instance /*$s1*/)
+ // line 7044, offset 0x8004d06c
+	/* begin block 1 */
+		// Start line: 7045
+		// Start offset: 0x8004D06C
+		// Variables:
+	// 		struct _FXGeneralEffect *currentEffect; // $a0
+	// 		struct _FXGeneralEffect *nextEffect; // $s0
+	/* end block 1 */
+	// End offset: 0x8004D0AC
+	// End Line: 7058
+
+	/* begin block 2 */
+		// Start line: 17002
+	/* end block 2 */
+	// End Line: 17003
+
+void FX_EndInstanceEffects(_Instance *instance)
+
+{
+  _Instance *p_Var1;
+  _Instance *unaff_s2;
+  
+  if (instance != (_Instance *)0x0) {
+    do {
+      p_Var1 = (_Instance *)(instance->node).prev;
+      if ((instance->next == unaff_s2) && (*(char *)&instance->prev == '\x01')) {
+        FUN_8004ae28();
+      }
+      instance = p_Var1;
+    } while (p_Var1 != (_Instance *)0x0);
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_EndInstanceParticleEffects(struct _Instance *instance /*$s2*/)
+ // line 7061, offset 0x8004d0c0
+	/* begin block 1 */
+		// Start line: 7062
+		// Start offset: 0x8004D0C0
+		// Variables:
+	// 		struct _FXGeneralEffect *currentEffect; // $a0
+	// 		struct _FXGeneralEffect *nextEffect; // $s0
+	/* end block 1 */
+	// End offset: 0x8004D118
+	// End Line: 7075
+
+	/* begin block 2 */
+		// Start line: 17040
+	/* end block 2 */
+	// End Line: 17041
+
+void FX_EndInstanceParticleEffects(_Instance *instance)
+
+{
+  return;
+}
+
+
+
+// autogenerated function stub: 
+// void /*$ra*/ FX_GetSpiralPoint(int radius /*$s1*/, int deg /*$s0*/, int *x /*$s2*/, int *y /*$s3*/)
+void FX_GetSpiralPoint(int radius, int deg, int *x, int *y)
+{ // line 7085, offset 0x8004d130
+	/* begin block 1 */
+		// Start line: 7086
+		// Start offset: 0x8004D130
+		// Variables:
+			int prevx; // $a0
+			int prevy; // $v0
+	/* end block 1 */
+	// End offset: 0x8004D1DC
+	// End Line: 7100
+
+	/* begin block 2 */
+		// Start line: 17092
+	/* end block 2 */
+	// End Line: 17093
+
+}
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_GetLinePoint(int radius /*$a0*/, int next_radius /*$s1*/, int deg /*$a2*/, int next_deg /*$s0*/, int *pntx /*stack 16*/, int *pnty /*stack 20*/, int part /*stack 24*/)
+ // line 7129, offset 0x8004d204
+	/* begin block 1 */
+		// Start line: 7130
+		// Start offset: 0x8004D204
+		// Variables:
+	// 		int x1; // stack offset -32
+	// 		int y1; // stack offset -28
+	// 		int x2; // stack offset -24
+	// 		int y2; // stack offset -20
+	/* end block 1 */
+	// End offset: 0x8004D2A4
+	// End Line: 7137
+
+	/* begin block 2 */
+		// Start line: 17184
+	/* end block 2 */
+	// End Line: 17185
+
+void FX_GetLinePoint(int radius,int next_radius,int deg,int next_deg,int *pntx,int *pnty,int part)
+
+{
+  int in_v0;
+  int in_v1;
+  int unaff_s2;
+  int iVar1;
+  int in_stack_0000001c;
+  int *in_stack_00000040;
+  int *in_stack_00000044;
+  
+  *in_stack_00000040 = in_v1 + (in_v0 >> 0xc);
+  iVar1 = (in_stack_0000001c - (int)pnty) * unaff_s2;
+  if (iVar1 < 0) {
+    iVar1 = iVar1 + 0xfff;
+  }
+  *in_stack_00000044 = (int)pnty + (iVar1 >> 0xc);
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_CalcSpiral(int degchange /*stack 0*/)
+ // line 7141, offset 0x8004d2d0
+	/* begin block 1 */
+		// Start line: 7142
+		// Start offset: 0x8004D2D0
+		// Variables:
+	// 		int radius; // $s2
+	// 		int deg; // $s1
+	// 		int n; // $s3
+	// 		int pntx; // stack offset -72
+	// 		int pnty; // stack offset -68
+	// 		int px; // stack offset -64
+	// 		int py; // stack offset -60
+	// 		int mx; // stack offset -56
+	// 		int my; // stack offset -52
+	// 		int mod; // $s0
+	// 		int next_deg; // $s4
+	// 		int next_radius; // $s5
+	// 		int minx; // $s7
+	// 		int maxx; // $s6
+	// 		int miny; // stack offset -48
+	// 		int maxy; // $fp
+	/* end block 1 */
+	// End offset: 0x8004D560
+	// End Line: 7204
+
+	/* begin block 2 */
+		// Start line: 17211
+	/* end block 2 */
+	// End Line: 17212
+
+void FX_CalcSpiral(int degchange)
+
+{
+  int iVar1;
+  int unaff_s1;
+  int unaff_s2;
+  int iVar2;
+  int unaff_s4;
+  int iVar3;
+  int unaff_s5;
+  int iVar4;
+  int unaff_s6;
+  int unaff_s7;
+  int unaff_s8;
+  short sStack00000020;
+  int in_stack_00000020;
+  short sStack00000024;
+  int in_stack_00000024;
+  short sStack00000028;
+  int in_stack_00000028;
+  short sStack0000002c;
+  int in_stack_0000002c;
+  short sStack00000030;
+  int in_stack_00000030;
+  short sStack00000034;
+  int in_stack_00000034;
+  int in_stack_00000038;
+  int in_stack_00000068;
+  
+  SoundEffectChannel_ARRAY_800d13bc[7].pitchChangePerUpdate = sStack00000020;
+  SoundEffectChannel_ARRAY_800d13bc[7].pitchChangeSign = sStack00000024;
+  iVar1 = unaff_s1;
+  do {
+    if (Spiral_Number == 0) {
+      iVar2 = unaff_s2;
+      iVar3 = unaff_s4;
+      iVar4 = unaff_s5;
+      if (iVar1 % Spiral_OffsetP[11] == 0) {
+        iVar4 = unaff_s5 + Spiral_OffsetP[11] * 0x440;
+        iVar3 = unaff_s4 + in_stack_00000068 * Spiral_OffsetP[11];
+        unaff_s1 = unaff_s4;
+        iVar2 = unaff_s5;
+      }
+      FUN_8004d19c(iVar2,iVar4,unaff_s1,iVar3);
+      FUN_8004d19c(iVar2 + 0x1c00,iVar4 + 0x1c00,unaff_s1,iVar3);
+      FUN_8004d19c(iVar2 + -0x1c00,iVar4 + -0x1c00,unaff_s1,iVar3);
+      unaff_s4 = iVar3;
+      unaff_s5 = iVar4;
+    }
+    else {
+      iVar2 = unaff_s2 + 0x440;
+      unaff_s1 = unaff_s1 + in_stack_00000068;
+      FUN_8004d0c8(iVar2,unaff_s1,&stack0x00000020,&stack0x00000024);
+      FUN_8004d0c8(unaff_s2 + 0x2040,unaff_s1,&stack0x00000028,&stack0x0000002c);
+      FUN_8004d0c8(unaff_s2 + -0x17c0,unaff_s1,&stack0x00000030,&stack0x00000034);
+    }
+    (&SoundEffectChannel_ARRAY_800d13bc[0].pitchChangeTime)[iVar1 * 2] = sStack00000020;
+    (&SoundEffectChannel_ARRAY_800d13bc[0].pitchChangeTimeSave)[iVar1 * 2] = sStack00000024;
+    if (iVar1 == 0x3f) {
+      in_stack_00000028 = in_stack_00000020;
+      in_stack_0000002c = in_stack_00000024;
+      in_stack_00000030 = in_stack_00000020;
+      in_stack_00000034 = in_stack_00000024;
+    }
+    (&SoundEffectChannel_ARRAY_800d13bc[8].volume)[iVar1 * 2] = sStack00000028;
+    (&SoundEffectChannel_ARRAY_800d13bc[8].volumeChangeTime)[iVar1 * 2] = sStack0000002c;
+    if (in_stack_00000028 < unaff_s7) {
+      unaff_s7 = in_stack_00000028;
+    }
+    if (unaff_s6 < in_stack_00000028) {
+      unaff_s6 = in_stack_00000028;
+    }
+    if (in_stack_0000002c < in_stack_00000038) {
+      in_stack_00000038 = in_stack_0000002c;
+    }
+    if (unaff_s8 < in_stack_0000002c) {
+      unaff_s8 = in_stack_0000002c;
+    }
+    iVar3 = iVar1 + 1;
+    Spiral_Array[iVar1 + 0xc].vx = sStack00000030;
+    Spiral_Array[iVar1 + 0xc].vy = sStack00000034;
+    unaff_s2 = iVar2;
+    iVar1 = iVar3;
+  } while (iVar3 < 0x40);
+  iVar1 = ((int)((unaff_s6 - unaff_s7) + ((uint)(unaff_s6 - unaff_s7) >> 0x1f)) >> 1) * 0x140;
+  if (iVar1 < 0) {
+    iVar1 = iVar1 + 0x1ff;
+  }
+  Spiral_OffsetP[8] = (int)(unaff_s7 + unaff_s6 + ((uint)(unaff_s7 + unaff_s6) >> 0x1f)) >> 1;
+  Spiral_OffsetP[9] =
+       (int)(in_stack_00000038 + unaff_s8 + ((uint)(in_stack_00000038 + unaff_s8) >> 0x1f)) >> 1;
+  Spiral_OffsetP[10] = (iVar1 >> 9) + 2;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Spiral(struct _PrimPool *primPool /*stack 0*/, unsigned long **ot /*stack 4*/)
+ // line 7224, offset 0x8004d5c8
+	/* begin block 1 */
+		// Start line: 7225
+		// Start offset: 0x8004D5C8
+		// Variables:
+	// 		struct _POLY_2G4 *poly; // $s2
+	// 		long prev; // $s3
+	// 		long offp; // $s7
+	// 		long offm; // $s4
+	// 		int n; // $s1
+	// 		struct DR_TPAGE *drtpage; // $v0
+	// 		int health; // $fp
+	// 		int health_mod; // $t1
+	// 		long no_color; // stack offset -76
+	// 		long color; // stack offset -80
+	// 		static short cnt; // offset 0x6c
+	// 		int current_cnt; // stack offset -72
+	// 		int max64; // $a0
+	// 		long SPIRAL_COLOR; // $t3
+	// 		long SPIRAL_COLOR2; // $t2
+	// 		long SPIRAL_COLOR3; // stack offset -68
+	// 		long SPIRAL_COLOR_END; // $s5
+	// 		long SPIRAL_NOCOLOR; // $a2
+
+		/* begin block 1.1 */
+			// Start line: 7361
+			// Start offset: 0x8004D7C4
+			// Variables:
+		// 		int tmp; // $v1
+		/* end block 1.1 */
+		// End offset: 0x8004D820
+		// End Line: 7375
+
+		/* begin block 1.2 */
+			// Start line: 7458
+			// Start offset: 0x8004D964
+			// Variables:
+		// 		static short deg; // offset 0x6e
+		// 		struct _Vector f1; // stack offset -96
+		/* end block 1.2 */
+		// End offset: 0x8004D9B8
+		// End Line: 7473
+	/* end block 1 */
+	// End offset: 0x8004D9B8
+	// End Line: 7479
+
+	/* begin block 2 */
+		// Start line: 17543
+	/* end block 2 */
+	// End Line: 17544
+
+/* WARNING: Removing unreachable block (ram,0x8004d774) */
+
+void FX_Spiral(_PrimPool *primPool,ulong **ot)
+
+{
+  short sVar1;
+  uint uVar2;
+  long lVar3;
+  int iVar4;
+  DVECTOR DVar5;
+  DVECTOR DVar6;
+  DVECTOR *pDVar7;
+  int iVar8;
+  uint *puVar9;
+  uint *puVar10;
+  DVECTOR DVar11;
+  DVECTOR DVar12;
+  DVECTOR DVar13;
+  DVECTOR DVar14;
+  int iVar15;
+  undefined *puStack00000010;
+  undefined4 uStack00000014;
+  undefined4 uStack00000018;
+  undefined4 uStack0000001c;
+  uint uStack00000020;
+  undefined4 uStack00000028;
+  undefined4 uStack0000002c;
+  DVECTOR DStack00000038;
+  DVECTOR DStack0000003c;
+  int iStack00000040;
+  DVECTOR DStack00000044;
+  uint uStack00000048;
+  undefined *in_stack_00000050;
+  int in_stack_00000054;
+  DVECTOR in_stack_00000058;
+  DVECTOR in_stack_0000005c;
+  int in_stack_00000088;
+  int in_stack_0000008c;
+  
+  FUN_8004d980(1);
+  DVar6 = (DVECTOR)0x3afcffd3;
+  DVar5 = (DVECTOR)0x3adce0ba;
+  DVar13 = (DVECTOR)0x3a483017;
+  DStack00000038 = (DVECTOR)0x3a002a15;
+  DStack00000044 = (DVECTOR)0x3abbc09d;
+  if (Spiral_Number == 0) {
+    if (Spiral_Current == Spiral_Max) {
+      sRam800cebd0 = sRam800cebd0 + 1;
+      if (0x50 < sRam800cebd0) {
+        sRam800cebd0 = 0;
+      }
+    }
+    else {
+      DVar6 = (DVECTOR)0x3a00ff00;
+      DVar5 = (DVECTOR)0x3a00e000;
+      DStack00000044 = (DVECTOR)0x3a00bf00;
+      DVar13 = (DVECTOR)0x3a004500;
+    }
+    DStack00000038 = (DVECTOR)0x3a00150b;
+  }
+  else {
+    sRam800cebd0 = sRam800cebd0 + 1;
+    if (0x50 < sRam800cebd0) {
+      sRam800cebd0 = 0;
+    }
+  }
+  lVar3 = Spiral_Max;
+  if (Spiral_Max < 0) {
+    lVar3 = Spiral_Max + 0x3f;
+  }
+  iVar4 = lVar3 >> 6;
+  iVar15 = Spiral_Current / iVar4;
+  puVar9 = *(uint **)(in_stack_00000088 + 4);
+  iVar4 = ((Spiral_Current - iVar15 * iVar4) * 0x1000) / iVar4;
+  if (puVar9 + 0x451 < *(uint **)(in_stack_00000088 + 8)) {
+    iVar8 = 0;
+    puStack00000010 = &stack0x00000038;
+    uStack00000048 = (uint)DVar6 & 0xff000000;
+    iStack00000040 = (int)sRam800cebd0;
+    pDVar7 = (DVECTOR *)(puVar9 + 0x10);
+    DVar11 = SoundEffectChannel_ARRAY_800d13bc[7]._28_4_;
+    DVar12 = SoundEffectChannel_ARRAY_800d13bc[7]._28_4_;
+    DVar14 = SoundEffectChannel_ARRAY_800d13bc[7]._28_4_;
+    DStack0000003c = DStack00000038;
+    do {
+      puVar10 = puVar9;
+      pDVar7[-0xb] = DStack00000038;
+      pDVar7[-7] = DStack00000038;
+      if (iVar15 < iVar8) {
+        DStack00000038 = DStack0000003c;
+      }
+      else {
+        uVar2 = (int)(iVar8 + iStack00000040 & 0xfU) >> 2;
+        DStack00000038 = DVar5;
+        if (uVar2 != 1) {
+          if (uVar2 < 2) {
+LAB_8004d7a0:
+            DStack00000038 = DVar6;
+          }
+          else {
+            if (uVar2 == 2) {
+              DStack00000038 = DStack00000044;
+            }
+            else {
+              DStack00000038 = DVar5;
+              if (uVar2 != 3) goto LAB_8004d7a0;
+            }
+          }
+        }
+      }
+      if (iVar8 == iVar15) {
+        in_stack_00000050 = puStack00000010;
+        in_stack_00000054 = iVar4;
+        in_stack_00000058 = DVar5;
+        in_stack_0000005c = DVar6;
+        FUN_800bd394(puStack00000010,&stack0x0000003c,iVar4,0x1000 - iVar4);
+        DStack00000038 = (DVECTOR)((uint)DStack00000038 & 0xffffff | uStack00000048);
+        puStack00000010 = in_stack_00000050;
+        iVar4 = in_stack_00000054;
+        DVar5 = in_stack_00000058;
+        DVar6 = in_stack_0000005c;
+      }
+      pDVar7[-0xf] = DVar13;
+      pDVar7[-0xd] = DVar13;
+      pDVar7[-3] = DVar13;
+      pDVar7[-1] = DVar13;
+      pDVar7[-6] = DVar11;
+      pDVar7[-10] = DVar11;
+      pDVar7[-0xe] = DVar14;
+      pDVar7[-2] = DVar12;
+      pDVar7[-9] = DStack00000038;
+      pDVar7[-5] = DStack00000038;
+      DVar11 = *(DVECTOR *)(&SoundEffectChannel_ARRAY_800d13bc[0].pitchChangeTime + iVar8 * 2);
+      DVar14 = *(DVECTOR *)(&SoundEffectChannel_ARRAY_800d13bc[8].volume + iVar8 * 2);
+      DVar12 = Spiral_Array[iVar8 + 0xc];
+      iVar8 = iVar8 + 1;
+      pDVar7[-4] = DVar11;
+      pDVar7[-8] = DVar11;
+      pDVar7[-0xc] = DVar14;
+      *pDVar7 = DVar12;
+      pDVar7 = pDVar7 + 0x11;
+      *puVar10 = *(uint *)(in_stack_0000008c + 4) & 0xffffff | 0x10000000;
+      *(uint *)(in_stack_0000008c + 4) = (uint)puVar10 & 0xffffff;
+      puVar9 = puVar10 + 0x11;
+    } while (iVar8 < 0x40);
+    puVar10[0x12] = 0xe1000620;
+    sVar1 = Spiral_Number;
+    *puVar9 = *(uint *)(in_stack_0000008c + 4) & 0xffffff | 0x1000000;
+    *(uint *)(in_stack_0000008c + 4) = (uint)puVar9 & 0xffffff;
+    *(uint **)(in_stack_00000088 + 4) = puVar10 + 0x13;
+    if ((sVar1 != 0) || (Spiral_Current == Spiral_Max)) {
+      uStack0000002c = Spiral_OffsetP[9];
+      uStack00000020 = (uint)uRam800cebd2 - 0x20 & 0xfff;
+      uStack00000028 = Spiral_OffsetP[8];
+      puStack00000010 = (undefined *)0x5;
+      uRam800cebd2 = (ushort)uStack00000020;
+      uStack00000014 = 0x8000;
+      uStack00000018 = Spiral_OffsetP[10];
+      uStack0000001c = Spiral_OffsetP[10];
+      FUN_8002b490(&stack0x00000028,0x140,loadStatus.changeDir,in_stack_0000008c);
+    }
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Health_Spiral(int number /*$a0*/, int current_health /*$s0*/, int max_health /*$s1*/)
+ // line 7481, offset 0x8004d9e8
+	/* begin block 1 */
+		// Start line: 7482
+		// Start offset: 0x8004D9E8
+		// Variables:
+	// 		int degchange; // $v1
+	/* end block 1 */
+	// End offset: 0x8004DB20
+	// End Line: 7529
+
+	/* begin block 2 */
+		// Start line: 18280
+	/* end block 2 */
+	// End Line: 18281
+
+void FX_Health_Spiral(int number,int current_health,int max_health)
+
+{
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Spiral_Init()
+ // line 7531, offset 0x8004db34
+	/* begin block 1 */
+		// Start line: 18380
+	/* end block 1 */
+	// End Line: 18381
+
+/* WARNING: Unknown calling convention yet parameter storage is locked */
+
+void FX_Spiral_Init(void)
+
+{
+  short *in_a2;
+  
+  FUN_800bfc28();
+  FUN_80039ae8(&stack0x00000010);
+  FUN_80078bf4((int)*in_a2,&stack0x00000010);
+  FUN_80078d28((int)in_a2[1],&stack0x00000010);
+                    /* WARNING: Subroutine does not return */
+  FUN_80078e5c((int)in_a2[2],&stack0x00000010);
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_DrawModel(struct Object *object /*$s6*/, int model_num /*$s7*/, struct _SVector *rotation /*$s0*/, struct _SVector *position /*$s1*/, struct _SVector *offset /*stack 16*/, int transflag /*stack 20*/)
+ // line 7560, offset 0x8004db74
+	/* begin block 1 */
+		// Start line: 7561
+		// Start offset: 0x8004DB74
+		// Variables:
+	// 		struct _Model *model; // $v0
+	// 		struct _MFace *mface; // $t0
+	// 		struct _MVertex *vertexList; // $t3
+	// 		struct TextureMT3 *texture; // $a1
+	// 		struct MATRIX matrix; // stack offset -88
+	// 		int i; // $a3
+	// 		struct POLY_GT3 *poly; // $s4
+	// 		unsigned long **drawot; // $s5
+	// 		struct _SVector output; // stack offset -56
+	// 		long color; // $t1
+
+		/* begin block 1.1 */
+			// Start line: 7604
+			// Start offset: 0x8004DCA0
+			// Variables:
+		// 		long clip; // stack offset -48
+		/* end block 1.1 */
+		// End offset: 0x8004DD98
+		// End Line: 7632
+	/* end block 1 */
+	// End offset: 0x8004DDC0
+	// End Line: 7639
+
+	/* begin block 2 */
+		// Start line: 18441
+	/* end block 2 */
+	// End Line: 18442
+
+	/* begin block 3 */
+		// Start line: 18453
+	/* end block 3 */
+	// End Line: 18454
+
+void FX_DrawModel(Object *object,int model_num,_SVector *rotation,_SVector *position,
+                 _SVector *offset,int transflag)
+
+{
+  int unaff_s0;
+  
+  FUN_80078d28(object,&offset);
+                    /* WARNING: Subroutine does not return */
+  FUN_80078e5c((int)*(short *)(unaff_s0 + 4),&offset);
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ fx_calc_points(struct _SVector *points /*$s1*/, int degrees /*$s0*/, int radius /*$s3*/, int radius2 /*$s4*/, int radius3 /*stack 16*/)
+ // line 7653, offset 0x8004ddec
+	/* begin block 1 */
+		// Start line: 7654
+		// Start offset: 0x8004DDEC
+		// Variables:
+	// 		int cosval; // $s0
+	// 		int sinval; // $v0
+	/* end block 1 */
+	// End offset: 0x8004DDEC
+	// End Line: 7654
+
+	/* begin block 2 */
+		// Start line: 18657
+	/* end block 2 */
+	// End Line: 18658
+
+void fx_calc_points(_SVector *points,int degrees,int radius,int radius2,int radius3)
+
+{
+  undefined4 in_zero;
+  undefined4 in_at;
+  int in_v0;
+  int iVar1;
+  int in_t1;
+  undefined4 *unaff_s1;
+  int unaff_s2;
+  int unaff_s3;
+  int unaff_s4;
+  int in_lo;
+  
+  *(short *)unaff_s1 = (short)(in_t1 >> 0xc);
+  *(short *)(unaff_s1 + 2) = (short)((int)points >> 0xc);
+  *(undefined2 *)((int)unaff_s1 + 2) = (short)(in_v0 * unaff_s3 >> 0xc);
+  *(undefined2 *)((int)unaff_s1 + 10) = (short)(in_v0 * unaff_s4 >> 0xc);
+  *(short *)(unaff_s1 + 4) = (short)(in_lo >> 0xc);
+  iVar1 = in_v0 * unaff_s2 >> 0xc;
+  *(undefined2 *)((int)unaff_s1 + 0x12) = (short)iVar1;
+  setCopReg(2,in_zero,*unaff_s1);
+  setCopReg(2,in_at,unaff_s1[1]);
+  setCopReg(2,iVar1,unaff_s1[2]);
+  setCopReg(2,in_v0 * unaff_s3,unaff_s1[3]);
+  setCopReg(2,points,unaff_s1[4]);
+  setCopReg(2,in_v0 * unaff_s4,unaff_s1[5]);
+  copFunction(2,0x280030);
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// long /*$ra*/ fx_get_startz(struct _SVector *position /*$a0*/)
+ // line 7671, offset 0x8004defc
+	/* begin block 1 */
+		// Start line: 7672
+		// Start offset: 0x8004DEFC
+		// Variables:
+	// 		struct MATRIX tmpmat; // stack offset -40
+	/* end block 1 */
+	// End offset: 0x8004DF44
+	// End Line: 7680
+
+	/* begin block 2 */
+		// Start line: 18700
+	/* end block 2 */
+	// End Line: 18701
+
+long fx_get_startz(_SVector *position)
+
+{
+  bool bVar1;
+  int in_v0;
+  undefined4 uStack0000004c;
+  
+  bVar1 = *(int *)(in_v0 + 4) + 0x900U < *(uint *)(in_v0 + 8);
+  uStack0000004c = clearRect[1]._8_4_;
+  if (bVar1) {
+    FUN_800bfc28();
+    FUN_800bce3c(position);
+                    /* WARNING: Subroutine does not return */
+    FUN_800bce1c(position);
+  }
+  return (uint)bVar1;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_DrawRing(struct MATRIX *wcTransform /*$s0*/, struct _SVector *position /*$s3*/, struct MATRIX *matrix /*$s4*/, int radius /*stack 12*/, int radius2 /*stack 16*/, int radius3 /*stack 20*/, int z1 /*stack 24*/, int z2 /*stack 28*/, int z3 /*stack 32*/, long color /*stack 36*/, int sortInWorld /*stack 40*/)
+ // line 7705, offset 0x8004df54
+	/* begin block 1 */
+		// Start line: 7706
+		// Start offset: 0x8004DF54
+		// Variables:
+	// 		int n; // $s3
+	// 		struct _POLY_2G4T *poly; // $s1
+	// 		unsigned long **drawot; // stack offset -44
+	// 		struct _SVector points[3]; // stack offset -96
+	// 		long sxy[3]; // stack offset -72
+	// 		long degrees; // $s6
+	// 		long color_black; // $s4
+	// 		long sz0; // stack offset -56
+	// 		long sz1; // stack offset -52
+	// 		long sz2; // stack offset -48
+	// 		long startz; // $s7
+	/* end block 1 */
+	// End offset: 0x8004E1D0
+	// End Line: 7782
+
+	/* begin block 2 */
+		// Start line: 18769
+	/* end block 2 */
+	// End Line: 18770
+
+	/* begin block 3 */
+		// Start line: 18779
+	/* end block 3 */
+	// End Line: 18780
+
+void FX_DrawRing(MATRIX *wcTransform,_SVector *position,MATRIX *matrix,int radius,int radius2,
+                int radius3,int z1,int z2,int z3,long color,int sortInWorld)
+
+{
+  FUN_800bce3c();
+                    /* WARNING: Subroutine does not return */
+  FUN_800bce1c();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ fx_setTex(struct DVECTOR *x /*$a0*/, unsigned char *uv /*$a1*/, int tx /*$a2*/, int offset /*$a3*/)
+ // line 7785, offset 0x8004e200
+	/* begin block 1 */
+		// Start line: 18998
+	/* end block 1 */
+	// End Line: 18999
+
+	/* begin block 2 */
+		// Start line: 18999
+	/* end block 2 */
+	// End Line: 19000
+
+void fx_setTex(DVECTOR *x,uchar *uv,int tx,int offset)
+
+{
+  int iVar1;
+  int iStack00000094;
+  
+  iVar1 = 0x20;
+  if (offset < 0x78) {
+    iVar1 = 8;
+  }
+  if ((uint)(*(int *)(loadStatus.changeDir + 4) + iVar1 * 0x28) <
+      *(uint *)(loadStatus.changeDir + 8)) {
+    iStack00000094 = offset;
+    FUN_800bfc28();
+    FUN_800bce3c();
+                    /* WARNING: Subroutine does not return */
+    FUN_800bce1c();
+  }
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_DrawRing2(struct MATRIX *wcTransform /*$s0*/, struct _SVector *position /*$s1*/, struct MATRIX *matrix /*$s3*/, int radius /*stack 12*/, int radius2 /*stack 16*/, int radius3 /*stack 20*/, int z1 /*stack 24*/, int z2 /*stack 28*/, int z3 /*stack 32*/, long offset /*stack 36*/, int sortInWorld /*stack 40*/)
+ // line 7847, offset 0x8004e244
+	/* begin block 1 */
+		// Start line: 7848
+		// Start offset: 0x8004E244
+		// Variables:
+	// 		int n; // $s3
+	// 		struct POLY_FT4 *poly; // $s2
+	// 		unsigned long **drawot; // stack offset -60
+	// 		struct _SVector points[3]; // stack offset -112
+	// 		long sxy[3]; // stack offset -88
+	// 		long degrees; // $fp
+	// 		long sz0; // stack offset -72
+	// 		long sz1; // stack offset -68
+	// 		long sz2; // stack offset -64
+	// 		long startz; // stack offset -56
+	// 		short tx; // $s0
+	// 		long dispYPos; // $s0
+	// 		int num_faces; // $s4
+	// 		int deg_change; // stack offset -52
+	/* end block 1 */
+	// End offset: 0x8004E5EC
+	// End Line: 7939
+
+	/* begin block 2 */
+		// Start line: 19122
+	/* end block 2 */
+	// End Line: 19123
+
+void FX_DrawRing2(MATRIX *wcTransform,_SVector *position,MATRIX *matrix,int radius,int radius2,
+                 int radius3,int z1,int z2,int z3,long offset,int sortInWorld)
+
+{
+  int in_v0;
+  int in_v1;
+  
+  if ((uint)(*(int *)(in_v0 + 4) + in_v1 * 8) < *(uint *)(in_v0 + 8)) {
+    FUN_800bfc28();
+    FUN_800bce3c();
+                    /* WARNING: Subroutine does not return */
+    FUN_800bce1c();
+  }
+  return;
+}
+
+
+
+// autogenerated function stub: 
+// void /*$ra*/ FX_DrawFField(struct MATRIX *wcTransform /*$s2*/, struct _FXForceFieldEffect *field /*$s0*/)
+void FX_DrawFField(struct MATRIX *wcTransform, struct _FXForceFieldEffect *field)
+{ // line 7964, offset 0x8004e61c
+	/* begin block 1 */
+		// Start line: 7965
+		// Start offset: 0x8004E61C
+		// Variables:
+			struct _Instance *instance; // $a0
+			struct MATRIX tmpmat; // stack offset -64
+			struct _SVector position; // stack offset -32
+			int size; // $s1
+			short fade; // $v0
+			long color; // stack offset -20
+			long black; // stack offset -24
+	/* end block 1 */
+	// End offset: 0x8004E7F8
+	// End Line: 8019
+
+	/* begin block 2 */
+		// Start line: 19458
+	/* end block 2 */
+	// End Line: 19459
+
+}
+
+
+// decompiled code
+// original method signature: 
+// struct _FXForceFieldEffect * /*$ra*/ FX_StartFField(struct _Instance *instance /*$s2*/, int size /*$s3*/, struct _Position *offset /*$s1*/, int size_diff /*$s4*/, int size_change /*stack 16*/, int deg_change /*stack 20*/, long color /*stack 24*/)
+ // line 8021, offset 0x8004e810
+	/* begin block 1 */
+		// Start line: 8022
+		// Start offset: 0x8004E810
+		// Variables:
+	// 		struct _FXForceFieldEffect *field; // $s0
+
+		/* begin block 1.1 */
+			// Start line: 8027
+			// Start offset: 0x8004E854
+			// Variables:
+		// 		short _x1; // $v0
+		// 		short _y1; // $v1
+		// 		short _z1; // $a1
+		// 		struct _SVector *_v0; // $v0
+		/* end block 1.1 */
+		// End offset: 0x8004E854
+		// End Line: 8027
+	/* end block 1 */
+	// End offset: 0x8004E8C0
+	// End Line: 8045
+
+	/* begin block 2 */
+		// Start line: 19583
+	/* end block 2 */
+	// End Line: 19584
+
+_FXForceFieldEffect *
+FX_StartFField(_Instance *instance,int size,_Position *offset,int size_diff,int size_change,
+              int deg_change,long color)
+
+{
+  short sVar1;
+  short in_v0;
+  short in_v1;
+  _FXForceFieldEffect *unaff_s0;
+  int unaff_s1;
+  short unaff_s4;
+  short in_stack_00000038;
+  short in_stack_0000003c;
+  long in_stack_00000040;
+  
+  sVar1 = *(short *)(unaff_s1 + 4);
+  (unaff_s0->offset).x = in_v0;
+  (unaff_s0->offset).y = in_v1;
+  (unaff_s0->offset).z = sVar1;
+  unaff_s0->size_diff = unaff_s4;
+  unaff_s0->deg = 0;
+  unaff_s0->size_change = in_stack_00000038;
+  unaff_s0->end_fade = 0;
+  unaff_s0->deg_change = in_stack_0000003c;
+  unaff_s0->start_fade = 0x1000;
+  unaff_s0->color = in_stack_00000040;
+  FUN_8004ae18();
+  return unaff_s0;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_EndFField(struct _Instance *instance /*$a0*/)
+ // line 8048, offset 0x8004e8e4
+	/* begin block 1 */
+		// Start line: 8050
+		// Start offset: 0x8004E8E4
+		// Variables:
+	// 		struct _FXGeneralEffect *currentEffect; // $v1
+
+		/* begin block 1.1 */
+			// Start line: 8054
+			// Start offset: 0x8004E91C
+		/* end block 1.1 */
+		// End offset: 0x8004E94C
+		// End Line: 8066
+	/* end block 1 */
+	// End offset: 0x8004E95C
+	// End Line: 8069
+
+	/* begin block 2 */
+		// Start line: 19644
+	/* end block 2 */
+	// End Line: 19645
+
+	/* begin block 3 */
+		// Start line: 19645
+	/* end block 3 */
+	// End Line: 19646
+
+void FX_EndFField(_Instance *instance)
+
+{
+  int *in_v1;
+  short in_a2;
+  undefined2 in_a3;
+  uint in_t0;
+  
+  do {
+    while( true ) {
+      do {
+        in_v1 = (int *)*in_v1;
+        if (in_v1 == (int *)0x0) {
+          return;
+        }
+      } while (((_Instance *)in_v1[2] != instance) || ((uint)*(byte *)(in_v1 + 3) != in_t0));
+      if (*(short *)((int)in_v1 + 0x22) != 0) break;
+      *(short *)(in_v1 + 9) = in_a2;
+    }
+    *(short *)(in_v1 + 9) = in_a2 - *(short *)((int)in_v1 + 0x22);
+    *(undefined2 *)((int)in_v1 + 0x22) = 0;
+  } while (*(short *)(in_v1 + 9) != 0);
+  *(undefined2 *)(in_v1 + 9) = in_a3;
+  FX_EndFField(instance);
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Draw_Glowing_Line(unsigned long **ot /*$t6*/, long otz /*$a0*/, struct DVECTOR *sxy0 /*$a2*/, struct DVECTOR *sxy1 /*$a3*/, struct DVECTOR *xy0 /*stack 16*/, struct DVECTOR *xy1 /*stack 20*/, long color /*stack 24*/, long color2 /*stack 28*/)
+ // line 8071, offset 0x8004e964
+	/* begin block 1 */
+		// Start line: 8072
+		// Start offset: 0x8004E964
+		// Variables:
+	// 		struct _POLY_2G4T *poly; // $t0
+	// 		struct _PrimPool *primPool; // $t2
+	// 		int negflag; // $t5
+	/* end block 1 */
+	// End offset: 0x8004EAF8
+	// End Line: 8116
+
+	/* begin block 2 */
+		// Start line: 19690
+	/* end block 2 */
+	// End Line: 19691
+
+void FX_Draw_Glowing_Line
+               (ulong **ot,long otz,DVECTOR *sxy0,DVECTOR *sxy1,DVECTOR *xy0,DVECTOR *xy1,long color
+               ,long color2)
+
+{
+  uint in_v0;
+  DVECTOR DVar1;
+  uint uVar2;
+  uint *puVar3;
+  uint *in_t0;
+  short *in_t1;
+  int in_t2;
+  short *in_t3;
+  uint in_t4;
+  int in_t5;
+  int in_t6;
+  
+  in_t0[10] = otz;
+  in_t0[2] = in_v0;
+  in_t0[4] = 0;
+  in_t0[8] = in_t4;
+  in_t0[0xc] = in_t4;
+  in_t0[0xe] = 0;
+  in_t0[0x10] = 0;
+  DVar1 = *sxy0;
+  *(DVECTOR *)(in_t0 + 0xb) = DVar1;
+  *(DVECTOR *)(in_t0 + 7) = DVar1;
+  *(short *)(in_t0 + 3) = sxy0->vx + *in_t1;
+  *(short *)((int)in_t0 + 0xe) = sxy0->vy - in_t1[1];
+  *(short *)(in_t0 + 0xf) = sxy0->vx - *in_t1;
+  *(short *)((int)in_t0 + 0x3e) = sxy0->vy + in_t1[1];
+  DVar1 = *sxy1;
+  *(DVECTOR *)(in_t0 + 0xd) = DVar1;
+  *(DVECTOR *)(in_t0 + 9) = DVar1;
+  *(short *)(in_t0 + 5) = sxy1->vx + *in_t3;
+  *(short *)((int)in_t0 + 0x16) = sxy1->vy - in_t3[1];
+  *(short *)(in_t0 + 0x11) = sxy1->vx - *in_t3;
+  *(short *)((int)in_t0 + 0x46) = sxy1->vy + in_t3[1];
+  if (in_t5 == 0) {
+    uVar2 = 0xe1000620;
+  }
+  else {
+    uVar2 = 0xe1000640;
+  }
+  in_t0[1] = uVar2;
+  puVar3 = (uint *)((int)ot * 4 + in_t6);
+  *in_t0 = *puVar3 & 0xffffff | 0x11000000;
+  *puVar3 = (uint)in_t0 & 0xffffff;
+  *(uint **)(in_t2 + 4) = in_t0 + 0x12;
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_Lightning(struct MATRIX *wcTransform /*$s0*/, unsigned long **ot /*stack 4*/, struct MATRIX *mat /*stack 8*/, short deg /*$s1*/, struct _SVector *start /*stack 16*/, struct _SVector *end /*stack 20*/, int width /*stack 24*/, int small_width /*stack 28*/, int segs /*stack 32*/, int sine_size /*stack 36*/, int variation /*stack 40*/, long color /*stack 44*/, long glow_color /*stack 48*/)
+ // line 8119, offset 0x8004eb00
+	/* begin block 1 */
+		// Start line: 8120
+		// Start offset: 0x8004EB00
+		// Variables:
+	// 		int sz0; // $s5
+	// 		int sz1; // stack offset -56
+	// 		long otz; // $s1
+	// 		int length; // $v1
+	// 		struct DVECTOR sxy0; // stack offset -112
+	// 		struct DVECTOR sxy1; // stack offset -104
+	// 		struct DVECTOR xy0; // stack offset -96
+	// 		struct DVECTOR xy1; // stack offset -88
+	// 		struct DVECTOR small_xy0; // stack offset -80
+	// 		struct DVECTOR small_xy1; // stack offset -72
+	// 		int n; // $s3
+	// 		int increment; // stack offset -52
+	// 		int rsin_nd2; // $s2
+
+		/* begin block 1.1 */
+			// Start line: 8154
+			// Start offset: 0x8004EBB4
+			// Variables:
+		// 		struct SVECTOR point; // stack offset -64
+
+			/* begin block 1.1.1 */
+				// Start line: 8162
+				// Start offset: 0x8004EC04
+				// Variables:
+			// 		int rsin_n4; // $s0
+			/* end block 1.1.1 */
+			// End offset: 0x8004ECF0
+			// End Line: 8166
+
+			/* begin block 1.1.2 */
+				// Start line: 8170
+				// Start offset: 0x8004ED00
+				// Variables:
+			// 		int tmpdeg; // $s1
+			/* end block 1.1.2 */
+			// End offset: 0x8004EDC8
+			// End Line: 8174
+
+			/* begin block 1.1.3 */
+				// Start line: 8188
+				// Start offset: 0x8004EE30
+				// Variables:
+			// 		int fx; // $s2
+			// 		int fy; // $s0
+			/* end block 1.1.3 */
+			// End offset: 0x8004EE78
+			// End Line: 8196
+		/* end block 1.1 */
+		// End offset: 0x8004EF94
+		// End Line: 8218
+	/* end block 1 */
+	// End offset: 0x8004EFC0
+	// End Line: 8227
+
+	/* begin block 2 */
+		// Start line: 19793
+	/* end block 2 */
+	// End Line: 19794
+
+void FX_Lightning(MATRIX *wcTransform,ulong **ot,MATRIX *mat,short deg,_SVector *start,_SVector *end
+                 ,int width,int small_width,int segs,int sine_size,int variation,long color,
+                 long glow_color)
+
+{
+                    /* WARNING: Subroutine does not return */
+  FUN_800bce1c();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_LightHouse(struct MATRIX *wcTransform /*$s0*/, unsigned long **ot /*stack 4*/, struct _Instance *instance /*$a2*/, int startSeg /*$a3*/, int endSeg /*stack 16*/, int segs /*stack 20*/, long beam_color /*stack 24*/)
+ // line 8232, offset 0x8004eff0
+	/* begin block 1 */
+		// Start line: 8233
+		// Start offset: 0x8004EFF0
+		// Variables:
+	// 		int sz0; // $s4
+	// 		int sz1; // stack offset -72
+	// 		long otz; // $a1
+	// 		int width; // $s0
+	// 		struct _SVector start; // stack offset -136
+	// 		struct _SVector end; // stack offset -128
+	// 		struct DVECTOR sxy0; // stack offset -120
+	// 		struct DVECTOR sxy1; // stack offset -112
+	// 		struct DVECTOR xy0; // stack offset -104
+	// 		struct DVECTOR xy1; // stack offset -96
+	// 		int fade; // $a3
+	// 		int n; // $s2
+	// 		int increment; // $s6
+	// 		long black; // stack offset -64
+	// 		long color; // stack offset -68
+	// 		long color1; // stack offset -56
+	// 		long color2; // stack offset -60
+	// 		int fx; // stack offset -52
+	// 		int fy; // stack offset -48
+	// 		int length; // $s7
+	// 		int segcnt; // $s3
+	// 		int end_width; // stack offset -44
+	// 		int flag; // $fp
+	// 		struct MATRIX *swTransform; // $v1
+
+		/* begin block 1.1 */
+			// Start line: 8292
+			// Start offset: 0x8004F138
+			// Variables:
+		// 		struct SVECTOR point; // stack offset -88
+
+			/* begin block 1.1.1 */
+				// Start line: 8303
+				// Start offset: 0x8004F1B0
+				// Variables:
+			// 		int newlength; // $v1
+			// 		int newfx; // $s1
+			// 		int newfy; // $s0
+			/* end block 1.1.1 */
+			// End offset: 0x8004F1F4
+			// End Line: 8317
+		/* end block 1.1 */
+		// End offset: 0x8004F214
+		// End Line: 8324
+
+		/* begin block 1.2 */
+			// Start line: 8335
+			// Start offset: 0x8004F248
+			// Variables:
+		// 		struct SVECTOR point; // stack offset -80
+
+			/* begin block 1.2.1 */
+				// Start line: 8357
+				// Start offset: 0x8004F330
+				// Variables:
+			// 		int x; // $v0
+			/* end block 1.2.1 */
+			// End offset: 0x8004F3BC
+			// End Line: 8369
+		/* end block 1.2 */
+		// End offset: 0x8004F40C
+		// End Line: 8378
+	/* end block 1 */
+	// End offset: 0x8004F43C
+	// End Line: 8388
+
+	/* begin block 2 */
+		// Start line: 20062
+	/* end block 2 */
+	// End Line: 20063
+
+void FX_LightHouse(MATRIX *wcTransform,ulong **ot,_Instance *instance,int startSeg,int endSeg,
+                  int segs,long beam_color)
+
+{
+  int in_v1;
+  MATRIX *pMVar1;
+  undefined2 uStack00000022;
+  undefined2 uStack00000024;
+  undefined2 uStack00000028;
+  undefined2 uStack0000002a;
+  undefined2 uStack0000002c;
+  int in_stack_000000b8;
+  
+  uStack00000022 = *(undefined2 *)(in_v1 + 0x18);
+  uStack00000024 = *(undefined2 *)(in_v1 + 0x1c);
+  pMVar1 = instance->matrix + in_stack_000000b8;
+  uStack00000028 = *(undefined2 *)pMVar1->t;
+  uStack0000002a = *(undefined2 *)(pMVar1->t + 1);
+  uStack0000002c = *(undefined2 *)(pMVar1->t + 2);
+  FUN_800bce3c();
+                    /* WARNING: Subroutine does not return */
+  FUN_800bce1c();
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_StartPassthruFX(struct _Instance *instance /*$s0*/, struct _SVector *normal /*$a1*/, struct _SVector *point /*$a2*/)
+ // line 8391, offset 0x8004f46c
+	/* begin block 1 */
+		// Start line: 8392
+		// Start offset: 0x8004F46C
+		// Variables:
+	// 		long color; // stack offset -24
+	/* end block 1 */
+	// End offset: 0x8004F46C
+	// End Line: 8392
+
+	/* begin block 2 */
+		// Start line: 20457
+	/* end block 2 */
+	// End Line: 20458
+
+void FX_StartPassthruFX(_Instance *instance,_SVector *normal,_SVector *point)
+
+{
+  int in_v0;
+  int in_v1;
+  int in_t0;
+  int in_t1;
+  int unaff_s0;
+  undefined4 uStack00000010;
+  undefined *puStack00000018;
+  
+  puStack00000018 = &DAT_0020ff40;
+  *(int *)(unaff_s0 + 0x120) = -(in_t1 + in_t0 + in_v1 * in_v0 >> 0xc);
+  uStack00000010 = 2;
+  FUN_8004a954(instance,&DAT_000020d0,&stack0x00000018,0);
+  uStack00000010 = 1;
+  FUN_8004a954();
+  return;
+}
+
+
+
+// decompiled code
+// original method signature: 
+// void /*$ra*/ FX_EndPassthruFX(struct _Instance *instance /*$a0*/)
+ // line 8409, offset 0x8004f548
+	/* begin block 1 */
+		// Start line: 20509
+	/* end block 1 */
+	// End Line: 20510
+
+void FX_EndPassthruFX(_Instance *instance)
+
+{
+  undefined4 in_v0;
+  int in_v1;
+  
+  *(undefined4 *)(in_v1 + 4) = in_v0;
+  ((instance->node).next)->prev = (instance->node).prev;
+  (instance->node).next = (NodeType *)0x0;
+  (instance->node).prev = (NodeType *)0x0;
+  return;
+}
+
+
+
+
+
